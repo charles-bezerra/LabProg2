@@ -32,4 +32,12 @@ public class Contato {
 		this.detalhes = detalhes;
 	}
 	
+	public String exibirContato() {
+		return this.nome + " " + this.sobrenome + " - " + this.telefone;
+	}
+	
+	public String toString() {
+		return this.nome + " " + this.sobrenome;
+	}
+	
 }
