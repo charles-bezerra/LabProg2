@@ -1,5 +1,9 @@
 package lab2;
 
+/**
+ *
+ * */
+
 public class Contato {
 	private String nome;
 	private String sobrenome;
@@ -36,10 +40,12 @@ public class Contato {
 		return this.toString() + " - " + this.telefone;
 	}
 
+	@Override
 	public String toString() {
 		return this.nome + " " + this.sobrenome;
 	}
 
+	@Override
 	public boolean equals(Object outroContato) {
         Contato outro;
 
@@ -48,6 +54,6 @@ public class Contato {
         else
             return false;
 
-        return (outro.nome == this.nome && outro.sobrenome == this.sobrenome) ? true : false;
+        return ( this.nome.equals(outro.nome) && this.sobrenome.equals(outro.sobrenome) ) ? true : false;
     }
 }
