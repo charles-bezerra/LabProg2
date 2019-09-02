@@ -1,0 +1,9 @@
+Classe é o que eu uso em java para definir um objeto, 
+usando métodos e atributos. 
+
+Objeto é tudo que posso representar como uma entidade do mundo real
+que será mapeada para o mundo de software, ex: carro, pessoa. Tal entidade
+oferece funcionalidades e possui estado
+
+A classe é sempre um molde/projeto para o objeto. A classe define um tipo
+de objeto.

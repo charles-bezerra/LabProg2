@@ -113,7 +113,7 @@ public class Disciplina {
 	 *
 	* @return media o valor do calculo da media das notas com o pesos respectivos pesos.
 	*/
-	public double mediaDisciplina() {
+	private double mediaDisciplina() {
 		int media = 0, acumulaValorPesos = 0;
 		for(int i = 0; i < this.notas.length; i++) {			
 			media += this.notas[i]*this.pesosNotas[i];
