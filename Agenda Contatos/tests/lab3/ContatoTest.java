@@ -1,7 +1,5 @@
 package lab3;
 
-import static junit.framework.Assert.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

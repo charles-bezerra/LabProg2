@@ -79,17 +79,19 @@ public class Agenda {
 	@Override
 	public boolean equals(Object outro){
 		Agenda outraAgenda;
+		int cont = 0;
 		if (outro != null) {
 			outraAgenda = (Agenda) outro;
 			Contato[] outrosContatos = outraAgenda.getContatos();
-			if (outrosContatos.length != this.contatos.length) {
+			if (outrosContatos.length == this.contatos.length) {
 				for (int i = 0; i < this.contatos.length; i++){
-					if (this.contatos[i] == null && outrosContatos[i] != null) break;
-					else if ( this.contatos[i] != null && !this.contatos[i].equals(outrosContatos[i]) ) break;
+					if (this.contatos[i] == null && outrosContatos[i] != null) return false;
+					else if ( this.contatos[i] != null && !this.contatos[i].equals(outrosContatos[i]) ) return false;
 				}
 			}
+			else return false;
 		}
-		return false;
+		return true;
 	}
 
 }

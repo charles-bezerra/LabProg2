@@ -5,6 +5,8 @@ public class AgendaDeContatos {
 
 	public static Agenda agenda = new Agenda("Agenda 1");
 
+
+
 	public static void exibirMenu() {
 		System.out.println("" + 
 			"(C)adastrar Contato\n" + 
@@ -15,13 +17,18 @@ public class AgendaDeContatos {
 		System.out.print("Opção> ");
 	}
 	
+
+
 	public static void exibirContato() {
 		Scanner sc = new Scanner(System.in);
 		int posicao = sc.nextInt();
 		
 		System.out.println( "\n" + agenda.exibirContato(posicao) + "\n" );
 	}
+
+
 	
+
 	public static int cadastrarContato() {
 		Scanner sc = new Scanner(System.in);
 
@@ -47,12 +54,14 @@ public class AgendaDeContatos {
 		return 1;
 	}
 	
+
+
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String resposta;
 		
 		do {
-		
 			exibirMenu();
 			resposta = sc.nextLine();
 			
@@ -67,7 +76,6 @@ public class AgendaDeContatos {
 			
 			else if(!resposta.equals("S"))
 				System.out.println("OPÇÃO INVÁLIDA!\n");
-		
 		}while(!resposta.equals("S"));
 		
 		sc.close();
