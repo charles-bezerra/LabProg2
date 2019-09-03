@@ -12,15 +12,13 @@ public class Agenda {
 	 * */
 	private String nomeAgenda;
 
-	private static int contadorDeAgenda = 1;
-
 	/**
 	 * Array contendo Objetos do tipo Contato
 	 * */
 	private Contato[] contatos;
 
 	Agenda(){
-		this("agenda " + contadorDeAgenda);
+		this("Sem nome");
 	}
 
 	/**
@@ -31,7 +29,6 @@ public class Agenda {
 	Agenda(String nomeAgenda){
 		this.contatos = new Contato[100];
 		this.nomeAgenda = nomeAgenda;
-		contadorDeAgenda++;
 	}
 
 
@@ -77,9 +74,7 @@ public class Agenda {
 		return true;
 	}
 
-	public Contato[] getContatos(){
-		return this.contatos;
-	}
+	public Contato[] getContatos(){ return this.contatos; }
 
 	@Override
 	public boolean equals(Object outro){
