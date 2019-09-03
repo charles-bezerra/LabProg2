@@ -1,4 +1,4 @@
-package lab2;
+package lab3;
 
 /**
  *  Classe responsável em controlar e representar
@@ -15,7 +15,7 @@ public class Agenda {
 	/**
 	 * Array contendo Objetos do tipo Contato
 	 * */
-	private Contato[] contatos;
+	private lab3.Contato[] contatos;
 
 	Agenda(){
 		this("Sem nome");
@@ -67,7 +67,7 @@ public class Agenda {
 	 * @param telefone telefone do contato
 	 * */
 	public boolean cadastrarContato(int posicao, String nome, String sobrenome, String telefone) {
-		if (posicao >= 1 && posicao <=100)
+		if (posicao >= 1 && posicao <=100 && !nome.equals("") && !sobrenome.equals("") && !telefone.equals(""))
 			contatos[posicao - 1] = new Contato(nome, sobrenome, telefone);
 		else
 			return false;
