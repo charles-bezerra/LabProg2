@@ -17,6 +17,10 @@ public class Agenda {
 	 * */
 	private lab3.Contato[] contatos;
 
+	/**
+	 * Construtor padrão de agenda que atribui "Sem nome" em agenda
+	 * e um array de tamanho 100 com o tipo Contato.
+	 * */
 	Agenda(){
 		this("Sem nome");
 	}
@@ -74,8 +78,18 @@ public class Agenda {
 		return true;
 	}
 
+	/**
+	 * Método que returna um array do tipo Contato
+	 *
+	 * @return um array de contato
+	 * */
 	public Contato[] getContatos(){ return this.contatos; }
 
+	/**
+	 * Método que retorna um booleno que afirma se uma agenda é igual a outro objeto do tipo agenda
+	 *
+	 * @return um booleano que afirma se uma agenda é igual a outro objeto do tipo agenda
+	 * */
 	@Override
 	public boolean equals(Object outro){
 		Agenda outraAgenda;

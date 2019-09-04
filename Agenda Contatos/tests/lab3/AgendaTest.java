@@ -7,11 +7,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ *
+ * Classe  que contém os testes de Agenda
+ *
+ * @author Charles Bezerra de Oliveira Júnior-119110595 (Lab3)
+ *  */
 class AgendaTest {
 
+    /**
+     * Atributos do tipo Agenda.
+     * */
     private Agenda agenda1, agenda2, agenda3, agenda4;
 
-
+    /**
+     * Método que inicializa e atribui objetos do tipo Agenda
+     * */
     @BeforeEach
     void criarAgendas() {
         agenda1 = new Agenda("agenda 1");
@@ -33,7 +44,9 @@ class AgendaTest {
             //Vazio
     }
 
-
+    /**
+     * Método que testa a função  cadastrarContato de Agenda
+     * */
     @Test
     void testCadastrarContato() {
         assertFalse( agenda1.cadastrarContato(0, "Charles", "Bezerra", "(84) 99924-3485") );
@@ -46,6 +59,9 @@ class AgendaTest {
         assertFalse( agenda1.cadastrarContato(101, "Pedro", "Henrique", "(83) 99999-9999") );
     }
 
+    /**
+     * Método que testa a função  exibirContatos de Agenda
+     * */
     @Test
     void testListarContatos() {
         assertEquals("1 Charles Bezerra\n2 Carlos Oliveira\n", agenda1.listarContatos());
@@ -54,17 +70,29 @@ class AgendaTest {
         assertEquals("", agenda4.listarContatos());
     }
 
+    /**
+     * Método que testa a função  exibirContato de Agenda
+     * */
     @Test
     void testExibirContato() {
 
         //Agenda 1
-        assertEquals("Charles Bezerra - (84) 99924-3485", agenda1.exibirContato(1));
-        assertEquals("Carlos Oliveira - (83) 99933-3315", agenda1.exibirContato(2));
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda1.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda1.exibirContato(2));
 
         //Agenda 2
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda2.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda2.exibirContato(2));
 
+        //Agenda 3
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda3.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda3.exibirContato(2));
+        assertEquals("3 Pedro Henrique - (85) 99999-9999", agenda3.exibirContato(3));
     }
 
+    /**
+     * Método que testa a função equals de Agenda
+     * */
     @Test
     void testEquals() {
         assertTrue(agenda1.equals(agenda2));
