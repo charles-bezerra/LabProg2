@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7be1cbaf-bf8d-4ba3-88af-958343ca2158" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Agenda.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Agenda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/AgendaDeContatos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/AgendaDeContatos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Contato.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Contato.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Agenda Contatos/lab3/AgendaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Agenda Contatos/lab3/AgendaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Agenda Contatos/lab3/ContatoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Agenda Contatos/lab3/ContatoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab3/Agenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/Agenda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab3/AgendaDeContatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/AgendaDeContatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab3/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab3/Contato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/lab3/AgendaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/lab3/AgendaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/lab3/ContatoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/lab3/ContatoTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +12,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="285" />
-    <option name="y" value="53" />
-    <option name="width" value="1390" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1QLa2M8QmjZTEIVVCa7bntfEwXH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -170,7 +153,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
