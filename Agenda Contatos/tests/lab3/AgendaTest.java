@@ -58,11 +58,17 @@ class AgendaTest {
     void testExibirContato() {
 
         //Agenda 1
-        assertEquals("Charles Bezerra - (84) 99924-3485", agenda1.exibirContato(1));
-        assertEquals("Carlos Oliveira - (83) 99933-3315", agenda1.exibirContato(2));
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda1.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda1.exibirContato(2));
 
         //Agenda 2
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda2.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda2.exibirContato(2));
 
+        //Agenda 3
+        assertEquals("1 Charles Bezerra - (84) 99924-3485", agenda3.exibirContato(1));
+        assertEquals("2 Carlos Oliveira - (83) 99933-3315", agenda3.exibirContato(2));
+        assertEquals("3 Pedro Henrique - (84) 99924-3485", agenda3.exibirContato(1));
     }
 
     @Test
