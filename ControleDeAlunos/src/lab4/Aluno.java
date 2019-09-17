@@ -1,5 +1,7 @@
 package lab4;
 
+import java.util.Objects;
+
 public class Aluno {
 	private String matricula;
 	private String nome;
@@ -15,6 +17,23 @@ public class Aluno {
 	public String getNome() { return this.nome; }
 	public String getCurso() { return this.curso; }
 
-	public int hashCode(){ return this.matricula.hashCode(); }
-	public String toString(){ return this.matricula + " - " + this.nome + " - " + this.curso; }
+	@Override
+	public int hashCode(){
+		return Objects.hash(this.matricula);
+	}
+
+	@Override
+	public String toString(){
+		return this.matricula + " - " + this.nome + " - " + this.curso;
+	}
+
+	@Override
+	public boolean equals(Object object){
+		if(object == this) return true;
+		if(object == null) return false;
+		if(object.getClass() != this.getClass()) return false;
+
+		Aluno outroObjeto = (Aluno) object;
+		return outroObjeto.hashCode() == this.hashCode();
+	}
 }

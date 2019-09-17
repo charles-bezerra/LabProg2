@@ -1,9 +1,10 @@
 package lab4;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GrupoDeEstudo {
     private String tema;
@@ -28,7 +29,7 @@ public class GrupoDeEstudo {
     }
 
     public String listarGrupo(){
-        String resultado = "Alunos do grupo Listas:\n";
+        String resultado = "Alunos do grupo " + this.tema + ":\n";
         Iterator<String> iter = this.matriculaAlunos.iterator();
         while (iter.hasNext()){
             resultado += "* " + this.alunos.get(iter.next()).toString() + "\n";
@@ -36,16 +37,18 @@ public class GrupoDeEstudo {
         return resultado;
     }
 
+    @Override
     public int hashCode(){
-        return this.tema.hashCode();
+        return Objects.hash(this.tema);
     }
 
-    public boolean equals(Object objeto){
-        if(objeto == this) return true;
-        if(objeto == null) return false;
-        if(objeto.getClass() != this.getClass()) return false;
+    @Override
+    public boolean equals(Object object){
+        if(object == this) return true;
+        if(object == null) return false;
+        if(object.getClass() != this.getClass()) return false;
 
-        GrupoDeEstudo outroObjeto = (GrupoDeEstudo) objeto;
+        GrupoDeEstudo outroObjeto = (GrupoDeEstudo) object;
         return outroObjeto.hashCode() == this.hashCode();
     }
 }
