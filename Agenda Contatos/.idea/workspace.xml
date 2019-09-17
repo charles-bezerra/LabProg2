@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7be1cbaf-bf8d-4ba3-88af-958343ca2158" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/tests/lab3/AgendaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/lab3/AgendaTest.java" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Agenda.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/AgendaDeContatos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Agenda Contatos/lab3/Contato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Agenda de Contatos/.idea/workspace.xml" beforeDir="false" />
+>>>>>>> c71fbe8cb087578f45030a48c708e2b1a901f199
+>>>>>>> ea8233afebf4c442c02c3cfa5d21875b6d87ac3a
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +23,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="195862850">
+    <session id="-261837529">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+<<<<<<< HEAD
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.21" value="1" />
@@ -98,25 +110,19 @@
       </file>
     </leaf>
   </component>
+=======
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+>>>>>>> ea8233afebf4c442c02c3cfa5d21875b6d87ac3a
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/lab3/AgendaDeContatos.java" />
-        <option value="$PROJECT_DIR$/src/lab3/Contato.java" />
-        <option value="$PROJECT_DIR$/src/lab3/Agenda.java" />
-        <option value="$PROJECT_DIR$/tests/lab3/AgendaTest.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="285" />
-    <option name="y" value="53" />
-    <option name="width" value="1390" />
-    <option name="height" value="1000" />
-  </component>
+  <component name="ProjectId" id="1QLa2M8QmjZTEIVVCa7bntfEwXH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -124,6 +130,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+<<<<<<< HEAD
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,10 +160,17 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+>>>>>>> ea8233afebf4c442c02c3cfa5d21875b6d87ac3a
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567522418850" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568296669422" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ControleDeAlunos" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -175,34 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AgendaTest.testEquals">
-    <configuration name="AgendaDeContatos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab3.AgendaDeContatos" />
-      <module name="Agenda Contatos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AgendaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Agenda Contatos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lab3" />
-      <option name="MAIN_CLASS_NAME" value="lab3.AgendaTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ContatoTest.testExibirContato">
     <configuration name="AgendaTest.testCadastrarContato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Agenda Contatos" />
       <extension name="coverage">
@@ -235,7 +222,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AgendaTest.testListarContatos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContatoTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Agenda Contatos" />
       <extension name="coverage">
         <pattern>
@@ -244,27 +231,59 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab3" />
-      <option name="MAIN_CLASS_NAME" value="lab3.AgendaTest" />
-      <option name="METHOD_NAME" value="testListarContatos" />
+      <option name="MAIN_CLASS_NAME" value="lab3.ContatoTest" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContatoTest.testExibirContato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agenda Contatos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab3" />
+      <option name="MAIN_CLASS_NAME" value="lab3.ContatoTest" />
+      <option name="METHOD_NAME" value="testExibirContato" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContatoTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agenda Contatos" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lab3" />
+      <option name="MAIN_CLASS_NAME" value="lab3.ContatoTest" />
+      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.AgendaDeContatos" />
-      <item itemvalue="JUnit.AgendaTest" />
-      <item itemvalue="JUnit.AgendaTest.testListarContatos" />
       <item itemvalue="JUnit.AgendaTest.testEquals" />
       <item itemvalue="JUnit.AgendaTest.testCadastrarContato" />
+      <item itemvalue="JUnit.ContatoTest.testEquals" />
+      <item itemvalue="JUnit.ContatoTest.testToString" />
+      <item itemvalue="JUnit.ContatoTest.testExibirContato" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContatoTest.testExibirContato" />
+        <item itemvalue="JUnit.ContatoTest.testToString" />
+        <item itemvalue="JUnit.ContatoTest.testEquals" />
         <item itemvalue="JUnit.AgendaTest.testEquals" />
         <item itemvalue="JUnit.AgendaTest.testCadastrarContato" />
-        <item itemvalue="JUnit.AgendaTest.testListarContatos" />
-        <item itemvalue="JUnit.AgendaTest" />
-        <item itemvalue="Application.AgendaDeContatos" />
       </list>
     </recent_temporary>
   </component>
@@ -281,42 +300,10 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 27m 11s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 27m 43s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testListarContatos - 2019.09.03 at 11h 32m 01s.xml">
-      <configuration name="AgendaTest.testListarContatos" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testListarContatos - 2019.09.03 at 11h 33m 30s.xml">
-      <configuration name="AgendaTest.testListarContatos" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testListarContatos - 2019.09.03 at 11h 34m 46s.xml">
-      <configuration name="AgendaTest.testListarContatos" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testCadastrarContato - 2019.09.03 at 11h 36m 27s.xml">
-      <configuration name="AgendaTest.testCadastrarContato" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 38m 52s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 45m 45s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 47m 04s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AgendaTest_testEquals - 2019.09.03 at 11h 48m 58s.xml">
-      <configuration name="AgendaTest.testEquals" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="47" y="25" width="1873" height="1055" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16675809" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
@@ -325,9 +312,21 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
+=======
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958949" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+>>>>>>> ea8233afebf4c442c02c3cfa5d21875b6d87ac3a
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -346,9 +345,32 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+<<<<<<< HEAD
+              <option name="COLUMN_ORDER" />
+=======
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+>>>>>>> c71fbe8cb087578f45030a48c708e2b1a901f199
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/lab3/Agenda.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -392,6 +414,8 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> ea8233afebf4c442c02c3cfa5d21875b6d87ac3a
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

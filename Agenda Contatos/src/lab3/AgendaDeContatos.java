@@ -1,6 +1,12 @@
 package lab3;
 import java.util.Scanner;
 
+/**
+ *
+ * Classe main do projeto.
+ *
+ * @author Charles Bezerra de Oliveira Júnior-119110595 (Lab3)
+ **/
 public class AgendaDeContatos {
 
 	public static Agenda agenda = new Agenda("Agenda 1");
