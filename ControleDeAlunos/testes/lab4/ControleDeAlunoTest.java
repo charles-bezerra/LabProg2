@@ -15,30 +15,36 @@ class ControleDeAlunoTest {
     }
 
     @Test
-    void cadastrarGrupoDeEstudo() {
+    void testCadastrarGrupoDeEstudo() {
+        assertEquals("CADASTRO REALIZADO!\n", controle1.cadastrarGrupoDeEstudo("Grupo 1") );
+        assertEquals( "TEMA INVÁLIDO!\n", controle1.cadastrarGrupoDeEstudo(null) );
+        assertEquals( "TEMA INVÁLIDO!\n", controle1.cadastrarGrupoDeEstudo("") );
+
+        controle1.cadastrarGrupoDeEstudo("Grupo 2");
+        assertEquals("GRUPO JÁ CADASTRADO!\n", controle1.cadastrarGrupoDeEstudo("Grupo 2"));
     }
 
     @Test
-    void cadastrarAluno() {
+    void testCadastrarAluno() {
     }
 
     @Test
-    void exibirAluno() {
+    void testExibirAluno() {
     }
 
     @Test
-    void alocarAlunoEmGrupo() {
+    void testAlocarAlunoEmGrupo() {
     }
 
     @Test
-    void listarGrupo() {
+    void testListarGrupo() {
     }
 
     @Test
-    void cadastrarRespostaDeAlunos() {
+    void testCadastrarRespostaDeAlunos() {
     }
 
     @Test
-    void listarRespostasDeAlunos() {
+    void testListarRespostasDeAlunos() {
     }
 }

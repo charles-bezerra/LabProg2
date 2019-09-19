@@ -16,18 +16,22 @@ public class ControleDeAluno {
         this.ordemDasRespostasDeAlunos = new ArrayList<>();
     }
 
-    public boolean cadastrarGrupoDeEstudo(String tema){
+    public String cadastrarGrupoDeEstudo(String tema){
+        if (tema == "" || tema == null) return "TEMA INVÁLIDO!\n";
+
         if (!this.gruposDeEstudo.containsKey(tema)) {
             this.gruposDeEstudo.put(tema, new GrupoDeEstudo(tema));
-            return true;
-        }else return false;
+            return "CADASTRO REALIZADO!\n";
+        }else return "GRUPO JÁ CADASTRADO!\n";
     }
 
-    public boolean cadastrarAluno(String matricula, String nome, String curso) {
+    public String cadastrarAluno(String matricula, String nome, String curso) {
+        if (matricula == null || nome == null || curso == null) return "DADO(S) INVÁLIDO(S)\n";
+
         if (!this.alunos.containsKey(matricula)){
             this.alunos.put(matricula, new Aluno(matricula, nome, curso));
-            return true;
-        }else return false;
+            return "CADASTRO REALIZADO!\n";
+        }else return "MATRÍCULA JÁ CADASTRADA!\n";
     }
 
     public String exibirAluno(String matricula){

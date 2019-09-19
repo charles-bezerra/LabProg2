@@ -27,7 +27,6 @@ class GrupoDeEstudoTest {
         assertTrue(grupo1.adicionarAluno(aluno1));
 
         grupo1.adicionarAluno(aluno1);
-
         assertFalse(grupo1.adicionarAluno(aluno1));
         assertFalse(grupo1.adicionarAluno(null));
     }
@@ -38,10 +37,28 @@ class GrupoDeEstudoTest {
         grupo1.adicionarAluno(aluno2);
         grupo1.adicionarAluno(aluno3);
 
-        assertEquals("", grupo1.listarGrupo());
+        String listagem =
+                "Alunos do grupo Grupo 1:\n" +
+                "* 1 - Charles - Computação\n" +
+                "* 2 - Carlos - Computação\n" +
+                "* 3 - Henrique - História\n";
+
+        assertEquals(listagem, grupo1.listarGrupo());
+        assertEquals("Alunos do grupo Grupo Espelhado:\n", grupo2.listarGrupo());
+        assertEquals("Alunos do grupo Grupo Espelhado:\n", grupo3.listarGrupo());
+    }
+
+    @Test
+    void testHashCode(){
+        assertFalse(grupo1.hashCode() == grupo2.hashCode());
+        assertFalse(grupo1.hashCode() == grupo3.hashCode());
+        assertTrue(grupo2.hashCode() == grupo3.hashCode());
     }
 
     @Test
     void testEquals() {
+        assertFalse(grupo1.equals(grupo2));
+        assertFalse(grupo1.equals(grupo3));
+        assertTrue(grupo2.equals(grupo3));
     }
 }

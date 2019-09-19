@@ -22,8 +22,7 @@ public class Main {
         controleDeAluno = new ControleDeAluno();
         sc = new Scanner(System.in);
 
-        exibirMenu();
-        String op = sc.nextLine();
+        exibirMenu(); String op = sc.nextLine();
 
         String matricula, nome, curso, grupo;
 
@@ -32,19 +31,16 @@ public class Main {
                 System.out.print("Maticula: "); matricula = sc.nextLine();
                 System.out.print("Nome: "); nome = sc.nextLine();
                 System.out.print("Curso: "); curso = sc.nextLine();
-                System.out.println(controleDeAluno.cadastrarAluno(matricula,nome,curso) ? "CADASTRO REALIZADO! \n" : "MATRÍCULA JÁ CADASTRADA! \n");
+                System.out.println( controleDeAluno.cadastrarAluno(matricula,nome,curso) );
             }
-
             else if(op.equals("E")){
                 System.out.print("Matrícula: "); matricula = sc.nextLine();
                 System.out.println("\n" + controleDeAluno.exibirAluno(matricula) );
             }
-
             else if(op.equals("N")){
                 System.out.print("Grupo: "); grupo = sc.nextLine();
-                System.out.println( controleDeAluno.cadastrarGrupoDeEstudo(grupo) ? "CADASTRO REALIZADO! \n" : "GRUPO JÁ CADASTRADO! \n" );
+                System.out.println( controleDeAluno.cadastrarGrupoDeEstudo(grupo) );
             }
-
             else if(op.equals("A")) {
                 System.out.print("(A)locar Aluno ou (I)mprimir Grupo? "); op = sc.nextLine();
                 if (op.equals("A")) {
@@ -57,25 +53,17 @@ public class Main {
                     System.out.println( controleDeAluno.listarGrupo(grupo) );
                 }
             }
-
             else if(op.equals("R")){
                 System.out.print("Aluno: "); matricula = sc.nextLine();
                 System.out.println( controleDeAluno.cadastrarRespostaDeAlunos(matricula) );
             }
-
-            else if(op.equals("I"))
-                System.out.println( controleDeAluno.listarRespostasDeAlunos() );
-
-            else if(op.equals("O"))
-                System.exit(0);
-
-            else
-                System.out.println("OPÇÃO INVÁLIDA!" + "\n");
+            else if(op.equals("I")) System.out.println( controleDeAluno.listarRespostasDeAlunos() );
+            else if(op.equals("O")) System.exit(0);
+            else System.out.println("OPÇÃO INVÁLIDA!" + "\n");
 
             exibirMenu();
             op = sc.nextLine();
         }
-
         System.out.close();
     }
 }
