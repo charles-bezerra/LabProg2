@@ -20,8 +20,7 @@ public class GrupoDeEstudo {
     public boolean adicionarAluno(Aluno aluno){
         if(aluno == null) return false;
         else{
-            if( this.alunos.containsKey( aluno.getMatricula() ) )
-                return false;
+            if( this.alunos.containsKey( aluno.getMatricula() ) ) return false;
             this.alunos.put( aluno.getMatricula(), aluno );
             this.matriculaAlunos.add(aluno.getMatricula());
             return true;
@@ -31,9 +30,11 @@ public class GrupoDeEstudo {
     public String listarGrupo(){
         String resultado = "Alunos do grupo " + this.tema + ":\n";
         Iterator<String> iter = this.matriculaAlunos.iterator();
+
         while (iter.hasNext()){
             resultado += "* " + this.alunos.get(iter.next()).toString() + "\n";
         }
+
         return resultado;
     }
 

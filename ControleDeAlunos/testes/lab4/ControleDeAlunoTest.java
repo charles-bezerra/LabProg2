@@ -15,30 +15,48 @@ class ControleDeAlunoTest {
     }
 
     @Test
-    void cadastrarGrupoDeEstudo() {
+    void testCadastrarGrupoDeEstudo() {
+        assertTrue( controle1.cadastrarGrupoDeEstudo("Grupo 1") );
+
+        try {
+            controle1.cadastrarGrupoDeEstudo(null);
+            fail("Exceção deveria ser executada!");
+        }catch (NullPointerException error){
+
+        }
+
+        try {
+            controle1.cadastrarGrupoDeEstudo("");
+            fail("Exceção deveria ser executada!");
+        }catch (IllegalArgumentException error){
+
+        }
+
+        controle1.cadastrarGrupoDeEstudo("Grupo 2");
+        assertFalse( controle1.cadastrarGrupoDeEstudo("Grupo 2") );
     }
 
     @Test
-    void cadastrarAluno() {
+    void testCadastrarAluno() {
     }
 
     @Test
-    void exibirAluno() {
+    void testExibirAluno() {
     }
 
     @Test
-    void alocarAlunoEmGrupo() {
+    void testAlocarAlunoEmGrupo() {
     }
 
     @Test
-    void listarGrupo() {
+    void testListarGrupo() {
     }
 
     @Test
-    void cadastrarRespostaDeAlunos() {
+    void testCadastrarRespostaDeAlunos() {
     }
 
     @Test
-    void listarRespostasDeAlunos() {
+    void testListarRespostasDeAlunos() {
     }
 }

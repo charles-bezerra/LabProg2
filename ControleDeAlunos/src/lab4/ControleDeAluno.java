@@ -16,7 +16,28 @@ public class ControleDeAluno {
         this.ordemDasRespostasDeAlunos = new ArrayList<>();
     }
 
+    public boolean eNumerico(String s) {
+        return s != null && s.matches("[-+]?\\d*\\.?\\d+");
+    }
+
+    public String validaEntradasString(String argumento, String variavel){
+
+        if (argumento == null)
+            throw new NullPointerException();
+
+        String subArgumento = argumento.trim();
+
+        if (subArgumento.equals(""))
+            throw new IllegalArgumentException("O " + variavel + " deve ser diferente de \"\"");
+
+
+        return argumento;
+    }
+
     public boolean cadastrarGrupoDeEstudo(String tema){
+
+        tema = this.validaEntradasString(tema, "tema");
+
         if (!this.gruposDeEstudo.containsKey(tema)) {
             this.gruposDeEstudo.put(tema, new GrupoDeEstudo(tema));
             return true;
@@ -24,6 +45,11 @@ public class ControleDeAluno {
     }
 
     public boolean cadastrarAluno(String matricula, String nome, String curso) {
+
+        matricula = validaEntradasString(matricula, "matricula");
+        nome = this.validaEntradasString(nome, "nome");
+        curso = this.validaEntradasString(curso, "tema");
+
         if (!this.alunos.containsKey(matricula)){
             this.alunos.put(matricula, new Aluno(matricula, nome, curso));
             return true;
@@ -31,34 +57,58 @@ public class ControleDeAluno {
     }
 
     public String exibirAluno(String matricula){
-        return this.alunos.containsKey(matricula) ? "Aluno: " + this.alunos.get(matricula).toString() + "\n" : "Aluno não cadastrado. \n";
+        matricula = this.validaEntradasString(matricula, "matricula");
+        return this.alunos.containsKey(matricula) ? "Aluno: " + this.alunos.get(matricula).toString() + "\n" : null;
     }
 
-    public String alocarAlunoEmGrupo(String matricula, String grupo){
-        if (!this.alunos.containsKey(matricula)) return "Aluno não cadastrado. \n";
-        if (!this.gruposDeEstudo.containsKey(grupo)) return "Grupo não cadastrado. \n";
+    public int alocarAlunoEmGrupo(String matricula, String grupo){
+
+        matricula = validaEntradasString(matricula, "matricula");
+        grupo = validaEntradasString(grupo, "grupo");
+
+        if (!this.alunos.containsKey(matricula)) return 1;
+        if (!this.gruposDeEstudo.containsKey(grupo)) return 2;
 
         this.gruposDeEstudo.get(grupo).adicionarAluno(this.alunos.get(matricula));
-        return "ALUNO ALOCADO! \n";
+        return 3;
     }
 
     public String listarGrupo(String grupo){
-        if (!this.gruposDeEstudo.containsKey(grupo)) return "Grupo não cadastrado. \n";
+
+        grupo = this.validaEntradasString(grupo, "grupo");
+
+        if (!this.gruposDeEstudo.containsKey(grupo)) return null;
         return this.gruposDeEstudo.get(grupo).listarGrupo() + "\n";
     }
 
-    public String cadastrarRespostaDeAlunos(String matricula){
-        if (!this.alunos.containsKey(matricula)) return "Aluno não cadastrado. \n";
+    public boolean cadastrarRespostaDeAlunos(String matricula){
+        if (!this.alunos.containsKey(matricula)) return false;
+
         this.ordemDasRespostasDeAlunos.add(matricula);
-        return "ALUNO REGISTRADO! \n";
+        return true;
     }
 
     public String listarRespostasDeAlunos(){
         int cont = 0;
-        String resultado = "Alunos: \n";
+        String resultado = "Alunos:\n";
         Iterator iter = this.ordemDasRespostasDeAlunos.iterator();
         while(iter.hasNext())
             resultado += ++cont + ". " + this.alunos.get(iter.next()).toString() + "\n";
         return resultado;
+    }
+}
+
+
+public enum MensagensAlocarAlunoEmGrupo {
+    Naluno(1), Ngrupo(2), Sucesso(3);
+
+    private int opcao;
+
+    MensagensAlocarAlunoEmGrupo(int opcao){
+        this.opcao = opcao;
+    }
+
+    public int getOpcao(){
+        return this.opcao;
     }
 }
