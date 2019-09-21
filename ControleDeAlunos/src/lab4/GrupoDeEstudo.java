@@ -10,32 +10,36 @@ public class GrupoDeEstudo {
     private String tema;
     private Map<String, Aluno> alunos;
     private ArrayList<String> matriculaAlunos;
+    private static final String LS = System.lineSeparator();
 
     GrupoDeEstudo(String tema){
-        this.tema = tema;
+        this.tema = ValidaArgumentos.verificarString(tema,"tema");
         this.alunos = new HashMap<>();
         this.matriculaAlunos = new ArrayList<>();
     }
 
     public boolean adicionarAluno(Aluno aluno){
-        if(aluno == null) return false;
-        else{
-            if( this.alunos.containsKey( aluno.getMatricula() ) ) return false;
-            this.alunos.put( aluno.getMatricula(), aluno );
-            this.matriculaAlunos.add(aluno.getMatricula());
-            return true;
-        }
+        aluno = ValidaArgumentos.verificarAluno(aluno);
+
+        if( this.alunos.containsKey( aluno.getMatricula() ) ) return false;
+
+        this.alunos.put( aluno.getMatricula(), aluno );
+        this.matriculaAlunos.add(aluno.getMatricula());
+        return true;
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public String listarGrupo(){
-        String resultado = "Alunos do grupo " + this.tema + ":\n";
+        StringBuilder resultado = new StringBuilder("Alunos do grupo " + this.tema + ":" + LS);
         Iterator<String> iter = this.matriculaAlunos.iterator();
-
         while (iter.hasNext()){
-            resultado += "* " + this.alunos.get(iter.next()).toString() + "\n";
+            resultado.append("* ").append( this.alunos.get( iter.next() ).toString() ).append(LS);
         }
-
-        return resultado;
+        return resultado.toString();
     }
 
     @Override

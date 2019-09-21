@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AlunoTest {
-
     private Aluno aluno1, aluno2, aluno3;
 
     @BeforeEach
@@ -14,6 +13,66 @@ class AlunoTest {
         aluno1 = new Aluno("1", "Charles", "Computação");
         aluno2 = new Aluno("1", "Carlos", "Computação");
         aluno3 = new Aluno("2", "Henrique", "História");
+    }
+
+    @Test
+    void testCriarObjetosMatriculaNula(){
+        try {
+            Aluno aluno = new Aluno(null, "aluno 1", "Computação");
+            fail("Exceção deveria ser executada");
+        }catch(NullPointerException error){
+            assertEquals("java.lang.NullPointerException", error.toString());
+        };
+    }
+
+    @Test
+    void testCriarObjetosNomeNulo(){
+        try {
+            Aluno aluno = new Aluno("2019.1", null, "Computação");
+            fail("Exceção deveria ser executada");
+        }catch(NullPointerException error){
+            assertEquals("java.lang.NullPointerException", error.toString());
+        };
+    }
+
+    @Test
+    void testCriarObjetosCursoNulo(){
+        try {
+            Aluno aluno = new Aluno("2019.1", "aluno 1", null);
+            fail("Exceção deveria ser executada");
+        }catch(NullPointerException error){
+            assertEquals("java.lang.NullPointerException", error.toString());
+        };
+    }
+
+    @Test
+    void testCriarObjetosMatriculaInvalida(){
+        try {
+            Aluno aluno = new Aluno("", "aluno 1", "Computação");
+            fail("Exceção deveria ser executada");
+        }catch(IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: O ARGUMENTO <matricula> DEVE CONTER VALORES DIFERENTES DE VAZIO", error.toString());
+        };
+    }
+
+    @Test
+    void testCriarObjetosNomeInvalido(){
+        try {
+            Aluno aluno = new Aluno("2019.1", "", "Computação");
+            fail("Exceção deveria ser executada");
+        }catch(IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: O ARGUMENTO <nome> DEVE CONTER VALORES DIFERENTES DE VAZIO", error.toString());
+        };
+    }
+
+    @Test
+    void testCriarObjetosCursoInvalido(){
+        try {
+            Aluno aluno = new Aluno("2019.1", "aluno 1", "");
+            fail("Exceção deveria ser executada");
+        }catch(IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: O ARGUMENTO <curso> DEVE CONTER VALORES DIFERENTES DE VAZIO", error.toString());
+        };
     }
 
     @Test
@@ -39,9 +98,9 @@ class AlunoTest {
 
     @Test
     void testHashCode() {
-        assertTrue( aluno1.hashCode() == aluno2.hashCode());
-        assertFalse( aluno1.hashCode() == aluno3.hashCode());
-        assertFalse(aluno2.hashCode() == aluno3.hashCode());
+        assertEquals( aluno1.hashCode(), aluno2.hashCode());
+        assertNotEquals( aluno1.hashCode(), aluno3.hashCode());
+        assertNotEquals(aluno2.hashCode() , aluno3.hashCode());
     }
 
     @Test
@@ -53,8 +112,8 @@ class AlunoTest {
 
     @Test
     void testEquals() {
-        assertTrue(aluno1.equals(aluno2));
-        assertFalse(aluno1.equals(aluno3));
-        assertFalse(aluno2.equals(aluno3));
+        assertEquals(aluno1, aluno2);
+        assertNotEquals(aluno1, aluno3);
+        assertNotEquals(aluno2, aluno3);
     }
 }
