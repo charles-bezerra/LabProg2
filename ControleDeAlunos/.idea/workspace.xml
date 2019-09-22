@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="49f29399-f06a-46a4-98c9-e240c2e9e7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab4/MensagensAlocarAluno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab4/ValidaArgumentos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleDeAlunos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ControleDeAlunos.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab4/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Aluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab4/ControleDeAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/ControleDeAluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab4/GrupoDeEstudo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/GrupoDeEstudo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/AlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/AlunoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab4/MensagensAlocarAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/MensagensAlocarAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab4/ValidaArgumentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/ValidaArgumentos.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +37,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="controledealunos" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />

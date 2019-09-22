@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"lab4","l":"Aluno"},{"p":"lab4","l":"ControleDeAluno"},{"p":"lab4","l":"GrupoDeEstudo"},{"p":"lab4","l":"Main"},{"p":"lab4","l":"MensagensAlocarAluno"},{"p":"lab4","l":"ValidaArgumentos"}]

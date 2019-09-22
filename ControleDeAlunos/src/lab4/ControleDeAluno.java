@@ -26,6 +26,11 @@ public class ControleDeAluno {
     private ArrayList<String> ordemDasRespostasDeAlunos;
 
     /**
+     * Atributo que recebe a quebra de linha adequada para  vários tipos de sistemas operacionais
+     */
+    private final String LS = System.lineSeparator();
+
+    /**
      * Contrutor do ControleDeAluno, não recebe parametros. Mas inicializa os objetos privados da instancia.
      */
     ControleDeAluno(){
@@ -81,6 +86,14 @@ public class ControleDeAluno {
         return this.alunos.containsKey(matricula) ? "Aluno: " + this.alunos.get(matricula).toString() : null;
     }
 
+    /**
+     * Método responsável por alocar um Aluno em um GrupoDeEstudos retornando
+     * um objeto do tipo Enum que representa informações da cadastro.
+     *
+     * @param matricula identificador do Aluno
+     * @param grupo tema que identifica o grupo de estudo
+     * @return retorna um Enum que identifica algum tipo de mensagem
+     */
     public MensagensAlocarAluno alocarAlunoEmGrupo(String matricula, String grupo){
         matricula = ValidaArgumentos.verificarString(matricula, "matricula");
         grupo = ValidaArgumentos.verificarString(grupo, "grupo");
@@ -92,27 +105,42 @@ public class ControleDeAluno {
         return MensagensAlocarAluno.CadastradoComSucesso;
     }
 
+    /**
+     * Método que lista um grupo de estudos e os alunos desse grupo
+     *
+     * @param grupo identificador do grupo de estudos
+     * @return String com informações do grupo e os seus alunos
+     */
     public String listarGrupo(String grupo){
         grupo = ValidaArgumentos.verificarString(grupo, "grupo");
-
         if (!this.gruposDeEstudo.containsKey(grupo)) return null;
         return this.gruposDeEstudo.get(grupo).listarGrupo();
     }
 
+    /**
+     * Método que cadastra uma resposta de um aluno
+     *
+     * @param matricula String identifica um aluno
+     * @return boolean que identifica se a resposta foi cadastrada com sucesso
+     */
     public boolean cadastrarRespostaDeAlunos(String matricula){
         matricula = ValidaArgumentos.verificarString(matricula, "matricula");
-
         if (!this.alunos.containsKey(matricula)) return false;
         this.ordemDasRespostasDeAlunos.add(matricula);
         return true;
     }
 
+    /**
+     * Método que lista os alunos que responderam em ordem de resposta
+     *
+     * @return String contendo os alunos que responderam
+     */
     public String listarRespostasDeAlunos(){
         int cont = 0;
-        String resultado = "Alunos:\n";
+        String resultado = "Alunos:" + LS;
         Iterator iter = this.ordemDasRespostasDeAlunos.iterator();
         while(iter.hasNext())
-            resultado += ++cont + ". " + this.alunos.get( iter.next() ).toString() + "\n";
+            resultado += ++cont + ". " + this.alunos.get( iter.next() ).toString() + LS;
         return resultado;
     }
 }

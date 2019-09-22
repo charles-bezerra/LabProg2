@@ -1,7 +1,7 @@
 package lab4;
 
 /**
- * Classe responsável por validar parametos de todo o sistema
+ * Classe responsável por validar parametros de todo o sistema
  */
 public class ValidaArgumentos {
     /**
