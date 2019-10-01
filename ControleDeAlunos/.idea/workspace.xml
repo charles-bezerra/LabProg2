@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="49f29399-f06a-46a4-98c9-e240c2e9e7c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/.settings/.jsdtscope" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Agenda Contatos/out/test/Agenda Contatos/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/Aluno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/AlunoTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/ControleDeAluno.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/ControleDeAlunoTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/GrupoDeEstudo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/GrupoDeEstudoTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ControleDeAlunos/lab4/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Agenda Contatos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Agenda Contatos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Agenda Contatos/out/test/Agenda Contatos/lab3/AgendaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Agenda Contatos/out/test/Agenda Contatos/lab3/AgendaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Agenda Contatos/out/test/Agenda Contatos/lab3/ContatoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Agenda Contatos/out/test/Agenda Contatos/lab3/ContatoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Agenda Contatos/src/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Agenda Contatos/src/lab3/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Agenda Contatos/tests/lab3/AgendaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Agenda Contatos/tests/lab3/AgendaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControleDeAlunos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ControleDeAlunos.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/ControleDeAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/ControleDeAluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/GrupoDeEstudo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/GrupoDeEstudo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/AlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/AlunoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="49f29399-f06a-46a4-98c9-e240c2e9e7c1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +13,10 @@
     <session id="-174809974">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,12 +42,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="41" column="97" lean-forward="true" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
+            <state relative-caret-position="615">
+              <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -84,37 +55,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="840">
+              <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lab4/ControleDeAluno.java">
+        <entry file="file://$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#3299#3300#0" expanded="true" />
-                <element signature="e#3318#3319#0" expanded="true" />
-                <element signature="e#3365#3366#0" expanded="true" />
-                <element signature="e#3391#3392#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,9 +104,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,7 +152,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568905255760" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Carlos_Charles_LGit" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -261,17 +214,13 @@
     <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2495886" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25233132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32972974" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32972974" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
@@ -279,14 +228,18 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -294,10 +247,30 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/lab4/package-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="615">
+          <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab4/ControleDeAluno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -305,39 +278,9 @@
     <entry file="file://$PROJECT_DIR$/testes/lab4/GrupoDeEstudoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/lab4/ControleDeAlunoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab4/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="41" column="97" lean-forward="true" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab4/ControleDeAluno.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#3299#3300#0" expanded="true" />
-            <element signature="e#3318#3319#0" expanded="true" />
-            <element signature="e#3365#3366#0" expanded="true" />
-            <element signature="e#3391#3392#0" expanded="true" />
           </folding>
         </state>
       </provider>
