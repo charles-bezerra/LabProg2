@@ -18,16 +18,20 @@ public class Cliente {
     public void editar(String atributo, String novoValor){
         if (atributo == null || atributo.trim().equals(""))
             throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-        if (atributo.toLowerCase().equals("cpf"))
+
+        if (atributo.equals("cpf"))
             throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
+
         if ( novoValor == null || novoValor.trim().equals(""))
             throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
-        if ( !(atributo.toLowerCase().equals("nome") || atributo.toLowerCase().equals("email") || atributo.toLowerCase().equals("localizacao")) )
+
+        if ( !(atributo.equals("nome") || atributo.equals("email") || atributo.equals("localizacao")) )
             throw new  IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
+
 
         if (atributo.equals("nome")) this.nome = novoValor;
         else if (atributo.equals("email")) this.email = novoValor;
-        else if (atributo.equals("localizacao")) this.localizacao = localizacao;
+        else if (atributo.equals("localizacao")) this.localizacao = novoValor;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class Cliente {
         return this.nome + " - " + this.localizacao + " - " + this.email;
     }
 
+    @Override
     public int hashCode(){
         return Objects.hash(this.cpf);
     }
