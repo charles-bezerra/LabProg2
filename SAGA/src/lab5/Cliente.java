@@ -15,9 +15,20 @@ public class Cliente {
         this.localizacao = localizacao;
     }
 
-    public void setNome(String nome){ this.nome = nome ; }
-    public void setEmail(String email){ this.email = email; }
-    public void setLocalizacao(String localizacao){ this.localizacao = localizacao; }
+    public void editar(String atributo, String novoValor){
+        if (atributo == null || atributo.trim().equals(""))
+            throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+        if (atributo.toLowerCase().equals("cpf"))
+            throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
+        if ( novoValor == null || novoValor.trim().equals(""))
+            throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+        if ( !(atributo.toLowerCase().equals("nome") || atributo.toLowerCase().equals("email") || atributo.toLowerCase().equals("localizacao")) )
+            throw new  IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
+
+        if (atributo.equals("nome")) this.nome = novoValor;
+        else if (atributo.equals("email")) this.email = novoValor;
+        else if (atributo.equals("localizacao")) this.localizacao = localizacao;
+    }
 
     @Override
     public String toString(){
