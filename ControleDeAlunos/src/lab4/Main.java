@@ -18,21 +18,47 @@ public class Main {
                 "(O)ra, vamos fechar o programa!" + LS +
                 "" + LS +
                 "Opção> ");
-    }
+    }    
+    
+    public static enum MensagemAlocarAluno{
+    	NullMatricula(1), NullGrupo(2), Sucesso(3);
 
+    	private int mensagem;
+
+    	MensagemAlocarAluno(int mensagem){ 
+    		this.mensagem = mensagem; 
+    	}
+    	
+    	public MensagemAlocarAluno getMensagem() {
+    		switch(mensagem) {
+    			case 1:{ return NullMatricula; }
+    			case 2:{ return NullGrupo; }
+    			default: return Sucesso;
+    		} 
+    	}
+    	
+    }
+    
     public static void alocarAlunoImprimirGrupo(){
         System.out.print("(A)locar Aluno ou (I)mprimir Grupo? ");
-        op = sc.nextLine();
-
+        op = sc.nextLine();   
         switch(op) {
             case "A":{
                 System.out.print("Matricula: ");
                 matricula = sc.nextLine();
 
                 System.out.print("Grupo: ");
-                grupo = sc.nextLine();
-
-                System.out.println(controleDeAluno.alocarAlunoEmGrupo(matricula, grupo));
+                grupo = sc.nextLine();                
+                
+                MensagemAlocarAluno msg = Main.MensagemAlocarAluno( controleDeAluno.alocarAlunoEmGrupo(matricula, grupo) ).getMensagem();
+                
+                switch(msg) {
+                	case MensagemAlocarAluno.NullMatricula:{
+                		
+                	}
+                }
+               
+                System.out.println();
             }
             case "I":{
                 System.out.print("Grupo: ");
@@ -44,7 +70,8 @@ public class Main {
         }
     }
 
-    public static void main(String[] args){
+
+	public static void main(String[] args){
         controleDeAluno = new ControleDeAluno();
         sc = new Scanner(System.in);
 

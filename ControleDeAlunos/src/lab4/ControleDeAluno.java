@@ -16,12 +16,7 @@ public class ControleDeAluno {
         this.ordemDasRespostasDeAlunos = new ArrayList<>();
     }
 
-    public boolean eNumerico(String s) {
-        return s != null && s.matches("[-+]?\\d*\\.?\\d+");
-    }
-
     public String validaEntradasString(String argumento, String variavel){
-
         if (argumento == null)
             throw new NullPointerException();
 
@@ -30,12 +25,10 @@ public class ControleDeAluno {
         if (subArgumento.equals(""))
             throw new IllegalArgumentException("O " + variavel + " deve ser diferente de \"\"");
 
-
         return argumento;
     }
 
     public boolean cadastrarGrupoDeEstudo(String tema){
-
         tema = this.validaEntradasString(tema, "tema");
 
         if (!this.gruposDeEstudo.containsKey(tema)) {
@@ -45,7 +38,6 @@ public class ControleDeAluno {
     }
 
     public boolean cadastrarAluno(String matricula, String nome, String curso) {
-
         matricula = validaEntradasString(matricula, "matricula");
         nome = this.validaEntradasString(nome, "nome");
         curso = this.validaEntradasString(curso, "tema");
@@ -62,7 +54,6 @@ public class ControleDeAluno {
     }
 
     public int alocarAlunoEmGrupo(String matricula, String grupo){
-
         matricula = validaEntradasString(matricula, "matricula");
         grupo = validaEntradasString(grupo, "grupo");
 
@@ -72,9 +63,8 @@ public class ControleDeAluno {
         this.gruposDeEstudo.get(grupo).adicionarAluno(this.alunos.get(matricula));
         return 3;
     }
-
+    
     public String listarGrupo(String grupo){
-
         grupo = this.validaEntradasString(grupo, "grupo");
 
         if (!this.gruposDeEstudo.containsKey(grupo)) return null;
@@ -83,7 +73,6 @@ public class ControleDeAluno {
 
     public boolean cadastrarRespostaDeAlunos(String matricula){
         if (!this.alunos.containsKey(matricula)) return false;
-
         this.ordemDasRespostasDeAlunos.add(matricula);
         return true;
     }
@@ -91,24 +80,10 @@ public class ControleDeAluno {
     public String listarRespostasDeAlunos(){
         int cont = 0;
         String resultado = "Alunos:\n";
-        Iterator iter = this.ordemDasRespostasDeAlunos.iterator();
+        Iterator<String> iter = this.ordemDasRespostasDeAlunos.iterator();
         while(iter.hasNext())
             resultado += ++cont + ". " + this.alunos.get(iter.next()).toString() + "\n";
         return resultado;
     }
 }
 
-
-public enum MensagensAlocarAlunoEmGrupo {
-    Naluno(1), Ngrupo(2), Sucesso(3);
-
-    private int opcao;
-
-    MensagensAlocarAlunoEmGrupo(int opcao){
-        this.opcao = opcao;
-    }
-
-    public int getOpcao(){
-        return this.opcao;
-    }
-}
