@@ -97,29 +97,61 @@ class ClienteTest {
 
     @Test
     void testEditaComValorNulo() {
+        try {
+            this.cliente.edita("nome",null);
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComValorInvalido() {
+        try {
+            this.cliente.edita("nome","");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComAtributoNulo() {
+        try {
+            this.cliente.edita(null,"Cliente novo");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComAtributoInvalido() {
+        try {
+            this.cliente.edita("","Cliente novo");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testToString() {
+        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        assertEquals("Cliente 1 - myLab - cliente@gmail.com", cliente1.toString());
     }
 
     @Test
     void testHashCode() {
+        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = New Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        assertEquals(cliente1.hashCode(), cliente2.hashCode());
     }
 
     @Test
     void testEquals() {
+        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = New Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        assertEquals(cliente1, cliente2);
     }
 }
