@@ -1,8 +1,8 @@
 package lab5;
 
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class ClienteController {
     private Map<String, Cliente> clientes;
@@ -11,14 +11,14 @@ public class ClienteController {
         this.clientes = new LinkedHashMap<>();
     }
 
-    public String adicionarCliente(String cpf, String nome, String email, String localizacao){
+    public String adiciona(String cpf, String nome, String email, String localizacao){
         if ( this.clientes.containsKey(cpf) )
             throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
         this.clientes.put(cpf, new Cliente(cpf,nome,email,localizacao) );
         return cpf;
     }
 
-    public String exibeCliente(String cpf){
+    public String exibe(String cpf){
         if (cpf == null || cpf.trim().equals(""))
             throw new IllegalArgumentException("Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo");
         if (!this.clientes.containsKey(cpf))
@@ -27,33 +27,32 @@ public class ClienteController {
     }
 
 
-    public String listaClientes(){
+    public String lista(){
         StringBuilder exibir = new StringBuilder();
         Iterator<String> clientes = this.clientes.keySet().iterator();
         while (clientes.hasNext()){
-            exibir.append(this.exibeCliente(clientes.next()));
+            exibir.append(this.exibe(clientes.next()));
             if (clientes.hasNext())
                 exibir.append(" | ");
         }
         return exibir.toString();
     }
 
-    public void editaCliente(String cpf, String atributo, String novoValor){
+    public void edita(String cpf, String atributo, String novoValor){
         if (cpf == null || cpf.trim().equals(""))
              throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
         if (!this.clientes.containsKey(cpf))
             throw new IllegalArgumentException("Erro na edicao do cliente: cliente nao existe.");
 
-        this.clientes.get(cpf).editar(atributo, novoValor);
+        this.clientes.get(cpf).edita(atributo, novoValor);
     }
 
 
-    public boolean removeCliente(String cpf){
+    public boolean remove(String cpf){
         if (cpf == null || cpf.trim().equals(""))
             throw new IllegalArgumentException("Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
         if ( !this.clientes.containsKey(cpf) )
             throw new IllegalArgumentException("Erro na remocao do cliente: cliente nao existe");
-
         this.clientes.remove(cpf);
         return true;
     }

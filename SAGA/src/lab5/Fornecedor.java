@@ -8,7 +8,7 @@ public class Fornecedor {
     private String nome;
     private String email;
     private String telefone;
-    private Map<CodProduto, Produto> produtos;
+    private ProdutoController produtos;
 
     Fornecedor(String nome, String email, String telefone) {
         if (nome == null || nome.trim().equals(""))
@@ -21,14 +21,7 @@ public class Fornecedor {
         this.nome = nome;
         this.email = email;
         this.telefone = email;
-        this.produtos = new LinkedHashMap<>();
-    }
-
-
-    public void adicionarProduto(String nome, String descricao, double preco){
-        if( this.produtos.containsKey(new CodProduto(nome, descricao) ) )
-            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.";
-        this.produtos.put(new CodProduto(nome, descricao), new Produto(nome, descricao, preco));
+        this.produtos = new ProdutoController();
     }
 
 
@@ -41,14 +34,30 @@ public class Fornecedor {
             throw new IllegalArgumentException("Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
 
         switch (atributo) {
-            case "email": {
-                this.email = novoValor;
-            }
-            case "telefone": {
-                this.telefone = novoValor;
-            }
+            case "email": this.email = novoValor;
+            case "telefone": this.telefone = novoValor;
             default: throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
         }
+    }
+
+    public void adicionaProduto(String nome, String descricao, Double preco){
+        this.produtos.adiciona(nome, descricao, preco);
+    }
+
+    public void removeProduto(String nome, String descricao){
+        this.produtos.remove(nome,descricao);
+    }
+
+    public void editaProduto(String nome, String descricao, Double novoPreco){
+        this.produtos.edita(nome,descricao,novoPreco);
+    }
+
+    public String exibeProduto(String nome, String descricao){
+        return this.produtos.exibe(nome, descricao);
+    }
+
+    public String listaProdutos(){
+        return this.produtos.lista();
     }
 
     @Override
