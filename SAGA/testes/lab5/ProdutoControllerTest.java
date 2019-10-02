@@ -19,7 +19,51 @@ class ProdutoControllerTest {
     }
 
     @Test
+    void testAdicionaComNomeNulo() {
+    }
+
+    @Test
+    void testAdicionaComNomeInvalido() {
+    }
+    
+    @Test
+    void testAdicionaComDescricaoNula() {
+    }
+
+    @Test
+    void testAdicionaComDescricaoInvalida() {
+    }
+    
+    @Test
+    void testAdicionaComPrecoNulo() {
+    }
+
+    @Test
+    void testAdicionaComPrecoInvalido() {
+    }
+
+    @Test
     void testExibe() {
+    }
+
+    @Test
+    void testExibeComProdutoInegistente() {
+    }
+
+    @Test
+    void testExibeComNomeNulo() {
+    }
+    
+    @Test
+    void testExibeComNomeInvalido() {
+    }
+
+    @Test
+    void testExibeComDescricaoNula() {
+    }
+    
+    @Test
+    void testExibeComDescricaoInvalida() {
     }
 
     @Test
@@ -29,8 +73,48 @@ class ProdutoControllerTest {
     @Test
     void testEdita() {
     }
+    
+    @Test
+    void testEditaComNomeNulo() {
+    }
+
+    @Test
+    void testEditaComNomeInvalido() {
+    }
+
+    @Test
+    void testEditaComDescricaoNula() {
+    }
+
+    @Test
+    void testEditaComDescricaoInvalida() {
+    }
+
+    @Test
+    void testEditaValorNulo() {
+    }
+
+    @Test
+    void testEditaComValorInvalido() {
+    }
 
     @Test
     void testRemove() {
+    }
+
+    @Test
+    void testRemoveNomeNulo() {
+    }
+
+    @Test
+    void testRemoveNomeInvalido() {
+    }
+
+    @Test
+    void testRemoveDescricaoNula() {
+    }
+
+    @Test
+    void testRemoveDescricaoInvalida() {
     }
 }
