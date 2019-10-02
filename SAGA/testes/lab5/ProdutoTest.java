@@ -11,6 +11,14 @@ class ProdutoTest {
     }
 
     @Test
+    void testSetPrecoNulo() {
+    }
+
+    @Test
+    void testSetPrecoInvalido() {
+    }
+
+    @Test
     void testToString() {
     }
 
