@@ -7,22 +7,92 @@ import static org.junit.jupiter.api.Assertions.*;
 class ClienteControllerTest {
 
     @Test
-    void adiciona() {
+    void testAdicionaComCpfNulo() {
     }
 
     @Test
-    void exibe() {
+    void testAdicionaComCpfInvalido() {
     }
 
     @Test
-    void lista() {
+    void testAdicionaComNomeNulo() {
     }
 
     @Test
-    void edita() {
+    void testAdicionaComNomeInvalido() {
     }
 
     @Test
-    void remove() {
+    void testAdicionaComEmailNulo() {
     }
+
+    @Test
+    void testAdicionaComEmailInvalido() {
+    }
+
+    @Test
+    void testAdicionaComLocalizacaoNula() {
+    }
+
+    @Test
+    void testAdicionaComLocalizacaoInvalida() {
+    }
+
+
+    @Test
+    void testExibeComCpfNulo() {
+    }
+
+    @Test
+    void testExibeComCpfInvalido() {
+    }
+
+    @Test
+    void testExibeComClienteInexistente() {
+    }
+
+    @Test
+    void testLista() {
+    }
+
+    @Test
+    void testEditaComCpfNulo() {
+    }
+
+    @Test
+    void testEditaComCpfInvalido() {
+    }
+
+    @Test
+    void testEditaComAtributoNulo() {
+    }
+
+    @Test
+    void testEditaComAtributoInvalido() {
+    }
+
+    @Test
+    void testEditaComAtributoInegistente() {
+    }
+
+    @Test
+    void testEditaComValorNulo() {
+    }
+
+    @Test
+    void testEditaComValorInvalido() {
+    }
+
+    @Test
+    void testRemoveCpfNulo() {
+    }
+
+    @Test
+    void testRemoveCpfInvalido() {
+    }
+
+    @Test
+    void testRemoveCpfInegistente() {
+    }
+
 }
