@@ -11,9 +11,9 @@ import java.util.Objects;
  * Classe que representa um fornecedor
  */
 public class Fornecedor {
-	/**
-	 * Nome do fornecedor
-	 */
+    /**
+    * Nome do fornecedor
+    */
     private String nome;
     /**
      * Email do fornecedor
@@ -28,6 +28,12 @@ public class Fornecedor {
      */
     private ProdutoController produtos;
 
+    /**
+    * Construtor de Fornecedor 
+    * @param nome atribui valor ao nome do fornecedor
+    * @param email atribui valor ao e-mail do fornecedor
+    * @param telefone atribui valor ao telefone do fornecedor
+    */
     Fornecedor(String nome, String email, String telefone) {
         if (nome == null || nome.trim().equals(""))
             throw new IllegalArgumentException("Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
@@ -42,7 +48,11 @@ public class Fornecedor {
         this.produtos = new ProdutoController();
     }
 
-
+    /**
+    * Edita um atributo do fornecedor
+    * @param atributo o atributo a ser alterado
+    * @param novoValor novo valor do atributo
+    */
     public void edita(String atributo, String novoValor){
         if (atributo == null || atributo.trim().equals(""))
             throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
@@ -58,10 +68,21 @@ public class Fornecedor {
         }
     }
 
+    /**
+    * Adiciona um produto em fornecedor
+    * @param nome o nome do produto
+    * @param descricao descrição do produto
+    * @param preco valor do preço do produto
+    */
     public void adicionaProduto(String nome, String descricao, Double preco){
         this.produtos.adiciona(nome, descricao, preco);
     }
 
+    /**
+    * Remove um produto do fornecedor
+    * @param nome nome do produto
+    * @param descricao do produto
+    */
     public void removeProduto(String nome, String descricao){
         this.produtos.remove(nome,descricao);
     }
