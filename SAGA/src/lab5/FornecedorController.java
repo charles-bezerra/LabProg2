@@ -4,13 +4,31 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @author Charles Bezerra de Oliveira Júnior - 119110595
+ *
+ * Classe que representa o CRUD do fornecedor
+ */
 public class FornecedorController {
+    /**
+     * Coleção que guarda os vários fornecedores
+     */
     private Map<String, Fornecedor> fornecedores;
 
+    /**
+     * Construtor que atribui valor a fornecedores
+     */
     FornecedorController(){
         this.fornecedores = new LinkedHashMap<>();
     }
 
+    /**
+     * Adiciona um fornecedor ao CRUD
+     * @param nome atribui valor ao nome do fornecedor
+     * @param email atribui valor ao email do fornecedor
+     * @param telefone atribui valor ao telefone do fornecedor
+     * @return retorna o nome
+     */
     public String adiciona(String nome, String email, String telefone){
         if (this.fornecedores.containsKey(nome))
             throw new IllegalArgumentException("Erro no cadastro de fornecedor: fornecedor ja existe.");
@@ -18,6 +36,11 @@ public class FornecedorController {
         return nome;
     }
 
+    /**
+     * Exibe um fornecedor
+     * @param nome nome que identifica o fornecedor
+     * @return retorna respresentação textual de fornecedor
+     */
     public String exibe(String nome){
         if (nome == null || nome.trim().equals(""))
             throw new IllegalArgumentException("Erro no exibicao de fornecedor: nome nao pode ser vazio ou nulo.");
@@ -26,6 +49,10 @@ public class FornecedorController {
         return this.fornecedores.get(nome).toString();
     }
 
+    /**
+     * Lista todos os fornecedores
+     * @return retorna respresentação textual de todos os fornecedores
+     */
     public String lista(){
         StringBuilder lista = new StringBuilder("");
         Iterator<String> fornercedores = this.fornecedores.keySet().iterator();
@@ -36,6 +63,12 @@ public class FornecedorController {
         return lista.toString();
     }
 
+    /**
+     * Edita um atributo de fornecedor
+     * @param nome nome que identifica o fornecedor
+     * @param atributo o atributo a ser alterado
+     * @param novoValor novo valor
+     */
     public void edita(String nome, String atributo, String novoValor){
         if (nome == null || nome.trim().equals(""))
             throw new IllegalArgumentException("Erro na edicao do fornecedor: fornecedor nao existe.");
@@ -43,6 +76,10 @@ public class FornecedorController {
         this.fornecedores.get(nome).edita(atributo, novoValor);
     }
 
+    /**
+     * Remove um fornecedor
+     * @param nome nome que identifica o fornecedor
+     */
     public void remove(String nome){
         if (nome==null || nome.trim().equals(""))
             throw new IllegalArgumentException("Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.");
@@ -51,6 +88,13 @@ public class FornecedorController {
         this.fornecedores.remove(nome);
     }
 
+    /**
+     * Adiciona um produto a fornecedor
+     * @param fornecedor
+     * @param nome
+     * @param descricao
+     * @param preco
+     */
     public void adicionarProduto(String fornecedor, String nome, String descricao, Double preco){
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro no cadastro de produto: fornecedor nao existe.");
@@ -59,6 +103,13 @@ public class FornecedorController {
         this.fornecedores.get(nome).adicionaProduto(nome, descricao, preco);
     }
 
+    /**
+     * Exibe um produto de fornecedor
+     * @param fornecedor
+     * @param nome
+     * @param descricao
+     * @return
+     */
     public String exibeProduto(String fornecedor, String nome, String descricao){
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");

@@ -4,9 +4,20 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @author Charles Bezerra de Oliveira Júnior - 119110595
+ *
+ * Classe CRUD de produto
+ */
 public class ProdutoController {
+    /**
+     * Coleção que contem todos os produtos
+     */
     private Map<ProdutoID, Produto> produtos;
 
+    /**
+     * Construtor do ProdutoController
+     */
     ProdutoController(){
         this.produtos = new LinkedHashMap<>();
     }

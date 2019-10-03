@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="CUSTOM_SCOPE_NAME" value="Module 'SAGA'" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c3f823-dd02-44b8-ad7c-6d72725ab840" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lab5/ProdutoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lab5/ProdutoID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/ClienteControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/ClienteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/FornecedorControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/FornecedorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/ProdutoControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/lab5/ProdutoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SAGA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SAGA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/CodProduto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelo UML/SAGA.png" beforeDir="false" afterPath="$PROJECT_DIR$/Modelo UML/SAGA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab5/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Fornecedor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab5/FornecedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/FornecedorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lab5/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/ProdutoID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ProdutoID.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,14 +52,22 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="saga" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/testes/lab5" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -182,7 +197,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

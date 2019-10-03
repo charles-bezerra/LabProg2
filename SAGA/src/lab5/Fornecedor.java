@@ -87,14 +87,30 @@ public class Fornecedor {
         this.produtos.remove(nome,descricao);
     }
 
+    /**
+     * Edita um produto do forcenedor
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @param novoPreco novo preço do produto
+     */
     public void editaProduto(String nome, String descricao, Double novoPreco){
         this.produtos.edita(nome,descricao,novoPreco);
     }
 
+    /**
+     * Exibe um produto do fornecedor
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @return a representação do produto da forma nome - descricao - R$preço
+     */
     public String exibeProduto(String nome, String descricao){
         return this.produtos.exibe(nome, descricao);
     }
 
+    /**
+     * Lista todos o produtos de um fornecedor
+     * @return representação de todos o produtos divido por |
+     */
     public String listaProdutos(){
         return this.produtos.lista();
     }
