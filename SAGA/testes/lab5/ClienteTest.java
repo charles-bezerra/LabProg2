@@ -1,6 +1,6 @@
 package lab5;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach; 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -137,21 +137,21 @@ class ClienteTest {
 
     @Test
     void testToString() {
-        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
         assertEquals("Cliente 1 - myLab - cliente@gmail.com", cliente1.toString());
     }
 
     @Test
     void testHashCode() {
-        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
-        Cliente cliente2 = New Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = new Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
         assertEquals(cliente1.hashCode(), cliente2.hashCode());
     }
 
     @Test
     void testEquals() {
-        Cliente cliente1 = New Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
-        Cliente cliente2 = New Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = new Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
         assertEquals(cliente1, cliente2);
     }
 }

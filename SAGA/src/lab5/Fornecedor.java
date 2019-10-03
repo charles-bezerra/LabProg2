@@ -4,10 +4,28 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.Objects;
 
+/**
+ * 
+ * @author Charles Bezerra de Oliveira Júnior - 119110595
+ *
+ * Classe que representa um fornecedor
+ */
 public class Fornecedor {
+	/**
+	 * Nome do fornecedor
+	 */
     private String nome;
+    /**
+     * Email do fornecedor
+     */
     private String email;
+    /**
+     * Telefone do fornecedor
+     */
     private String telefone;
+    /**
+     * CRUD dos vários produtos do fornecedor
+     */
     private ProdutoController produtos;
 
     Fornecedor(String nome, String email, String telefone) {

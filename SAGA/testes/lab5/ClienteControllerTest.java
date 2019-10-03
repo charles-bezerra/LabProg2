@@ -1,6 +1,7 @@
 package lab5;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,9 +10,11 @@ class ClienteControllerTest {
     private ClienteController clientes;
 
     @BeforeEach
-    void criar objetos() {
+    void criarObjetos() {
          this.clientes = new ClienteController();
-         this.clientes.adiciona("017.626.944-41", "Charles", "charlesbezerra5@gmail.com", "SPLab")
+         this.clientes.adiciona("017.626.944-41", "Charles", "charles@gmail.com", "SPLab");
+         this.clientes.adiciona("017.626.944-42", "Bezerra", "bezerra@gmail.com", "LSD");
+         this.clientes.adiciona("017.626.944-43", "Oliveira", "oliveira@gmail.com", "LIT");
     }
 
     @Test
@@ -127,46 +130,108 @@ class ClienteControllerTest {
 
     @Test
     void testLista() {
+    	String listagem = "Charles - charles@gmail.com - SPLab | Bezerra - bezerra@gmail.com - LSD | Oliveira - oliveira@gmail.com - LIT";
+    	assertEquals(listagem, this.clientes.lista());
     }
 
     @Test
     void testEditaComCpfNulo() {
+        try {
+            this.clientes.edita(null, "nome", "teste");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComCpfInvalido() {
+        try {
+            this.clientes.edita("", "nome", "teste");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComAtributoNulo() {
+        try {
+            this.clientes.edita("017.626.944-41", null, "teste");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComAtributoInvalido() {
+        try {
+            this.clientes.edita("017.626.944-41", "", "teste");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComAtributoInegistente() {
+        try {
+            this.clientes.edita("017.626.944-50", "nome", "teste");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: cliente nao existe.", error.toString());
+        }
     }
 
     @Test
     void testEditaComValorNulo() {
+        try {
+            this.clientes.edita("017.626.944-41", "nome", null);
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testEditaComValorInvalido() {
+        try {
+            this.clientes.edita("017.626.944-41", "nome", "");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testRemoveCpfNulo() {
+        try {
+            this.clientes.remove(null);
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na remocao do cliente: cpf nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testRemoveCpfInvalido() {
+        try {
+            this.clientes.remove("");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na remocao do cliente: cpf nao pode ser vazio ou nulo.", error.toString());
+        }
     }
 
     @Test
     void testRemoveCpfInegistente() {
+        try {
+            this.clientes.remove("1234567");
+            fail("Exceção deveria ser lançada!");
+        }catch (IllegalArgumentException error){
+            assertEquals("java.lang.IllegalArgumentException: Erro na remocao do cliente: cliente nao existe.", error.toString());
+        }
     }
 
 }

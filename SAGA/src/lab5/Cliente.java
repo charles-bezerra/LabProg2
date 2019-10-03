@@ -4,6 +4,8 @@ import java.util.Objects;
 
 /**
  * Classe que representa e quarda valores de um cliente do sistema
+ * 
+ * @author Charles Bezerra de Oliveira Júnior - 119110595
  */
 public class Cliente {
     /**
