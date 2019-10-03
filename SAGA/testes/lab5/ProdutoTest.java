@@ -21,7 +21,7 @@ class ProdutoTest {
     		this.produto.setPreco(null);
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no edicao de produto: preco nao pode ser vazio ou nulo.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do produto: preco nao pode ser vazio ou nulo.", error.toString());
         }
     }
 
@@ -31,7 +31,7 @@ class ProdutoTest {
     		this.produto.setPreco(-1.0);
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no edicao de produto: preco invalido.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do produto: preco invalido.", error.toString());
         }
     }
 
@@ -43,7 +43,7 @@ class ProdutoTest {
 
     @Test
     void testEquals() {
-    	Produto p = new Produto("X-frango", "Muito Bom", 10.0);
-    	assertEquals(this.produto, p);
+    	Produto p = new Produto("X-frango", "Muito bom", 10.0);
+        assertEquals(this.produto, p);
     }
 }

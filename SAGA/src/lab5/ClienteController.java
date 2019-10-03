@@ -44,8 +44,8 @@ public class ClienteController {
      * @return repesentação de cliente <nome - email - local>
      */
     public String exibe(String cpf){
-        if (cpf == null || cpf.trim().equals(""))
-            throw new IllegalArgumentException("Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo");
+        Validador.prefixoError = "Erro na exibicao de cliente";
+        cpf = Validador.validaString("cpf", cpf);
         if (!this.clientes.containsKey(cpf))
             throw new IllegalArgumentException("Erro na exibicao do cliente: cliente nao existe.");
         return this.clientes.get(cpf).toString();
@@ -74,11 +74,10 @@ public class ClienteController {
      * @param novoValor novo valor do atributo
      */
     public void edita(String cpf, String atributo, String novoValor){
-        if (cpf == null || cpf.trim().equals(""))
-             throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
+        Validador.prefixoError = "Erro na edicao de cliente";
+        cpf = Validador.validaString("cpf", cpf);
         if (!this.clientes.containsKey(cpf))
             throw new IllegalArgumentException("Erro na edicao do cliente: cliente nao existe.");
-
         this.clientes.get(cpf).edita(atributo, novoValor);
     }
 
@@ -89,8 +88,8 @@ public class ClienteController {
      * @return boolean true se foi removido com sucesso
      */
     public boolean remove(String cpf){
-        if (cpf == null || cpf.trim().equals(""))
-            throw new IllegalArgumentException("Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
+        Validador.prefixoError = "Erro na remocao de cliente";
+        cpf = Validador.validaString("cpf", cpf);
         if ( !this.clientes.containsKey(cpf) )
             throw new IllegalArgumentException("Erro na remocao do cliente: cliente nao existe");
         this.clientes.remove(cpf);

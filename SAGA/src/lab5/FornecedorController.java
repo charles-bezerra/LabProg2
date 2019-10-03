@@ -42,8 +42,8 @@ public class FornecedorController {
      * @return retorna respresentação textual de fornecedor
      */
     public String exibe(String nome){
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro no exibicao de fornecedor: nome nao pode ser vazio ou nulo.");
+        Validador.prefixoError = "Erro na exibicao de fornecedor";
+        Validador.validaString("nome", nome);
         if (!this.fornecedores.containsKey(nome))
             throw new IllegalArgumentException("Erro no exibicao de fornecedor: fornecedor nao existe.");
         return this.fornecedores.get(nome).toString();
@@ -71,8 +71,9 @@ public class FornecedorController {
      */
     public void edita(String nome, String atributo, String novoValor){
         if (nome == null || nome.trim().equals(""))
+            throw new IllegalArgumentException("Erro na edicao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.");
+        if (!this.fornecedores.containsKey(nome))
             throw new IllegalArgumentException("Erro na edicao do fornecedor: fornecedor nao existe.");
-
         this.fornecedores.get(nome).edita(atributo, novoValor);
     }
 
@@ -111,32 +112,36 @@ public class FornecedorController {
      * @return
      */
     public String exibeProduto(String fornecedor, String nome, String descricao){
+        Validador.prefixoError="Erro na exibicao de produto";
+        Validador.validaString("fornecedor", fornecedor);
+
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
-        if (fornecedor == null || fornecedor.trim().equals(""))
-            throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
         return this.fornecedores.get(fornecedor).exibeProduto(nome,descricao);
     }
 
     public String listaProdutos(String fornecedor){
+        Validador.prefixoError="Erro na listagem de produtos";
+        Validador.validaString("fornecedor", fornecedor);
+
         if (!this.fornecedores.containsKey(fornecedor))
-            throw new IllegalArgumentException("Erro na listagem de produto: fornecedor nao existe.");
-        if (fornecedor == null || fornecedor.trim().equals(""))
-            throw new IllegalArgumentException("Erro na listagem de produto: fornecedor nao pode ser vazio ou nulo.");
+            throw new IllegalArgumentException("Erro na listagem de produto: fornecedor nao existe.");;
         return this.fornecedores.get(fornecedor).listaProdutos();
     }
 
     public void editaProduto(String fornecedor, String nome, String descricao, Double novoPreco){
+        Validador.prefixoError="Erro na edicao de produto";
+        Validador.validaString("fornecedor", fornecedor);
+
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na edicao de produto: fornecedor nao existe.");
-        if (fornecedor == null || fornecedor.trim().equals(""))
-            throw new IllegalArgumentException("Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
         this.fornecedores.get(fornecedor).editaProduto(nome,descricao,novoPreco);
     }
 
     public void removeProduto(String fornecedor, String nome, String descricao){
-        if (fornecedor == null || fornecedor.trim().equals(""))
-            throw new IllegalArgumentException("Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
+        Validador.prefixoError="Erro na remocao de produto";
+        Validador.validaString("fornecedor", fornecedor);
+
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na remocao de produto: fornecedor nao existe.");
         this.fornecedores.get(fornecedor).removeProduto(nome, descricao);
