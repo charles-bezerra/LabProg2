@@ -32,16 +32,14 @@ public class Produto {
      * @param preco atribui valor ao preço do produto
      */
     Produto(String nome, String descricao, Double preco){
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do produto: nome nao pode ser vazio ou nulo.");
-        if (descricao == null || descricao.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do produto: descricao nao pode ser vazio ou nulo.");
+        Validador.prefixoError = "Erro no cadastro de produto";
+        this.nome = Validador.validaString("nome", nome);
+        this.descricao = Validador.validaString("descricao", descricao);
+
         if (preco == null || preco < 0)
             throw new IllegalArgumentException("Erro no cadastro de produto: preco invalido.");
-
-        this.nome = nome;
-        this.descricao = descricao;
         this.preco = preco;
+
         this.id = new ProdutoID(nome, descricao);
     }
 
@@ -50,14 +48,16 @@ public class Produto {
      * @param preco novo valor do preço
      */
     public void setPreco(Double preco){
-        if (preco == null || preco < 0)
-            throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
+        if (preco == null)
+            throw new IllegalArgumentException("Erro na edicao do produto: preco nao pode ser vazio ou nulo.");
+        if (preco < 0)
+            throw new IllegalArgumentException("Erro na edicao do produto: preco invalido.");
         this.preco = preco;
     }
 
     @Override
     public String toString(){
-        return this.nome + " - " + this.descricao + " - " + this.preco;
+        return this.nome + " - " + this.descricao + " - R$" + this.preco;
     }
 
     @Override

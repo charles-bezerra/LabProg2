@@ -83,7 +83,7 @@ class FornecedorControllerTest {
     		this.fornecedores.exibe(null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -93,7 +93,7 @@ class FornecedorControllerTest {
     		this.fornecedores.exibe("");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -109,7 +109,7 @@ class FornecedorControllerTest {
     		this.fornecedores.edita(null, "email", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -119,37 +119,37 @@ class FornecedorControllerTest {
     		this.fornecedores.edita("", "email", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
     	}    	
     }
     
     @Test
     void testEditaComAtributoNulo() {
     	try {
-    		this.fornecedores.edita("Zeno", null, "teste");
+    		this.fornecedores.edita("Helhao", null, "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
     @Test
     void testEditaComAtributoInvalido() {
     	try {
-    		this.fornecedores.edita("Zeno", "", "teste");
+    		this.fornecedores.edita("Helhao", "", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
     	}    	
     }
     
     @Test
     void testEditaComAtributoInegistente() {
     	try {
-    		this.fornecedores.edita("Zeno", "carro", "teste");
+    		this.fornecedores.edita("Helhao", "carro", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: atributo nao existe.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: atributo nao existe.", error.toString());
     	}
     }
 
@@ -159,7 +159,7 @@ class FornecedorControllerTest {
     		this.fornecedores.remove(null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na remocao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -169,7 +169,7 @@ class FornecedorControllerTest {
     		this.fornecedores.remove("");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na remocao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 }

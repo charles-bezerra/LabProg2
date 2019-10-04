@@ -20,7 +20,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor(null, "email@gmail.com", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -30,7 +30,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor("", "email@gmail.com", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -40,7 +40,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor("Zeno", null, "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: email nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -50,7 +50,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor("Zeno", "", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: email nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -60,7 +60,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor("Zeno", "email@gmail.com", null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -70,7 +70,7 @@ class FornecedorTest {
     		Fornecedor f = new Fornecedor("Zeno", "email@gmail.com", "");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -80,7 +80,7 @@ class FornecedorTest {
     		this.fornecedor.edita(null, "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -90,7 +90,7 @@ class FornecedorTest {
     		this.fornecedor.edita("", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -100,7 +100,7 @@ class FornecedorTest {
     		this.fornecedor.edita("Helhao", null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: novo valor nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -110,14 +110,14 @@ class FornecedorTest {
     		this.fornecedor.edita("Helhao", "");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no edicao de fornecedor: novo valor nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
 
     @Test
     void testToString() {
-    	assertEquals("Helhao - helhao@gmail.com", "(83) 0000-0000", this.fornecedor.toString());
+    	assertEquals("Helhao - helhao@gmail.com - (83) 0000-0000", this.fornecedor.toString());
     }
 
     @Test
