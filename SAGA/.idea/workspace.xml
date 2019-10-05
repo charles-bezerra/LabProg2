@@ -5,34 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c3f823-dd02-44b8-ad7c-6d72725ab840" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelo UML/SAGA.png" beforeDir="false" afterPath="$PROJECT_DIR$/Modelo UML/SAGA.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Fornecedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/FornecedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/FornecedorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lab5/ProdutoID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ProdutoID.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Rd3nSRa8kmXVgxXDQMJvnDJprL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,6 +49,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/testes/lab5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
