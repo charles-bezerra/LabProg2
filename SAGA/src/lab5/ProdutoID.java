@@ -3,8 +3,8 @@ package lab5;
 import java.util.Objects;
 
 /**
+  * Classe CRUD de produto
  * @author Charles Bezerra de Oliveira Júnior - 119110595
- * Classe que representa o endereço composto de um produto
  *
  */
 public class ProdutoID {

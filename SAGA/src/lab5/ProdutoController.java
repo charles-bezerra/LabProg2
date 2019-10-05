@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * Classe CRUD de produto
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
- * Classe CRUD de produto
  */
 public class ProdutoController {
     /**

@@ -48,6 +48,11 @@ public class Cliente {
         this.localizacao = localizacao;
     }
 
+    /**
+     * Edita um atributo do cliente
+     * @param atributo atributo a ser alterado
+     * @param novoValor novo valor
+     */
     public void edita(String atributo, String novoValor){
         if (atributo == null || atributo.trim().equals(""))
             throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");

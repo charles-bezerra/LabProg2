@@ -5,10 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Objects;
 
 /**
- * 
+  * Classe que representa um fornecedor
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
- * Classe que representa um fornecedor
  */
 public class Fornecedor {
     /**

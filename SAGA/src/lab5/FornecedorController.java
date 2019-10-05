@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
+ * Classe que representa o CRUD do fornecedor
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
- * Classe que representa o CRUD do fornecedor
  */
 public class FornecedorController {
     /**
@@ -104,11 +104,11 @@ public class FornecedorController {
     }
 
     /**
-     * Exibe um produto de fornecedor
-     * @param fornecedor
-     * @param nome
-     * @param descricao
-     * @return
+     * Exibe um produto de um fornecedor
+     * @param fornecedor nome que identifica um fornecedor
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @return retorna a representação textual de um produto
      */
     public String exibeProduto(String fornecedor, String nome, String descricao){
         if (!this.fornecedores.containsKey(fornecedor))
@@ -118,6 +118,11 @@ public class FornecedorController {
         return this.fornecedores.get(fornecedor).exibeProduto(nome,descricao);
     }
 
+    /**
+     * Lista todos os produtos de um fornecedor
+     * @param fornecedor nome que identifica o fornecedor
+     * @return retorna todos as representações textuais dos produtos de fornecedor
+     */
     public String listaProdutos(String fornecedor){
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na listagem de produto: fornecedor nao existe.");
@@ -126,6 +131,13 @@ public class FornecedorController {
         return this.fornecedores.get(fornecedor).listaProdutos();
     }
 
+    /**
+     * Edita um produto de um fornecedor 
+     * @param fornecedor nome que identifica um fornecedor
+     * @param nome nome do produto
+     * @param descricao descrição de um produto
+     * @param novoPreco novo preço
+     */
     public void editaProduto(String fornecedor, String nome, String descricao, Double novoPreco){
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na edicao de produto: fornecedor nao existe.");
@@ -134,6 +146,12 @@ public class FornecedorController {
         this.fornecedores.get(fornecedor).editaProduto(nome,descricao,novoPreco);
     }
 
+    /**
+     * Remove um produto de um fornecedor
+     * @param fornecedor nome que identifica um fornecedor
+     * @param nome nome do produto
+     * @param descricao descrição de um produto
+     */
     public void removeProduto(String fornecedor, String nome, String descricao){
         if (fornecedor == null || fornecedor.trim().equals(""))
             throw new IllegalArgumentException("Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");

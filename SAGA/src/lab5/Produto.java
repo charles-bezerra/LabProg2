@@ -3,9 +3,10 @@ package lab5;
 import java.util.Objects;
 
 /**
+ * Representação do produto no sistema
+ *
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
- * Representação do produto no sistema
  */
 public class Produto {
     /**
