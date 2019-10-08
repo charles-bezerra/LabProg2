@@ -1,59 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="CUSTOM_SCOPE_NAME" value="Module 'SAGA'" />
-  </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b8c3f823-dd02-44b8-ad7c-6d72725ab840" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="8c7b6dc4-0120-47e9-9fdd-3dae3d0f7a13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lab5/Validador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/lab5/ProdutoControllerTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SAGA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SAGA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/META-INF/SAGA.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ClienteTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Facade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Fornecedor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/FornecedorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoID.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SAGA/lab5/ProdutoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Fornecedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/FornecedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/FornecedorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lab5/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lab5/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/lab5/FornecedorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab5/FornecedorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/lab5/FornecedorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab5/FornecedorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/lab5/ProdutoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/lab5/ProdutoTest.java" afterDir="false" />
+>>>>>>> e6b113cc382e43ce8ce0bb92329460a73e714fd7
+>>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="1533942458">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="groovy" value="1" />
+          <entry key="java" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="1" />
+          <entry key="JAVA" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1473" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1473" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab5/Validador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/lab5/ClienteTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1377">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/lab5/ProdutoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab5/ProdutoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testes/lab5/ProdutoControllerTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab5/Produto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+<<<<<<< HEAD
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Rd3nSRa8kmXVgxXDQMJvnDJprL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+=======
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/lab5/ClienteController.java" />
+        <option value="$PROJECT_DIR$/src/lab5/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/lab5/Validador.java" />
+        <option value="$PROJECT_DIR$/src/lab5/FornecedorController.java" />
+        <option value="$PROJECT_DIR$/testes/lab5/FornecedorControllerTest.java" />
+        <option value="$PROJECT_DIR$/testes/lab5/FornecedorTest.java" />
+        <option value="$PROJECT_DIR$/src/lab5/Fornecedor.java" />
+        <option value="$PROJECT_DIR$/src/lab5/Produto.java" />
+        <option value="$PROJECT_DIR$/testes/lab5/ProdutoTest.java" />
+        <option value="$PROJECT_DIR$/testes/lab5/ProdutoControllerTest.groovy" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="194" />
+    <option name="y" value="118" />
+    <option name="width" value="1380" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SAGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="testes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SAGA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+              <item name="testes" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+>>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="saga" />
-    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570114538885" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Groovy JUnit" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/testes/lab5" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+=======
+>>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -75,8 +267,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteTest">
-    <configuration name="ClienteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProdutoTest.testEquals">
+    <configuration name="ProdutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAGA" />
       <extension name="coverage">
         <pattern>
@@ -85,13 +277,12 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab5" />
-      <option name="MAIN_CLASS_NAME" value="lab5.ClienteTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="lab5.ProdutoTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.testCriarComCpfInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAGA" />
       <extension name="coverage">
         <pattern>
@@ -100,14 +291,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab5" />
-      <option name="MAIN_CLASS_NAME" value="lab5.ClienteTest" />
-      <option name="METHOD_NAME" value="testCriarComCpfInvalido" />
+      <option name="MAIN_CLASS_NAME" value="lab5.ProdutoTest" />
+      <option name="METHOD_NAME" value="testEquals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.testCriarComEmailInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoTest.testSetPrecoInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAGA" />
       <extension name="coverage">
         <pattern>
@@ -116,14 +307,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab5" />
-      <option name="MAIN_CLASS_NAME" value="lab5.ClienteTest" />
-      <option name="METHOD_NAME" value="testCriarComEmailInvalido" />
+      <option name="MAIN_CLASS_NAME" value="lab5.ProdutoTest" />
+      <option name="METHOD_NAME" value="testSetPrecoInvalido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.testCriarComNomeInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoTest.testSetPrecoNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAGA" />
       <extension name="coverage">
         <pattern>
@@ -132,14 +323,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab5" />
-      <option name="MAIN_CLASS_NAME" value="lab5.ClienteTest" />
-      <option name="METHOD_NAME" value="testCriarComNomeInvalido" />
+      <option name="MAIN_CLASS_NAME" value="lab5.ProdutoTest" />
+      <option name="METHOD_NAME" value="testSetPrecoNulo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClienteTest.testCriarComNomeNulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SAGA" />
       <extension name="coverage">
         <pattern>
@@ -148,20 +339,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="lab5" />
-      <option name="MAIN_CLASS_NAME" value="lab5.ClienteTest" />
-      <option name="METHOD_NAME" value="testCriarComNomeNulo" />
+      <option name="MAIN_CLASS_NAME" value="lab5.ProdutoTest" />
+      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.ProdutoTest" />
+      <item itemvalue="JUnit.ProdutoTest.testToString" />
+      <item itemvalue="JUnit.ProdutoTest.testSetPrecoInvalido" />
+      <item itemvalue="JUnit.ProdutoTest.testSetPrecoNulo" />
+      <item itemvalue="JUnit.ProdutoTest.testEquals" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteTest" />
-        <item itemvalue="JUnit.ClienteTest.testCriarComEmailInvalido" />
-        <item itemvalue="JUnit.ClienteTest.testCriarComNomeInvalido" />
-        <item itemvalue="JUnit.ClienteTest.testCriarComCpfInvalido" />
-        <item itemvalue="JUnit.ClienteTest.testCriarComNomeNulo" />
+        <item itemvalue="JUnit.ProdutoTest.testEquals" />
+        <item itemvalue="JUnit.ProdutoTest" />
+        <item itemvalue="JUnit.ProdutoTest.testSetPrecoNulo" />
+        <item itemvalue="JUnit.ProdutoTest.testToString" />
+        <item itemvalue="JUnit.ProdutoTest.testSetPrecoInvalido" />
       </list>
     </recent_temporary>
   </component>
@@ -170,28 +368,235 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b8c3f823-dd02-44b8-ad7c-6d72725ab840" name="Default Changelist" comment="" />
-      <created>1569983313159</created>
+      <changelist id="8c7b6dc4-0120-47e9-9fdd-3dae3d0f7a13" name="Default Changelist" comment="" />
+      <created>1570108897429</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1569983313159</updated>
+      <updated>1570108897429</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TestHistory">
+    <history-entry file="ProdutoTest - 2019.10.03 at 11h 46m 56s.xml">
+      <configuration name="ProdutoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testSetPrecoNulo - 2019.10.03 at 11h 48m 41s.xml">
+      <configuration name="ProdutoTest.testSetPrecoNulo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testSetPrecoNulo - 2019.10.03 at 11h 49m 52s.xml">
+      <configuration name="ProdutoTest.testSetPrecoNulo" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest - 2019.10.03 at 11h 50m 23s.xml">
+      <configuration name="ProdutoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest - 2019.10.03 at 11h 51m 24s.xml">
+      <configuration name="ProdutoTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testEquals - 2019.10.03 at 11h 53m 07s.xml">
+      <configuration name="ProdutoTest.testEquals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testEquals - 2019.10.03 at 11h 53m 46s.xml">
+      <configuration name="ProdutoTest.testEquals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testEquals - 2019.10.03 at 11h 53m 48s.xml">
+      <configuration name="ProdutoTest.testEquals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testEquals - 2019.10.03 at 11h 54m 15s.xml">
+      <configuration name="ProdutoTest.testEquals" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProdutoTest_testEquals - 2019.10.03 at 11h 54m 25s.xml">
+      <configuration name="ProdutoTest.testEquals" configurationId="JUnit" />
+    </history-entry>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  <component name="ToolWindowManager">
+    <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2495886" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32972974" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2495886" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/lab5/ClienteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" column="37" lean-forward="true" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+          <folding>
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="56" column="8" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/FornecedorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/FornecedorControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2113">
+          <caret line="148" column="41" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/ProdutoID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/Fornecedor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="37" column="53" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+          <folding>
+            <element signature="e#2431#2432#0" expanded="true" />
+            <element signature="e#2483#2484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/FornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+          <folding>
+            <element signature="e#4078#4079#0" expanded="true" />
+            <element signature="e#4174#4175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/ClienteControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/Validador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/ClienteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1377">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/ProdutoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/ProdutoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/lab5/ProdutoControllerTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

@@ -33,33 +33,29 @@ public class Cliente {
      * @param localizacao é atribuido a localizacao do Cliente
      */
     Cliente(String cpf, String nome, String email, String localizacao){
-        if (cpf == null || cpf.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        if (email == null || email.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        if (localizacao == null || localizacao.trim().equals(""))
-            throw new IllegalArgumentException("Erro no cadastro do cliente: localizacao nao pode ser vazio ou nulo.");
-
-        this.cpf = cpf;
-        this.nome = nome;
-        this.email = email;
-        this.localizacao = localizacao;
+        Validador.prefixoError = "Erro no cadastro do cliente";
+        this.cpf = Validador.validaString("cpf", cpf);
+        this.nome = Validador.validaString("nome", nome);
+        this.email = Validador.validaString( "email", email);
+        this.localizacao = Validador.validaString( "localizacao", localizacao);
     }
 
     /**
+<<<<<<< HEAD
      * Edita um atributo do cliente
      * @param atributo atributo a ser alterado
      * @param novoValor novo valor
+=======
+     * Edita o valor de um atributo do cliente
+     * @param atributo atributo a ser editado
+     * @param novoValor novo valor do atributo
+>>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
      */
     public void edita(String atributo, String novoValor){
-        if (atributo == null || atributo.trim().equals(""))
-            throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-        if (atributo.equals("cpf"))
-            throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
-        if ( novoValor == null || novoValor.trim().equals(""))
-            throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+        Validador.prefixoError = "Erro na edicao do cliente";
+        Validador.validaString( "atributo", atributo);
+        Validador.validaString( "novo valor", novoValor);
+
         if ( !(atributo.equals("nome") || atributo.equals("email") || atributo.equals("localizacao")) )
             throw new  IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
 
