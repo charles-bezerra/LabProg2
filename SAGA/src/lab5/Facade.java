@@ -4,13 +4,13 @@ public class Facade {
     private ClienteController clientes;
     private FornecedorController fornecedores;
 
-    Facade(){
+    public Facade(){
         this.clientes = new ClienteController();
         this.fornecedores = new FornecedorController();
     }
 
-    public void adicionarCliente(String cpf, String nome, String email, String localizacao){
-        this.clientes.adiciona(cpf,nome,email,localizacao);
+    public String adicionaCliente(String cpf, String nome, String email, String localizacao){
+        return this.clientes.adiciona(cpf, nome, email, localizacao);
     }
 
     public String exibeCliente(String cpf){
@@ -29,8 +29,8 @@ public class Facade {
         this.clientes.remove(cpf);
     }
 
-    public void adicionaFornecedor(String nome, String email, String telefone){
-        this.fornecedores.adiciona(nome, email, telefone);
+    public String adicionaFornecedor(String nome, String email, String telefone){
+        return this.fornecedores.adiciona(nome, email, telefone);
     }
 
     public String exibeFornecedor(String nome){
@@ -50,22 +50,22 @@ public class Facade {
     }
 
     public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco){
-        this.fornecedores.adicionarProduto(fornecedor,nome,descricao,preco);
+        this.fornecedores.adicionaProduto(fornecedor, nome, descricao, preco);
     }
 
-    public String exibeProduto(String fornecedor, String nome, String descricao){
-        return this.fornecedores.exibeProduto(fornecedor,nome,descricao);
+    public String exibeProduto(String nome, String descricao, String fornecedor){
+        return this.fornecedores.exibeProduto(nome, descricao, fornecedor);
     }
 
     public String listaProdutos(String fornecedor){
         return this.fornecedores.listaProdutos(fornecedor);
     }
 
-    public void editaProduto(String fornecedor, String nome, String descricao, Double novoPreco){
-        this.fornecedores.editaProduto(fornecedor, nome, descricao, novoPreco);
+    public void editaProduto(String nome, String descricao, String fornecedor, Double novoPreco){
+        this.fornecedores.editaProduto(nome, descricao, fornecedor, novoPreco);
     }
 
-    public void removeProduto(String fornecedor, String nome, String descricao){
-        this.fornecedores.removeProduto(fornecedor, nome, descricao);
+    public void removeProduto(String nome, String descricao, String fornecedor){
+        this.fornecedores.removeProduto(nome, descricao, fornecedor);
     }
 }

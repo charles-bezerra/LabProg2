@@ -25,14 +25,17 @@ public class ProdutoController {
     public void adiciona(String nome, String descricao, Double preco){
         if( this.produtos.containsKey(new ProdutoID(nome, descricao) ) )
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
-        this.produtos.put(new ProdutoID(nome, descricao), new Produto(nome, descricao, preco));
+        Produto produto = new Produto(nome, descricao, preco);
+        ProdutoID id = new ProdutoID(nome, descricao);
+        this.produtos.put(id, produto);
     }
 
     public String exibe(String nome, String descricao){
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro na exibicao de produto: nome nao pode ser vazio ou nulo");
-        if (descricao == null || descricao.trim().equals(""))
-            throw new IllegalArgumentException("Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
+    	Validador.prefixoError="Erro na exibicao de produto";
+        Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
+        if (!this.produtos.containsKey(new ProdutoID(nome, descricao)))
+        	throw new IllegalArgumentException("Erro na exibicao de produto: produto nao existe.");
         return this.produtos.get(new ProdutoID(nome, descricao)).toString();
     }
 
@@ -47,18 +50,25 @@ public class ProdutoController {
     }
 
     public void edita(String nome, String descricao, Double novoPreco){
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro na edicao de produto: nome nao pode ser vazio ou nulo");
-        if (descricao == null || descricao.trim().equals(""))
-            throw new IllegalArgumentException("Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
-        this.produtos.get(new ProdutoID(nome,descricao)).setPreco(novoPreco);
+    	Validador.prefixoError = "Erro na edicao de produto";
+        Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
+        if (novoPreco == null)
+            throw new IllegalArgumentException("Erro na edicao de produto: preco nao pode ser vazio ou nulo.");
+        else if (novoPreco < 0)
+            throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
+
+        ProdutoID id = new ProdutoID(nome, descricao);
+        
+        if (!this.produtos.containsKey(id))
+        	throw new IllegalArgumentException("Erro na edicao de produto: produto nao existe.");
+        this.produtos.get(id).setPreco(novoPreco);
     }
 
     public void remove(String nome, String descricao){
-        if (nome == null || nome.trim().equals(""))
-            throw new IllegalArgumentException("Erro na remocao de produto: nome nao pode ser vazio ou nulo");
-        if (descricao == null || descricao.trim().equals(""))
-            throw new IllegalArgumentException("Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+    	Validador.prefixoError="Erro na remocao de produto";
+        Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
         ProdutoID produto = new ProdutoID(nome, descricao);
         if (!this.produtos.containsKey(produto))
             throw new IllegalArgumentException("Erro na remocao de produto: produto nao existe.");

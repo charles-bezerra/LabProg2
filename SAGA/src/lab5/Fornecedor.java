@@ -35,9 +35,9 @@ public class Fornecedor {
     */
     Fornecedor(String nome, String email, String telefone) {
         Validador.prefixoError = "Erro no cadastro do fornecedor";
-        this.nome = Validador.validaString("nome", nome);
-        this.email = Validador.validaString("email", email);
-        this.telefone = Validador.validaString("telefone", telefone);
+        this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        this.email = Validador.validaString("email nao pode ser vazio ou nulo.", email);
+        this.telefone = Validador.validaString("telefone nao pode ser vazio ou nulo.", telefone);
         this.produtos = new ProdutoController();
     }
 
@@ -48,17 +48,18 @@ public class Fornecedor {
     */
     public void edita(String atributo, String novoValor){
         Validador.prefixoError = "Erro na edicao do fornecedor";
-        Validador.validaString("atributo", atributo);
-        Validador.validaString("novo valor", novoValor);
+        Validador.validaString("atributo nao pode ser vazio ou nulo.", atributo);
+        Validador.validaString("novo valor nao pode ser vazio ou nulo.", novoValor);
 
         if (atributo.equals("nome"))
             throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser editado.");
 
-        switch (atributo) {
-            case "email": this.email = novoValor;
-            case "telefone": this.telefone = novoValor;
-            default: throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
-        }
+        if (atributo.equals("email"))
+        	this.email = novoValor;
+        else if(atributo.equals("telefone"))
+        	this.telefone = novoValor;
+        else throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
+
     }
 
     /**

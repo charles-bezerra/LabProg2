@@ -1,9 +1,7 @@
 package lab5;
 
-import org.junit.jupiter.api.Test; 
-
+import org.junit.jupiter.api.Test;  
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 
 class ProdutoTest {
@@ -37,8 +35,7 @@ class ProdutoTest {
 
     @Test
     void testToString() {
-    	Double preco = new Double(4.9);
-    	assertEquals("X-frango - Muito bom - R$" + preco.toString(), this.produto.toString());
+    	assertEquals("X-frango - Muito bom - R$4,90", this.produto.toString());
     }
 
     @Test

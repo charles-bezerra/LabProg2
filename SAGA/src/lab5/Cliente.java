@@ -34,10 +34,14 @@ public class Cliente {
      */
     Cliente(String cpf, String nome, String email, String localizacao){
         Validador.prefixoError = "Erro no cadastro do cliente";
-        this.cpf = Validador.validaString("cpf", cpf);
-        this.nome = Validador.validaString("nome", nome);
-        this.email = Validador.validaString( "email", email);
-        this.localizacao = Validador.validaString( "localizacao", localizacao);
+        this.cpf = Validador.validaString("cpf nao pode ser vazio ou nulo.", cpf);
+        
+        if (cpf.length() != 11)
+        	throw new IllegalArgumentException("Erro no cadastro do cliente: cpf invalido.");
+        
+        this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        this.email = Validador.validaString( "email nao pode ser vazio ou nulo.", email);
+        this.localizacao = Validador.validaString( "localizacao nao pode ser vazia ou nula.", localizacao);
     }
 
     /**
@@ -53,10 +57,14 @@ public class Cliente {
      */
     public void edita(String atributo, String novoValor){
         Validador.prefixoError = "Erro na edicao do cliente";
-        Validador.validaString( "atributo", atributo);
-        Validador.validaString( "novo valor", novoValor);
+        Validador.validaString("atributo nao pode ser vazio ou nulo.", atributo);
+        Validador.validaString("novo valor nao pode ser vazio ou nulo.", novoValor);
+        
+        if ( atributo.equals("cpf") )
+            throw new  IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
+       
 
-        if ( !(atributo.equals("nome") || atributo.equals("email") || atributo.equals("localizacao")) )
+        if ( !atributo.equals("nome") && !atributo.equals("email") && !atributo.equals("localizacao") )
             throw new  IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
 
         if (atributo.equals("nome")) this.nome = novoValor;
