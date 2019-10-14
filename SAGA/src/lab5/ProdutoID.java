@@ -4,6 +4,7 @@ import java.util.Objects;
 
 /**
   * Classe CRUD de produto
+  * 
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
@@ -27,6 +28,19 @@ public class ProdutoID {
         this.descricao = descricao;
     }
 
+    public String getNome() {
+    	return this.nome;
+    }
+    
+    public String getDescricao() {
+    	return this.descricao;
+    }
+
+    @Override
+    public String toString() {
+    	return this.nome + " - " + this.descricao;
+    }
+    
     @Override
     public int hashCode(){
         return Objects.hash(this.nome)*3 + Objects.hash(this.descricao)*7;

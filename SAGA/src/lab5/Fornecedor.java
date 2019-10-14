@@ -1,7 +1,6 @@
 package lab5;
 
-import java.util.Map;
-import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -9,7 +8,7 @@ import java.util.Objects;
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
-public class Fornecedor {
+public class Fornecedor implements Comparable<Fornecedor> {
     /**
     * Nome do fornecedor
     */
@@ -39,6 +38,19 @@ public class Fornecedor {
         this.email = Validador.validaString("email nao pode ser vazio ou nulo.", email);
         this.telefone = Validador.validaString("telefone nao pode ser vazio ou nulo.", telefone);
         this.produtos = new ProdutoController();
+    }
+    
+    
+    public String getNome() {
+    	return this.nome;
+    }
+    
+    public String getEmail() {
+    	return this.email;
+    }    
+    
+    public String getTelefone() {
+    	return this.telefone;
     }
 
     /**
@@ -102,12 +114,13 @@ public class Fornecedor {
     }
 
     /**
-     * Lista todos o produtos de um fornecedor
-     * @return representação de todos o produtos divido por |
+     * Lista todos o produtos de um fornecedor por ordem Alfabética
+     * @return representação de todos o produtos em uma Lista de Stringss
      */
-    public String listaProdutos(){
-        return this.produtos.lista();
+    public List<String> exibeProdutos(){
+        return this.produtos.exibeProdutos();
     }
+
 
     @Override
     public String toString(){
@@ -120,7 +133,17 @@ public class Fornecedor {
     }
 
     @Override
-    public boolean equals(Object o){
-        return true;
+    public boolean equals(Object obj){
+        if (obj == null) return false;
+        if (obj == this) return true;
+        if (obj.getClass() != this.getClass()) return false;
+
+        Fornecedor outroFornecedor = (Fornecedor) obj;
+        return outroFornecedor.hashCode() == this.hashCode();
+    }
+    
+    @Override
+    public int compareTo(Fornecedor f) {
+    	return this.getNome().compareTo(f.getNome());
     }
 }

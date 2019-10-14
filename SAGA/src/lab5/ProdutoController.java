@@ -1,11 +1,11 @@
 package lab5;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
+
 
 /**
  * Classe CRUD de produto
+ * 
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
@@ -19,59 +19,118 @@ public class ProdutoController {
      * Construtor do ProdutoController
      */
     ProdutoController(){
-        this.produtos = new LinkedHashMap<>();
+        this.produtos = new HashMap<>();
     }
+    
+    /**
+     * 
+     * @param nome
+     * @param descricao
+     * @return
+     */
+    private boolean encontraProduto(String nome, String descricao) {
+    	if( this.produtos.containsKey(new ProdutoID(nome, descricao)) )
+    		return true;
+    	return false;
+    }
+    
+    
+    /**
+     * 
+     * @return
+     */
+    private List<Produto> getProdutosOrdenados(){
+    	if (this.produtos.isEmpty())
+    		return null;
+		
+    	List<Produto> produtosOrdenados = new ArrayList<>( this.produtos.values() );
+		Collections.sort(produtosOrdenados);
 
+		return produtosOrdenados;
+    }
+    
+    /**
+     * 
+     * @param nome
+     * @param descricao
+     * @param preco
+     */
     public void adiciona(String nome, String descricao, Double preco){
-        if( this.produtos.containsKey(new ProdutoID(nome, descricao) ) )
+        if( encontraProduto(nome, descricao) )
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
+      
         Produto produto = new Produto(nome, descricao, preco);
         ProdutoID id = new ProdutoID(nome, descricao);
+      
         this.produtos.put(id, produto);
     }
-
+    
+    
+    /**
+     * 
+     * @param nome
+     * @param descricao
+     * @return
+     */
     public String exibe(String nome, String descricao){
     	Validador.prefixoError="Erro na exibicao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
-        if (!this.produtos.containsKey(new ProdutoID(nome, descricao)))
+        
+        if ( !encontraProduto(nome, descricao) )
         	throw new IllegalArgumentException("Erro na exibicao de produto: produto nao existe.");
+        
         return this.produtos.get(new ProdutoID(nome, descricao)).toString();
     }
 
-    public String lista(){
-        StringBuilder resultado = new StringBuilder("");
-        Iterator<ProdutoID> produtos = this.produtos.keySet().iterator();
+    /**
+     * o
+     * @return
+     */
+    public List<String> exibeProdutos(){
+        List<String> resultado = new ArrayList<>();        
+        Iterator<Produto> produtos;
+        
+        if (this.getProdutosOrdenados() == null)
+        	return null;
+    	
+        produtos = this.getProdutosOrdenados().iterator();
+        Produto produto;
+
         while (produtos.hasNext()){
-            resultado.append( this.produtos.get(produtos.hasNext()).toString() );
-            if (produtos.hasNext()) resultado.append(" | ");
+            produto = produtos.next();
+            resultado.add(
+            	this.exibe( 	
+            		produto.getNome(),
+            		produto.getDescricao()
+            	) 
+            );
         }
-        return resultado.toString();
+        
+        return resultado;
     }
 
     public void edita(String nome, String descricao, Double novoPreco){
     	Validador.prefixoError = "Erro na edicao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
-        if (novoPreco == null)
-            throw new IllegalArgumentException("Erro na edicao de produto: preco nao pode ser vazio ou nulo.");
-        else if (novoPreco < 0)
-            throw new IllegalArgumentException("Erro na edicao de produto: preco invalido.");
-
-        ProdutoID id = new ProdutoID(nome, descricao);
+        Validador.validaPreco(novoPreco);
         
-        if (!this.produtos.containsKey(id))
+        if ( !this.encontraProduto(nome, descricao) )
         	throw new IllegalArgumentException("Erro na edicao de produto: produto nao existe.");
-        this.produtos.get(id).setPreco(novoPreco);
+        
+        this.produtos.get(new ProdutoID(nome, descricao)).setPreco(novoPreco);
     }
+    
 
     public void remove(String nome, String descricao){
     	Validador.prefixoError="Erro na remocao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
-        ProdutoID produto = new ProdutoID(nome, descricao);
-        if (!this.produtos.containsKey(produto))
+                
+        if ( !this.encontraProduto(nome, descricao) )
             throw new IllegalArgumentException("Erro na remocao de produto: produto nao existe.");
-        this.produtos.remove(produto);
+        
+        this.produtos.remove(new ProdutoID(nome, descricao));
     }
 }

@@ -7,7 +7,7 @@ import java.util.Objects;
  * 
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  */
-public class Cliente {
+public class Cliente implements Comparable<Cliente> {
     /**
      * Identificador único do cliente, quarda o CPF
      */
@@ -34,26 +34,32 @@ public class Cliente {
      */
     Cliente(String cpf, String nome, String email, String localizacao){
         Validador.prefixoError = "Erro no cadastro do cliente";
-        this.cpf = Validador.validaString("cpf nao pode ser vazio ou nulo.", cpf);
-        
-        if (cpf.length() != 11)
-        	throw new IllegalArgumentException("Erro no cadastro do cliente: cpf invalido.");
-        
+        this.cpf = Validador.validaCPF(cpf);
         this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         this.email = Validador.validaString( "email nao pode ser vazio ou nulo.", email);
         this.localizacao = Validador.validaString( "localizacao nao pode ser vazia ou nula.", localizacao);
     }
+    
+    public String getCPF() {
+    	return this.cpf;
+    }
+    
+    public String getNome() {
+    	return this.nome;
+    }
+    
+    public String getEmail() {
+    	return this.email;
+    }
 
+    public String getLocalizacoa() {
+    	return this.localizacao;
+    }
+    
     /**
-<<<<<<< HEAD
-     * Edita um atributo do cliente
-     * @param atributo atributo a ser alterado
-     * @param novoValor novo valor
-=======
      * Edita o valor de um atributo do cliente
      * @param atributo atributo a ser editado
      * @param novoValor novo valor do atributo
->>>>>>> 5ce340fb888c830c0017eeeecac80da72f7c4ffd
      */
     public void edita(String atributo, String novoValor){
         Validador.prefixoError = "Erro na edicao do cliente";
@@ -62,8 +68,6 @@ public class Cliente {
         
         if ( atributo.equals("cpf") )
             throw new  IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
-       
-
         if ( !atributo.equals("nome") && !atributo.equals("email") && !atributo.equals("localizacao") )
             throw new  IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
 
@@ -88,5 +92,10 @@ public class Cliente {
 
         Cliente outroCliente = (Cliente) obj;
         return outroCliente.hashCode() == this.hashCode();
+    }
+    
+    @Override
+    public int compareTo(Cliente c) {
+    	return this.getNome().compareTo(c.getNome());
     }
 }

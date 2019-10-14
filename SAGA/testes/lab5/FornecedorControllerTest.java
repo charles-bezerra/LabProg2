@@ -172,4 +172,27 @@ class FornecedorControllerTest {
     		assertEquals("java.lang.IllegalArgumentException: Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
     	}
     }
+
+	@Test
+	void testExibeProdutos(){
+    	this.fornecedores.remove("Helhao");
+    	this.fornecedores.remove("Rotatoria");
+    	String esperado = "Dona Inês - Tapioca completa - Tapioca com coco, queijo e manteiga - R$3,50 | Dona Inês - Bolo - Bolo de chocolate - R$3,00 | Dona Inês - Tapioca simples - Tapioca com manteiga - R$3,00 | Josenilda - Biscoito doce - Maizena - R$3,00 | Josenilda - Mousse - Mousse de Limão - R$4,00 | Josenilda - Salada - Salada de frutas com leite condensado - R$4,50";
+
+    	this.fornecedores.adiciona("Dona Inês", "dines@gmail.com", "83 9999-5050");
+		this.fornecedores.adiciona("Josenilda" , "nilda@computacao.ufcg.edu.br", "83 98736-5050" );
+    	this.fornecedores.adiciona("Ron Weasley", "rweasley@splab.ufcg.edu.br", "83 99936-5050");
+
+		this.fornecedores.adicionaProduto("Dona Inês", "Tapioca completa", "Tapioca com coco, queijo e manteiga", 3.5);
+		this.fornecedores.adicionaProduto("Dona Inês", "Bolo", "Bolo de chocolate", 3.0);
+		this.fornecedores.adicionaProduto("Dona Inês", "Tapioca simples", "Tapioca com manteiga", 3.0);
+
+		this.fornecedores.adicionaProduto("Josenilda", "Biscoito doce", "Maizena", 3.0);
+		this.fornecedores.adicionaProduto("Josenilda", "Mousse", "Mousse de Limão", 4.0);
+		this.fornecedores.adicionaProduto("Josenilda", "Salada", "Salada de frutas com leite condensado", 4.5);
+
+		assertEquals(esperado, this.fornecedores.exibeProdutos());
+
+	}
+
 }

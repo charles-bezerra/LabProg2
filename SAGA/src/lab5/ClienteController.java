@@ -1,8 +1,6 @@
 package lab5;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.LinkedHashMap;
+import java.util.*;
 
 /**
  * Classe CRUD de Cliente
@@ -20,7 +18,17 @@ public class ClienteController {
 	 * Construtor que inicializa this.clientes
 	 */
     ClienteController(){
-        this.clientes = new LinkedHashMap<>();
+        this.clientes = new HashMap<>();
+    }
+
+    private List<Cliente> getClientesOrdenados(){
+        if ( this.clientes.isEmpty() )
+            return null;
+
+        List<Cliente> clientes = new ArrayList<>( this.clientes.values() );
+        Collections.sort(clientes);
+
+        return clientes;
     }
 
     /**
@@ -51,6 +59,22 @@ public class ClienteController {
         return this.clientes.get(cpf).toString();
     }
 
+    public String exibeClientes(){
+        if (this.getClientesOrdenados() == null)
+            return null;
+
+        StringBuilder resultado = new StringBuilder("");
+        Iterator<Cliente> clientes = this.getClientesOrdenados().iterator();
+
+        while (clientes.hasNext()){
+            resultado.append( this.exibe( clientes.next().getCPF() ) );
+
+            if (clientes.hasNext())
+                resultado.append(" | ");
+        }
+
+        return resultado.toString();
+    }
 
     /**
      * Lista todos clientes cadastrados

@@ -1,8 +1,7 @@
 package lab5;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
+
 
 /**
  * Classe que representa o CRUD do fornecedor
@@ -19,8 +18,17 @@ public class FornecedorController {
      * Construtor que atribui valor a fornecedores
      */
     FornecedorController(){
-        this.fornecedores = new LinkedHashMap<>();
+        this.fornecedores = new HashMap<>();
     }
+    
+    private List<Fornecedor> getFornecedoresOrdenados() {
+    	if (this.fornecedores.isEmpty())
+    		return null;
+    	List<Fornecedor> fornecedores =  new ArrayList<>( this.fornecedores.values() );
+		Collections.sort(fornecedores);
+		return fornecedores;
+    }
+    
     /**
      * Adiciona um fornecedor ao CRUD
      * @param nome atribui valor ao nome do fornecedor
@@ -46,6 +54,24 @@ public class FornecedorController {
         if (!this.fornecedores.containsKey(nome))
             throw new IllegalArgumentException("Erro na exibicao do fornecedor: fornecedor nao existe.");
         return this.fornecedores.get(nome).toString();
+    }
+
+
+    public String exibeFornecedores(){
+        if (this.getFornecedoresOrdenados() == null)
+            return null;
+
+        StringBuilder resultado = new StringBuilder("");
+        Iterator<Fornecedor> fornecedores = this.getFornecedoresOrdenados().iterator();
+
+        while (fornecedores.hasNext()){
+            resultado.append( this.exibe( fornecedores.next().getNome() ) );
+
+            if (fornecedores.hasNext())
+                resultado.append(" | ");
+        }
+
+        return resultado.toString();
     }
 
     /**
@@ -90,10 +116,10 @@ public class FornecedorController {
 
     /**
      * Adiciona um produto a fornecedor
-     * @param fornecedor
-     * @param nome
-     * @param descricao
-     * @param preco
+     * @param fornecedor atribui o fornecedor a um produto
+     * @param nome atribui o nome do produto
+     * @param descricao atribui a descricao de produto
+     * @param preco atribui o preco de produto
      */
     public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco){
     	Validador.prefixoError="Erro no cadastro de produto";
@@ -119,16 +145,74 @@ public class FornecedorController {
     }
 
     /**
+     * Exibe todas as representações dos produtos de todos fornecedores em ordem alfabética
+     * @return String com todas as representações dos produtos de todos fornecedores em ordem alfabética
+     */
+    public String exibeProdutos() {
+        if (this.getFornecedoresOrdenados() == null)
+            return null;
+
+        Iterator<Fornecedor> fornecedores = this.getFornecedoresOrdenados().iterator();
+        Iterator<String> listaDeProdutosDoFornecedor;
+
+        StringBuilder resultado = new StringBuilder("");
+
+        Fornecedor fornecedor = fornecedores.next();
+
+        while( fornecedores.hasNext() ) {
+
+            if (fornecedor.exibeProdutos() != null) {
+                listaDeProdutosDoFornecedor = fornecedor.exibeProdutos().iterator();
+
+                while (listaDeProdutosDoFornecedor.hasNext()) {
+                    resultado.append(fornecedor.getNome());
+                    resultado.append(" - ");
+                    resultado.append(listaDeProdutosDoFornecedor.next());
+                    if (listaDeProdutosDoFornecedor.hasNext()) resultado.append(" | ");
+                }
+            }
+            else{
+                resultado.append( fornecedor.getNome() );
+                resultado.append( " -" );
+            }
+
+            fornecedor = fornecedores.next();
+
+            if (fornecedores.hasNext())
+                resultado.append(" | ");
+        }
+    	return resultado.toString();
+    }
+    
+    
+    /**
      * Lista todos os produtos de um fornecedor
      * @param fornecedor nome que identifica o fornecedor
      * @return retorna todos as representações textuais dos produtos de fornecedor
      */
-    public String listaProdutos(String fornecedor){
-        Validador.prefixoError="Erro na listagem dos produtos";
+    public String exibeProdutosFornecedor(String fornecedor){
+        Validador.prefixoError="Erro na exibicao de produto";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
         if (!this.fornecedores.containsKey(fornecedor))
-            throw new IllegalArgumentException("Erro na listagem dos produtos: fornecedor nao existe.");;
-        return this.fornecedores.get(fornecedor).listaProdutos();
+            throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");;
+
+        StringBuilder resultado = new StringBuilder("");
+        List<String> produtosFornecedor = new ArrayList<>( this.fornecedores.get(fornecedor).exibeProdutos() );
+
+        if (produtosFornecedor.isEmpty())
+            return null;
+
+        Iterator<String> produtosIterator = produtosFornecedor.iterator();
+
+        while (produtosIterator.hasNext()){
+            resultado.append( fornecedor );
+            resultado.append(" - ");
+            resultado.append( produtosIterator.next() );
+            if ( produtosIterator.hasNext() )
+                resultado.append(" | ");
+        }
+
+        return resultado.toString();
     }
 
     /**
