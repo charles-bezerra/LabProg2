@@ -31,6 +31,18 @@ public class ClienteController {
         return clientes;
     }
 
+    public boolean encontraCliente(String cpf){
+        return this.clientes.containsKey(cpf);
+    }
+
+    public Cliente getCliente(String cpf){
+        return this.clientes.get(cpf);
+    }
+
+    public List<Cliente> getClientes(){
+        return new ArrayList<>( this.clientes.values() );
+    }
+
     /**
      * Método que adiciona um cliente na coleção clientes
      * @param cpf identificador único de um cliente

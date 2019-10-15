@@ -78,4 +78,20 @@ public class Facade {
     public void removeProduto(String nome, String descricao, String fornecedor){
         this.controller.removeProduto(nome, descricao, fornecedor);
     }
+
+    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto){
+        return this.controller.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto);
+    }
+
+    public String exibeContaCliente(String cpf, String fornecedor){
+        return this.exibeContaCliente(cpf, fornecedor);
+    }
+
+    public String exibeContasClientes(){
+        return this.exibeContasClientes();
+    }
+
+    public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
+        this.controller.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
+    }
 }

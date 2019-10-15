@@ -23,17 +23,18 @@ public class ProdutoController {
     }
     
     /**
-     * 
-     * @param nome
-     * @param descricao
-     * @return
+     * Verifica se existe um determinado produto
+     * @param nome identificado do produto
+     * @param descricao identificador do produto
+     * @return boolean
      */
-    private boolean encontraProduto(String nome, String descricao) {
-    	if( this.produtos.containsKey(new ProdutoID(nome, descricao)) )
-    		return true;
-    	return false;
+    public boolean encontraProduto(String nome, String descricao) {
+    	return this.produtos.containsKey(new ProdutoID(nome, descricao));
     }
-    
+
+    public Produto getProduto(String nome, String descricao){
+        return this.produtos.get(new ProdutoID(nome, descricao));
+    }
     
     /**
      * 
@@ -63,6 +64,44 @@ public class ProdutoController {
         ProdutoID id = new ProdutoID(nome, descricao);
       
         this.produtos.put(id, produto);
+    }
+
+    public void adicionaCombo(String nome, String descricao, Double fator, String produtos){
+        Validador.prefixoError="Erro no cadastro de combo";
+        Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
+        Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
+
+        Validador.validaString("combo deve ter produtos.", produtos);
+        Validador.validaDouble("fator nao pode ser vazio ou nulo.", fator);
+
+        ProdutoID id;
+        String nomeProduto, descricaoProduto;
+
+        String[] listaDeProdutos = produtos.split(",");
+        Produto[] produtosObj = new Produto[listaDeProdutos.length];
+
+        int i = 0;
+
+        for (String item: listaDeProdutos) {
+            nomeProduto = item.split(" - ")[0];
+            descricaoProduto = item.split(" - ")[1];
+
+            id = new ProdutoID(nomeProduto, descricaoProduto);
+
+            if ( this.produtos.get(id) instanceof Combo )
+                throw new IllegalArgumentException(Validador.prefixoError + ": um combo nao pode possuir combos na lista de produtos.");
+
+            if ( !this.produtos.containsKey(id) )
+                throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");
+
+            produtosObj[i] = this.produtos.get(id);
+            i++;
+        }
+
+        id = new ProdutoID(nome, descricao);
+        Combo combo = new Combo(nome, descricao, fator, produtosObj);
+
+        this.produtos.put(id, combo);
     }
     
     

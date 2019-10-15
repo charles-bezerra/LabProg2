@@ -1,5 +1,8 @@
 package lab5;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -11,18 +14,23 @@ public class Conta {
      * Identificador da conta
      */
     private ContaID id;
+    private Cliente cliente;
+    private Fornecedor fornecedor;
 
     /**
-     * Controller de compras
+     * As compras
      */
-    private CompraController compras;
+    private List<Compra> compras;
 
     /**
      * Inicializa o controlador de compras
      */
-    Conta(ContaID id){
+    Conta(ContaID id, Cliente cliente, Fornecedor fornecedor){
         this.id = id;
-        this.compras = new CompraController();
+        this.cliente = cliente;
+        this.fornecedor = fornecedor;
+
+        this.compras = new ArrayList<>();
     }
 
     /**
@@ -34,7 +42,10 @@ public class Conta {
      * @return String com a representação textual da compra
      */
     public String adicionaCompra(String data, String nomeProduto, String descricaoProduto, Double preco){
-        return this.compras.adiciona(data, nomeProduto, descricaoProduto, preco);
+        Compra compra = new Compra(data, nomeProduto, descricaoProduto, preco);
+        this.compras.add(compra);
+
+        return compra.toString();
     }
 
     /**
@@ -42,12 +53,31 @@ public class Conta {
      * @return Double
      */
     public Double getDebito(){
-        return this.compras.getDebito();
+        Double valor = 0.0;
+        for (Compra compra: this.compras)
+            valor += compra.getPreco();
+        return valor;
     }
 
-    public String exibeProdutos(){
-        return this.exibeProdutos();
+    public Cliente getCliente(){
+        return this.cliente;
     }
+
+    public String exibe(){
+        StringBuilder resultado = new StringBuilder("");
+        Iterator<Compra> comprasIterator = this.compras.iterator();
+
+        resultado.append( this.fornecedor.getNome() );
+        resultado.append(" | ");
+
+        while (comprasIterator.hasNext()){
+            resultado.append( comprasIterator.next().toString() );
+            if (comprasIterator.hasNext()) resultado.append(" | ");
+        }
+
+        return resultado.toString();
+    }
+
 
     @Override
     public int hashCode(){

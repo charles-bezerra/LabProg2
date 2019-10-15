@@ -75,7 +75,8 @@ Guilherme Lanches - Acai - Acai de 300mL - R$5,00 | Guilherme Lanches - Acaraje 
 Lanchonete do Fabio - | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | \
 Maria Eduarda - Agua - Garrafa de agua de 500mL - R$1,00 | Maria Eduarda - Cafe com Leite - Um copo de 150mL com cafe e leite - R$1,00 | \
 Pedro - Lasanha - Lasanha a bolonhesa - R$4,00 | Pedro - Pastel de Frango com Catupiry - Um pastel com recheio de frango e catupiry - R$2,50 | \
-Pedro - Pastel de Frango com Cheddar - Um pastel com recheio de frango e cheddar - R$2,50 | Pedro - Tapioca - Tapioca com queijo e frango - R$3,00" exibeProdutos
+Pedro - Pastel de Frango com Cheddar - Um pastel com recheio de frango e cheddar - R$2,50 | Pedro - Tapioca - Tapioca com queijo e frango - R$3,00 | \
+Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50" exibeProdutos
 
 ## Removendo os fornecedores criados ##
 
@@ -93,5 +94,4 @@ Seu Olavo - olavo@gmail.com - 83 99348-1092" exibeFornecedores
 ## Listando os produtos de todos os fornecedores em ordem alfabetica ##
 
 expect "Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | \
-Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50" exibeProdutos
-
+Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50" exibeProdutos

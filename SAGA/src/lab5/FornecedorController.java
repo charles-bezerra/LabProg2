@@ -20,7 +20,11 @@ public class FornecedorController {
     FornecedorController(){
         this.fornecedores = new HashMap<>();
     }
-    
+
+    /**
+     * Ordena e retorna todos os fornecedores em ordem alfabética
+     * @return ArrayList -> Fornecedor
+     */
     private List<Fornecedor> getFornecedoresOrdenados() {
     	if (this.fornecedores.isEmpty())
     		return null;
@@ -28,7 +32,36 @@ public class FornecedorController {
 		Collections.sort(fornecedores);
 		return fornecedores;
     }
-    
+
+    /**
+     * Verifica se existe um fornecedor no sistema
+     * @param nome identificador de fornecedor
+     * @return boolean
+     */
+    public boolean encontraFornecedor(String nome){
+        if (this.fornecedores.containsKey(nome))
+            return true;
+        return false;
+    }
+
+    /**
+     * Recupera um fornecedor
+     * @param nome identificador de fornecedor
+     * @return Fornecedor
+     */
+    public Fornecedor getFornecedor(String nome){
+        return this.fornecedores.get(nome);
+    }
+
+    /**
+     * Recupera todos os fornecedores
+     * @param cpf
+     * @return
+     */
+    public List<Fornecedor> getFornecedores(String cpf){
+        return new ArrayList<>( this.fornecedores.values() );
+    }
+
     /**
      * Adiciona um fornecedor ao CRUD
      * @param nome atribui valor ao nome do fornecedor
@@ -57,6 +90,10 @@ public class FornecedorController {
     }
 
 
+    /**
+     * Exisbe todos os fornecedores em ordem alfabética alfabética
+     * @return String
+     */
     public String exibeFornecedores(){
         if (this.getFornecedoresOrdenados() == null)
             return null;
@@ -115,6 +152,28 @@ public class FornecedorController {
     }
 
     /**
+     * Verifica se existe um produto em fornecedor
+     * @param fornecedor
+     * @param nome identificador do produto
+     * @param descricao identificador do produto
+     * @return boolean
+     */
+    public boolean encontraProdutoFornecedor(String fornecedor, String nome, String descricao){
+        return this.fornecedores.get(fornecedor).encontraProduto(nome, descricao);
+    }
+
+    /**
+     * Recupera um determinado produto de um determinado fornecedor
+     * @param fornecedor identificador de fornecedor
+     * @param nome identificador do produto
+     * @param descricao identificador do produto
+     * @return Produto
+     */
+    public Produto getProdutoFornecedor(String fornecedor, String nome, String descricao){
+        return this.fornecedores.get(fornecedor).getProduto(nome, descricao);
+    }
+
+    /**
      * Adiciona um produto a fornecedor
      * @param fornecedor atribui o fornecedor a um produto
      * @param nome atribui o nome do produto
@@ -157,9 +216,10 @@ public class FornecedorController {
 
         StringBuilder resultado = new StringBuilder("");
 
-        Fornecedor fornecedor = fornecedores.next();
+        Fornecedor fornecedor;
 
         while( fornecedores.hasNext() ) {
+            fornecedor = fornecedores.next();
 
             if (fornecedor.exibeProdutos() != null) {
                 listaDeProdutosDoFornecedor = fornecedor.exibeProdutos().iterator();
@@ -175,8 +235,6 @@ public class FornecedorController {
                 resultado.append( fornecedor.getNome() );
                 resultado.append( " -" );
             }
-
-            fornecedor = fornecedores.next();
 
             if (fornecedores.hasNext())
                 resultado.append(" | ");
@@ -242,5 +300,10 @@ public class FornecedorController {
         if (!this.fornecedores.containsKey(fornecedor))
             throw new IllegalArgumentException("Erro na remocao de produto: fornecedor nao existe.");
         this.fornecedores.get(fornecedor).removeProduto(nome, descricao);
+    }
+
+
+    public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
+        this.fornecedores.get(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
     }
 }

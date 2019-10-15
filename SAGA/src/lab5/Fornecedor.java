@@ -39,16 +39,27 @@ public class Fornecedor implements Comparable<Fornecedor> {
         this.telefone = Validador.validaString("telefone nao pode ser vazio ou nulo.", telefone);
         this.produtos = new ProdutoController();
     }
-    
-    
+
+    /**
+     * Recupera o nome do fornededor
+     * @return String
+     */
     public String getNome() {
     	return this.nome;
     }
-    
+
+    /**
+     * Recupera o email do fornecedor
+     * @return String
+     */
     public String getEmail() {
     	return this.email;
-    }    
-    
+    }
+
+    /**
+     * Recupera o telefone do fornecedor
+     * @return String
+     */
     public String getTelefone() {
     	return this.telefone;
     }
@@ -72,6 +83,26 @@ public class Fornecedor implements Comparable<Fornecedor> {
         	this.telefone = novoValor;
         else throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
 
+    }
+
+    /**
+     * Procura se existe um determinado produto
+     * @param nome identificador de produto
+     * @param descricao identificador de produto
+     * @return boolean
+     */
+    public boolean encontraProduto(String nome, String descricao){
+        return this.produtos.encontraProduto(nome, descricao);
+    }
+
+    /**
+     * Recupera um determinado produto
+     * @param nome identificador de produto
+     * @param descricao identificador de produto
+     * @return Produto
+     */
+    public Produto getProduto(String nome, String descricao){
+        return this.produtos.getProduto(nome, descricao);
     }
 
     /**
@@ -121,6 +152,9 @@ public class Fornecedor implements Comparable<Fornecedor> {
         return this.produtos.exibeProdutos();
     }
 
+    public void adicionaCombo(String nome, String descricao, Double fator, String produtos) {
+        this.produtos.adicionaCombo(nome, descricao, fator, produtos);
+    }
 
     @Override
     public String toString(){

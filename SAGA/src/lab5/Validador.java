@@ -22,6 +22,12 @@ public class Validador {
     	return valor;
     }
 
+    public static Double validaDouble(String msg, Double valor) {
+        if (valor == null)
+            throw new IllegalArgumentException(prefixoError + ": " + msg);
+        return valor;
+    }
+
     public static String validaCPF(String cpf){
         if (cpf == null || cpf.trim().equals(""))
             throw new IllegalArgumentException(prefixoError + ": cpf nao pode ser vazio ou nulo.");

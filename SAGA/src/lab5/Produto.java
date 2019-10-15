@@ -13,19 +13,19 @@ public class Produto implements Comparable<Produto> {
     /**
      * nome do produto
      */
-    private String nome;
+    protected String nome;
     /**
      * descrição do produto
      */
-    private String descricao;
+    protected String descricao;
     /**
      * preço do produto
      */
-    private Double preco;
+    protected Double preco;
     /**
      * endereço composto do produto
      */
-    private ProdutoID id;
+    protected ProdutoID id;
 
     /**
      * Construtor do produto
@@ -72,7 +72,15 @@ public class Produto implements Comparable<Produto> {
     public ProdutoID getID() {
     	return this.id;
     }
-    
+
+    /**
+     * Retorna o preco do produto
+     * @return Double
+     */
+    public Double getPreco(){
+        return this.preco;
+    }
+
     @Override
     public String toString(){
     	DecimalFormat df = new DecimalFormat("###,##0.00");

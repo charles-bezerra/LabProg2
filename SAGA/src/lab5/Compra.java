@@ -19,6 +19,13 @@ public class Compra {
         return this.preco;
     }
 
+    public void setPreco(Double novoPreco){
+        Validador.prefixoError="Erro na edicao de compra";
+        Validador.validaPreco(novoPreco);
+
+        this.preco = novoPreco;
+    }
+
     @Override
     public String toString(){
         return this.idProduto.getNome() + " - " + this.data;
