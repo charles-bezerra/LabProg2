@@ -103,7 +103,7 @@ public class Controller {
         if (!this.fornecedores.encontraFornecedor(fornecedor))
             throw new IllegalArgumentException("Erro ao cadastrar compra: fornecedor nao existe");
 
-        if (!this.fornecedores.encontraProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto))
+        if ( !this.fornecedores.encontraProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto) )
             throw new IllegalArgumentException("Erro ao cadastrar compra: produto nao existe.");
 
         if (!this.contas.encontraConta(cpf, fornecedor)) {
@@ -112,7 +112,15 @@ public class Controller {
             this.contas.adicionaConta(cliente, fornecedorObj);
         }
 
-        Double preco = this.fornecedores.getProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto).getPreco();
+
+        Produto produto = this.fornecedores.getProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto);
+        Double preco;
+
+        if (produto instanceof Combo)
+            preco = ((Combo) produto).getPreco();
+        else
+            preco = ((ProdutoSimples) produto).getPreco();
+
         return this.contas.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto, preco);
     }
 

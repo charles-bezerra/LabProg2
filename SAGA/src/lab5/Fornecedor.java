@@ -131,7 +131,7 @@ public class Fornecedor implements Comparable<Fornecedor> {
      * @param novoPreco novo preço do produto
      */
     public void editaProduto(String nome, String descricao, Double novoPreco){
-        this.produtos.edita(nome,descricao,novoPreco);
+        this.produtos.editaProduto(nome,descricao,novoPreco);
     }
 
     /**
@@ -152,6 +152,13 @@ public class Fornecedor implements Comparable<Fornecedor> {
         return this.produtos.exibeProdutos();
     }
 
+    /**
+     *
+     * @param nome
+     * @param descricao
+     * @param fator
+     * @param produtos
+     */
     public void adicionaCombo(String nome, String descricao, Double fator, String produtos) {
         this.produtos.adicionaCombo(nome, descricao, fator, produtos);
     }

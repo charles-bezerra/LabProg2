@@ -10,7 +10,7 @@ class ProdutoTest {
 	
     @BeforeEach
     void criarObjetos() {
-    	this.produto = new Produto("X-frango","Muito bom", 4.9);
+    	this.produto = new ProdutoSimples("X-frango","Muito bom", 4.9);
     }
 
     @Test
@@ -40,7 +40,7 @@ class ProdutoTest {
 
     @Test
     void testEquals() {
-    	Produto p = new Produto("X-frango", "Muito bom", 10.0);
+    	Produto p = new ProdutoSimples("X-frango", "Muito bom", 10.0);
         assertEquals(this.produto, p);
     }
 }

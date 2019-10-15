@@ -303,6 +303,14 @@ public class FornecedorController {
     }
 
 
+    /**
+     * Adiciona um combo nos produtos do fornecedor
+     * @param fornecedor
+     * @param nome
+     * @param descricao
+     * @param fator
+     * @param produtos
+     */
     public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
         this.fornecedores.get(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
     }

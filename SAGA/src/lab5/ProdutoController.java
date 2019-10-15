@@ -60,7 +60,7 @@ public class ProdutoController {
         if( encontraProduto(nome, descricao) )
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
       
-        Produto produto = new Produto(nome, descricao, preco);
+        ProdutoSimples produto = new ProdutoSimples(nome, descricao, preco);
         ProdutoID id = new ProdutoID(nome, descricao);
       
         this.produtos.put(id, produto);
@@ -77,7 +77,7 @@ public class ProdutoController {
         ProdutoID id;
         String nomeProduto, descricaoProduto;
 
-        String[] listaDeProdutos = produtos.split(",");
+        String[] listaDeProdutos = produtos.split(", ");
         Produto[] produtosObj = new Produto[listaDeProdutos.length];
 
         int i = 0;
@@ -93,6 +93,8 @@ public class ProdutoController {
 
             if ( !this.produtos.containsKey(id) )
                 throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");
+
+
 
             produtosObj[i] = this.produtos.get(id);
             i++;
@@ -149,7 +151,7 @@ public class ProdutoController {
         return resultado;
     }
 
-    public void edita(String nome, String descricao, Double novoPreco){
+    public void editaProduto(String nome, String descricao, Double novoPreco){
     	Validador.prefixoError = "Erro na edicao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
@@ -157,8 +159,11 @@ public class ProdutoController {
         
         if ( !this.encontraProduto(nome, descricao) )
         	throw new IllegalArgumentException("Erro na edicao de produto: produto nao existe.");
-        
-        this.produtos.get(new ProdutoID(nome, descricao)).setPreco(novoPreco);
+
+        ProdutoID id = new ProdutoID(nome, descricao);
+        ProdutoSimples produto = (ProdutoSimples) this.produtos.get(id);
+
+        this.produtos.put(id, produto);
     }
     
 

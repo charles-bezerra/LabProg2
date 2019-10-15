@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
-public class Produto implements Comparable<Produto> {
+public abstract class Produto implements Comparable<Produto> {
     /**
      * nome do produto
      */
@@ -19,10 +19,6 @@ public class Produto implements Comparable<Produto> {
      */
     protected String descricao;
     /**
-     * preço do produto
-     */
-    protected Double preco;
-    /**
      * endereço composto do produto
      */
     protected ProdutoID id;
@@ -31,22 +27,12 @@ public class Produto implements Comparable<Produto> {
      * Construtor do produto
      * @param nome atribui valor ao nome do produto
      * @param descricao atribui valor a descrição do produto
-     * @param preco atribui valor ao preço do produto
      */
-    Produto(String nome, String descricao, Double preco){
+    Produto(String nome, String descricao){
         Validador.prefixoError = "Erro no cadastro de produto";
         this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         this.descricao = Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
-        this.preco = Validador.validaPreco(preco);
         this.id = new ProdutoID(nome, descricao);
-    }
-
-    /**
-     * Altera o valor do preço
-     * @param preco novo valor do preço
-     */
-    public void setPreco(Double preco){
-        this.preco = preco;
     }
 
     /**
@@ -73,19 +59,10 @@ public class Produto implements Comparable<Produto> {
     	return this.id;
     }
 
-    /**
-     * Retorna o preco do produto
-     * @return Double
-     */
-    public Double getPreco(){
-        return this.preco;
-    }
 
     @Override
     public String toString(){
-    	DecimalFormat df = new DecimalFormat("###,##0.00");
-    	String preco = df.format(this.preco);
-        return this.nome + " - " + this.descricao + " - R$" + preco.replace('.', ',');
+        return this.nome + " - " + this.descricao;
     }
 
     @Override

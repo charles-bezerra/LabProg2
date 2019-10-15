@@ -3,18 +3,17 @@ package lab5;
 import java.text.DecimalFormat;
 
 public class Combo extends Produto {
-    private Produto[] produtos;
+    private ProdutoSimples[] produtos;
     private Double fator;
 
     Combo(String nome, String descricao, Double fator, Produto[] produtos){
-        super(nome, descricao, 0.0);
-        this.fator = fator;
+        super(nome, descricao);
 
         if (fator < 0 && fator >= 1)
             throw new IllegalArgumentException(Validador.prefixoError + "fator invalido.");
 
-        this.produtos = produtos;
-        this.preco = this.getPreco();
+        this.fator = fator;
+        this.produtos = (ProdutoSimples[]) produtos;
     }
 
     public void setFator(Double novoFator){
@@ -27,17 +26,18 @@ public class Combo extends Produto {
         this.fator = novoFator;;
     }
 
-    @Override
     public Double getPreco(){
         Double valor = 0.0;
-        for (Produto produto: this.produtos)
+
+        for (ProdutoSimples produto: this.produtos)
             valor += produto.getPreco();
+
         return valor - (valor*this.fator);
     }
 
     @Override
     public String toString(){
-        DecimalFormat df = new DecimalFormat("###,###,##0.00");
-        return this.nome + " - " + this.descricao + " - R$" + df.format( this.preco );
+        DecimalFormat df = new DecimalFormat("###,##0.00");
+        return this.nome + " - " + this.descricao + " - " + df.format(this.getPreco());
     }
 }

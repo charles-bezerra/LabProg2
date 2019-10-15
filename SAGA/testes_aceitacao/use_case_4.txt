@@ -95,3 +95,4 @@ Seu Olavo - olavo@gmail.com - 83 99348-1092" exibeFornecedores
 
 expect "Dona Alba - Rubacao - Feijao com arroz e queijo coalho - R$17,00 | Marcos - Coxao de Frango - Coxao de frango com cheddar - R$2,50 | \
 Marcos - Coxao de Pizza - Coxao de frango com presunto e queijo - R$2,50 | Seu Olavo - X-burguer - Hamburguer de carne com queijo e calabresa - R$4,50" exibeProdutos
+
