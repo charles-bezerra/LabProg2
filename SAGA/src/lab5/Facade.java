@@ -84,14 +84,22 @@ public class Facade {
     }
 
     public String exibeContaCliente(String cpf, String fornecedor){
-        return this.exibeContaCliente(cpf, fornecedor);
+        return this.controller.exibeContaCliente(cpf, fornecedor);
     }
 
     public String exibeContasClientes(){
-        return this.exibeContasClientes();
+        return this.controller.exibeContasClientes();
     }
 
     public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
         this.controller.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
+    }
+
+    public void editaCombo(String fornecedor, String nome, String descricao, Double novoFator){
+        this.controller.editaCombo(fornecedor, nome, descricao, novoFator);
+    }
+
+    public Double getDebito(String cpf, String fornecedor){
+        return this.controller.getDebito(cpf, fornecedor);
     }
 }

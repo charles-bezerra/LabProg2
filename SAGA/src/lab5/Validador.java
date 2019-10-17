@@ -22,6 +22,16 @@ public class Validador {
     	return valor;
     }
 
+    public static Double validaFator(Double valor) {
+        if (valor == null)
+            throw new IllegalArgumentException(prefixoError + ": fator nao pode ser vazio ou nulo.");
+
+        if ( valor <= 0.0 || valor >= 1.0 )
+            throw new IllegalArgumentException(prefixoError + ": fator invalido.");
+
+        return valor;
+    }
+
     public static Double validaDouble(String msg, Double valor) {
         if (valor == null)
             throw new IllegalArgumentException(prefixoError + ": " + msg);

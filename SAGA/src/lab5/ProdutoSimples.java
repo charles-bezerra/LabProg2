@@ -6,7 +6,7 @@ public class ProdutoSimples extends Produto {
     /**
      * preço do produto
      */
-    protected Double preco;
+    private Double preco;
 
     ProdutoSimples(String nome, String descricao, Double preco){
         super(nome, descricao);
@@ -25,6 +25,7 @@ public class ProdutoSimples extends Produto {
      * Retorna o preco do produto
      * @return Double
      */
+    @Override
     public Double getPreco(){
         return this.preco;
     }

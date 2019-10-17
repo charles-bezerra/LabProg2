@@ -31,6 +31,12 @@ public class Combo extends Produto {
         this.fator = novoFator;;
     }
 
+
+    /**
+     * Retorna o preco do combo com o desconto
+     * @return Double
+     */
+    @Override
     public Double getPreco(){
         Double valor = 0.0;
 
@@ -43,6 +49,6 @@ public class Combo extends Produto {
     @Override
     public String toString(){
         DecimalFormat df = new DecimalFormat("###,##0.00");
-        return this.nome + " - " + this.descricao + " - " + df.format(this.getPreco());
+        return this.nome + " - " + this.descricao + " - R$" + df.format(this.getPreco());
     }
 }

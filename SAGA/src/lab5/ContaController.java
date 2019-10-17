@@ -75,7 +75,7 @@ public class ContaController {
         resultado.append("Cliente: ");
         resultado.append( conta.getCliente().getNome() );
         resultado.append(" | ");
-        resultado.append( conta.exibe() );
+        resultado.append( conta.toString() );
 
         return resultado.toString();
     }

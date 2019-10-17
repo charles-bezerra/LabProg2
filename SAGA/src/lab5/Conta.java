@@ -63,7 +63,9 @@ public class Conta {
         return this.cliente;
     }
 
-    public String exibe(){
+
+    @Override
+    public String toString(){
         StringBuilder resultado = new StringBuilder("");
         Iterator<Compra> comprasIterator = this.compras.iterator();
 

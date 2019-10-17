@@ -14,10 +14,12 @@ public abstract class Produto implements Comparable<Produto> {
      * nome do produto
      */
     protected String nome;
+
     /**
      * descrição do produto
      */
     protected String descricao;
+
     /**
      * endereço composto do produto
      */
@@ -59,6 +61,7 @@ public abstract class Produto implements Comparable<Produto> {
     	return this.id;
     }
 
+    public Double getPreco(){ return 0.0; }
 
     @Override
     public String toString(){

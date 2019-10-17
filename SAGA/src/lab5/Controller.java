@@ -97,10 +97,10 @@ public class Controller {
         Validador.validaString("nome do produto nao pode ser vazio ou nulo.", nomeProduto);
         Validador.validaString("descricao do produto nao pode ser vazia ou nula.", descricaoProduto);
 
-        if (!this.clientes.encontraCliente(cpf))
+        if ( !this.clientes.encontraCliente(cpf) )
             throw new IllegalArgumentException("Erro ao cadastrar compra: cliente nao existe.");
 
-        if (!this.fornecedores.encontraFornecedor(fornecedor))
+        if ( !this.fornecedores.encontraFornecedor(fornecedor) )
             throw new IllegalArgumentException("Erro ao cadastrar compra: fornecedor nao existe");
 
         if ( !this.fornecedores.encontraProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto) )
@@ -112,14 +112,8 @@ public class Controller {
             this.contas.adicionaConta(cliente, fornecedorObj);
         }
 
-
         Produto produto = this.fornecedores.getProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto);
-        Double preco;
-
-        if (produto instanceof Combo)
-            preco = ((Combo) produto).getPreco();
-        else
-            preco = ((ProdutoSimples) produto).getPreco();
+        Double preco = produto.getPreco();
 
         return this.contas.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto, preco);
     }
@@ -141,27 +135,23 @@ public class Controller {
     public String exibeContasClientes() {
         Iterator<Cliente> clientesIterator = this.clientes.getClientes().iterator();
         Iterator<Conta> contasIterator;
-
         StringBuilder resultado = new StringBuilder("");
+
         Cliente cliente;
         Conta conta;
 
         while (clientesIterator.hasNext()) {
             cliente = clientesIterator.next();
             resultado.append(cliente.getNome());
-
             contasIterator = this.contas.getContas().iterator();
-
             while (contasIterator.hasNext()) {
                 conta = contasIterator.next();
                 if (conta.getCliente().equals(cliente)) {
                     resultado.append(" | ");
-                    resultado.append(conta.exibe());
+                    resultado.append( conta.toString() );
                 }
             }
-
-            if (clientesIterator.hasNext())
-                resultado.append(" | ");
+            if (clientesIterator.hasNext()) resultado.append(" | ");
         }
 
         return resultado.toString();
@@ -173,5 +163,10 @@ public class Controller {
 
     public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
         this.fornecedores.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
+    }
+
+
+    public void editaCombo(String fornecedor, String nome, String descricao, Double novoFator){
+        this.fornecedores.editaCombo(fornecedor, nome, descricao, novoFator);
     }
 }

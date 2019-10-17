@@ -163,6 +163,10 @@ public class Fornecedor implements Comparable<Fornecedor> {
         this.produtos.adicionaCombo(nome, descricao, fator, produtos);
     }
 
+    public void editaCombo(String nome, String descricao, Double novoFator){
+        this.produtos.editaCombo(nome, descricao, novoFator);
+    }
+
     @Override
     public String toString(){
         return this.nome + " - " + this.email + " - " + this.telefone;

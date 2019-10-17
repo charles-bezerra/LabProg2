@@ -92,14 +92,10 @@ public class ProdutoController {
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
         Validador.validaString("combo deve ter produtos.", produtos);
-        Validador.validaDouble("fator nao pode ser vazio ou nulo.", fator);
-
-        if ( fator < 0 && fator >= 1)
-            throw new IllegalArgumentException("Erro na edicao de combo: fator invalido.");
+        Validador.validaFator(fator);
 
         if ( this.encontraCombo(nome, descricao))
             throw new IllegalArgumentException("Erro no cadastro de combo: combo ja existe.");
-
 
         String nomeProduto, descricaoProduto;
         String[] listaDeProdutos = produtos.split(", ");
@@ -111,11 +107,11 @@ public class ProdutoController {
             nomeProduto = item.split(" - ")[0];
             descricaoProduto = item.split(" - ")[1];
 
-            if ( !this.encontraProdutoSimples(nomeProduto, descricaoProduto) )
-                throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");
-
             if ( this.encontraCombo(nomeProduto, descricaoProduto) )
                 throw new IllegalArgumentException(Validador.prefixoError + ": um combo nao pode possuir combos na lista de produtos.");
+
+            if ( !this.encontraProdutoSimples(nomeProduto, descricaoProduto) )
+                throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");
 
             produtosObj[i] = this.produtosSimples.get( new ProdutoID(nomeProduto, descricaoProduto) );
             i++;
@@ -190,6 +186,7 @@ public class ProdutoController {
         Validador.prefixoError = "Erro na edicao de combo";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
+        Validador.validaFator(novoFator);
 
         if ( !this.encontraCombo(nome, descricao) )
             throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");

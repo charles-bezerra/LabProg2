@@ -31,14 +31,28 @@ public class ClienteController {
         return clientes;
     }
 
+    /**
+     * Verifica se existe um cliente pelo seu cpf
+     * @param cpf identificador de cliente
+     * @return boolean
+     */
     public boolean encontraCliente(String cpf){
         return this.clientes.containsKey(cpf);
     }
 
+    /**
+     * Encontra e retorna um cliente
+     * @param cpf identificador de cliente
+     * @return Cliente
+     */
     public Cliente getCliente(String cpf){
         return this.clientes.get(cpf);
     }
 
+    /**
+     * Retorna uma lista contendo todos os clientes cadastrados
+     * @return List de clientes
+     */
     public List<Cliente> getClientes(){
         return new ArrayList<>( this.clientes.values() );
     }
@@ -130,9 +144,11 @@ public class ClienteController {
      */
     public boolean remove(String cpf){
         Validador.prefixoError = "Erro na remocao do cliente";
-        cpf = Validador.validaString("cpf nao pode ser vazio ou nulo.", cpf);
+        Validador.validaString("cpf nao pode ser vazio ou nulo", cpf);
+
         if ( !this.clientes.containsKey(cpf) )
             throw new IllegalArgumentException("Erro na remocao do cliente: cliente nao existe.");
+
         this.clientes.remove(cpf);
         return true;
     }
