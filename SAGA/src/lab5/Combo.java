@@ -13,6 +13,11 @@ public class Combo extends Produto {
             throw new IllegalArgumentException(Validador.prefixoError + "fator invalido.");
 
         this.fator = fator;
+
+        for (Produto item: produtos)
+            if (item instanceof Combo)
+                throw new IllegalArgumentException(Validador.prefixoError + ": ");
+
         this.produtos = (ProdutoSimples[]) produtos;
     }
 

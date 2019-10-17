@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="ObjectAid">
+  <library name="easyaccept">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/easyaccept.jar!/" />
     </CLASSES>

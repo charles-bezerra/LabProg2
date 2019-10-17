@@ -312,6 +312,12 @@ public class FornecedorController {
      * @param produtos
      */
     public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
+        Validador.prefixoError="Erro no cadastro de combo";
+        Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
+
+        if ( !this.encontraFornecedor(fornecedor) )
+            throw new IllegalArgumentException(Validador.prefixoError + ": fornecedor nao existe.");
+
         this.fornecedores.get(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
     }
 }

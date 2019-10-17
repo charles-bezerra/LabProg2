@@ -71,6 +71,11 @@ public class ClienteController {
         return this.clientes.get(cpf).toString();
     }
 
+
+    /**
+     * Lista todos clientes cadastrados em ordem alfabética
+     * @return  repesentação de cliente de todos os clientes separados com < | >
+     */
     public String exibeClientes(){
         if (this.getClientesOrdenados() == null)
             return null;
@@ -125,7 +130,7 @@ public class ClienteController {
      */
     public boolean remove(String cpf){
         Validador.prefixoError = "Erro na remocao do cliente";
-        cpf = Validador.validaString("cpf nao pode ser vazio ou nulo", cpf);
+        cpf = Validador.validaString("cpf nao pode ser vazio ou nulo.", cpf);
         if ( !this.clientes.containsKey(cpf) )
             throw new IllegalArgumentException("Erro na remocao do cliente: cliente nao existe.");
         this.clientes.remove(cpf);

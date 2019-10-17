@@ -11,7 +11,7 @@ class ClienteTest {
 
     @BeforeEach
     void criarObjetos(){
-        this.cliente = new Cliente("123","Charles Bezerra", "charles@gmail.com", "MyLab");
+        this.cliente = new Cliente("01762694441","Charles Bezerra", "charles@gmail.com", "MyLab");
     }
 
     @Test
@@ -37,7 +37,7 @@ class ClienteTest {
     @Test
     void testCriarComNomeNulo() {
         try {
-            Cliente cliente1 = new Cliente("123456", null, "cliente@gmail.com","LabCliente");
+            Cliente cliente1 = new Cliente("01762694441", null, "cliente@gmail.com","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.", error.toString());
@@ -47,7 +47,7 @@ class ClienteTest {
     @Test
     void testCriarComNomeInvalido() {
         try {
-            Cliente cliente1 = new Cliente("123456", "", "cliente@gmail.com","LabCliente");
+            Cliente cliente1 = new Cliente("01762694441", "", "cliente@gmail.com","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.", error.toString());
@@ -57,7 +57,7 @@ class ClienteTest {
     @Test
     void testCriarComEmailNulo() {
         try {
-            Cliente cliente1 = new Cliente("123456", "Cliente 1", null,"LabCliente");
+            Cliente cliente1 = new Cliente("01762694441", "Cliente 1", null,"LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: email nao pode ser vazio ou nulo.", error.toString());
@@ -67,7 +67,7 @@ class ClienteTest {
     @Test
     void testCriarComEmailInvalido() {
         try {
-            Cliente cliente1 = new Cliente("123456", "Cliente 1", "","LabCliente");
+            Cliente cliente1 = new Cliente("01762694441", "Cliente 1", "","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: email nao pode ser vazio ou nulo.", error.toString());
@@ -77,20 +77,20 @@ class ClienteTest {
     @Test
     void testCriarComLocalizacaoNulo() {
         try {
-            Cliente cliente1 = new Cliente("123456", "Cliente", "cliente1@gmail.com",null);
+            Cliente cliente1 = new Cliente("01762694441", "Cliente", "cliente1@gmail.com",null);
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazio ou nulo.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.", error.toString());
         }
     }
 
     @Test
     void testCriarComTelefoneInvalido() {
         try {
-            Cliente cliente1 = new Cliente("123456", "Cliente", "cliente1@gmail.com","");
+            Cliente cliente1 = new Cliente("01762694441", "Cliente", "cliente1@gmail.com","");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazio ou nulo.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.", error.toString());
         }
     }
 
@@ -137,21 +137,21 @@ class ClienteTest {
 
     @Test
     void testToString() {
-        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente1 = new Cliente("01762694441", "Cliente 1", "cliente@gmail.com", "myLab");
         assertEquals("Cliente 1 - myLab - cliente@gmail.com", cliente1.toString());
     }
 
     @Test
     void testHashCode() {
-        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
-        Cliente cliente2 = new Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        Cliente cliente1 = new Cliente("01762694441", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = new Cliente("01762694441", "Cliente 2", "cliente1@gmail.com", "Lab");
         assertEquals(cliente1.hashCode(), cliente2.hashCode());
     }
 
     @Test
     void testEquals() {
-        Cliente cliente1 = new Cliente("017.626.944-41", "Cliente 1", "cliente@gmail.com", "myLab");
-        Cliente cliente2 = new Cliente("017.626.944-41", "Cliente 2", "cliente1@gmail.com", "Lab");
+        Cliente cliente1 = new Cliente("01762694441", "Cliente 1", "cliente@gmail.com", "myLab");
+        Cliente cliente2 = new Cliente("01762694441", "Cliente 2", "cliente1@gmail.com", "Lab");
         assertEquals(cliente1, cliente2);
     }
 }

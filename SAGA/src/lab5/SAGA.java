@@ -12,6 +12,7 @@ public class SAGA {
                 "testes_aceitacao/use_case_3.txt",
                 "testes_aceitacao/use_case_4.txt",
                 "testes_aceitacao/use_case_5.txt",
+                "testes_aceitacao/use_case_6.txt",
         };
         EasyAccept.main(args);
     }

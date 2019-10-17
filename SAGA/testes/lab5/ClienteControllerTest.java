@@ -12,9 +12,9 @@ class ClienteControllerTest {
     @BeforeEach
     void criarObjetos() {
          this.clientes = new ClienteController();
-         this.clientes.adiciona("017.626.944-41", "Charles", "charles@gmail.com", "SPLab");
-         this.clientes.adiciona("017.626.944-42", "Bezerra", "bezerra@gmail.com", "LSD");
-         this.clientes.adiciona("017.626.944-43", "Oliveira", "oliveira@gmail.com", "LIT");
+         this.clientes.adiciona("01762694441", "Charles", "charles@gmail.com", "SPLab");
+         this.clientes.adiciona("01762694442", "Bezerra", "bezerra@gmail.com", "LSD");
+         this.clientes.adiciona("01762694443", "Oliveira", "oliveira@gmail.com", "LIT");
     }
 
     @Test
@@ -40,7 +40,7 @@ class ClienteControllerTest {
     @Test
     void testAdicionaComNomeNulo() {
         try {
-            this.clientes.adiciona("12345", null, "cliente@gmail.com","LabCliente");
+            this.clientes.adiciona("12312312345", null, "cliente@gmail.com","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.", error.toString());
@@ -50,7 +50,7 @@ class ClienteControllerTest {
     @Test
     void testAdicionaComNomeInvalido() {
         try {
-            this.clientes.adiciona("12345", "", "cliente@gmail.com","LabCliente");
+            this.clientes.adiciona("12312312345", "", "cliente@gmail.com","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.", error.toString());
@@ -60,7 +60,7 @@ class ClienteControllerTest {
     @Test
     void testAdicionaComEmailNulo() {
         try {
-            this.clientes.adiciona("12345", "Cliente 1", null,"LabCliente");
+            this.clientes.adiciona("12312312345", "Cliente 1", null,"LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: email nao pode ser vazio ou nulo.", error.toString());
@@ -70,7 +70,7 @@ class ClienteControllerTest {
     @Test
     void testAdicionaComEmailInvalido() {
         try {
-            this.clientes.adiciona("12345", "Cliente 1", "","LabCliente");
+            this.clientes.adiciona("12312312345", "Cliente 1", "","LabCliente");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: email nao pode ser vazio ou nulo.", error.toString());
@@ -80,20 +80,20 @@ class ClienteControllerTest {
     @Test
     void testAdicionaComLocalizacaoNula() {
         try {
-            this.clientes.adiciona("12345", "Cliente 1", "cliente@gmail.com", null);
+            this.clientes.adiciona("12312312345", "Cliente 1", "cliente@gmail.com", null);
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazio ou nulo.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.", error.toString());
         }
     }
 
     @Test
     void testAdicionaComLocalizacaoInvalida() {
         try {
-            this.clientes.adiciona("12345", "Cliente 1", "cliente@gmail.com","");
+            this.clientes.adiciona("12312312345", "Cliente 1", "cliente@gmail.com","");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazio ou nulo.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.", error.toString());
         }
     }
 
@@ -101,10 +101,10 @@ class ClienteControllerTest {
     @Test
     void testExibeComClienteInegistente(){
          try {
-            this.clientes.exibe("12345");
+            this.clientes.exibe("12312312345");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro na exibicao do cliente: cliente não existe", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro na exibicao do cliente: cliente nao existe.", error.toString());
         }
     }
 
@@ -129,9 +129,9 @@ class ClienteControllerTest {
     }
 
     @Test
-    void testLista() {
-    	String listagem = "Charles - charles@gmail.com - SPLab | Bezerra - bezerra@gmail.com - LSD | Oliveira - oliveira@gmail.com - LIT";
-    	assertEquals(listagem, this.clientes.lista());
+    void testExibeClientes() {
+    	String listagem = "Bezerra - LSD - bezerra@gmail.com | Charles - SPLab - charles@gmail.com | Oliveira - LIT - oliveira@gmail.com";
+    	assertEquals(listagem, this.clientes.exibeClientes());
     }
 
     @Test
@@ -157,7 +157,7 @@ class ClienteControllerTest {
     @Test
     void testEditaComAtributoNulo() {
         try {
-            this.clientes.edita("017.626.944-41", null, "teste");
+            this.clientes.edita("01762694441", null, "teste");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
@@ -167,7 +167,7 @@ class ClienteControllerTest {
     @Test
     void testEditaComAtributoInvalido() {
         try {
-            this.clientes.edita("017.626.944-41", "", "teste");
+            this.clientes.edita("01762694441", "", "teste");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.", error.toString());
@@ -177,17 +177,17 @@ class ClienteControllerTest {
     @Test
     void testEditaComAtributoInegistente() {
         try {
-            this.clientes.edita("017.626.944-50", "nome", "teste");
+            this.clientes.edita("01762694441", "sobrenome", "teste");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: cliente nao existe.", error.toString());
+            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: atributo nao existe.", error.toString());
         }
     }
 
     @Test
     void testEditaComValorNulo() {
         try {
-            this.clientes.edita("017.626.944-41", "nome", null);
+            this.clientes.edita("01762694441", "nome", null);
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());
@@ -197,7 +197,7 @@ class ClienteControllerTest {
     @Test
     void testEditaComValorInvalido() {
         try {
-            this.clientes.edita("017.626.944-41", "nome", "");
+            this.clientes.edita("01762694441", "nome", "");
             fail("Exceção deveria ser lançada!");
         }catch (IllegalArgumentException error){
             assertEquals("java.lang.IllegalArgumentException: Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.", error.toString());

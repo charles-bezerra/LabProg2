@@ -22,7 +22,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona(null, "email@gmail.com", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -32,7 +32,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona("", "email@gmail.com", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -42,7 +42,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona("Zeno", null, "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: email nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -52,7 +52,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona("Zeno", "", "9999999");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: email nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -62,7 +62,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona("Zeno", "zeno@gmail.com", null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -72,7 +72,7 @@ class FornecedorControllerTest {
     		this.fornecedores.adiciona("Zeno", "zeno@gmail.com", "");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro de fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -83,7 +83,7 @@ class FornecedorControllerTest {
     		this.fornecedores.exibe(null);
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
@@ -93,13 +93,13 @@ class FornecedorControllerTest {
     		this.fornecedores.exibe("");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao de fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na exibicao do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
 
     @Test
     void testLista() {
-    	String listagem = "Helhao - helhao@gmail.com - 99999999 | Rotatoria - rotatoria@gmail.com - 8888888";
+    	String listagem = "Rotatoria - rotatoria@gmail.com - 8888888 | Helhao - helhao@gmail.com - 99999999";
     	assertEquals(listagem, this.fornecedores.lista());
     }
 
@@ -109,7 +109,7 @@ class FornecedorControllerTest {
     		this.fornecedores.edita(null, "email", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}
     }
     
@@ -119,7 +119,7 @@ class FornecedorControllerTest {
     		this.fornecedores.edita("", "email", "teste");
     		fail("Exceção deveria ser lançada!");
     	}catch(IllegalArgumentException error) {
-    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome do fornecedor nao pode ser vazio ou nulo.", error.toString());
+    		assertEquals("java.lang.IllegalArgumentException: Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.", error.toString());
     	}    	
     }
     
@@ -177,7 +177,7 @@ class FornecedorControllerTest {
 	void testExibeProdutos(){
     	this.fornecedores.remove("Helhao");
     	this.fornecedores.remove("Rotatoria");
-    	String esperado = "Dona Inês - Tapioca completa - Tapioca com coco, queijo e manteiga - R$3,50 | Dona Inês - Bolo - Bolo de chocolate - R$3,00 | Dona Inês - Tapioca simples - Tapioca com manteiga - R$3,00 | Josenilda - Biscoito doce - Maizena - R$3,00 | Josenilda - Mousse - Mousse de Limão - R$4,00 | Josenilda - Salada - Salada de frutas com leite condensado - R$4,50";
+    	String esperado = "Dona Inês - Bolo - Bolo de chocolate - R$3,00 | Dona Inês - Tapioca completa - Tapioca com coco, queijo e manteiga - R$3,50 | Dona Inês - Tapioca simples - Tapioca com manteiga - R$3,00 | Josenilda - Biscoito doce - Maizena - R$3,00 | Josenilda - Mousse - Mousse de Limão - R$4,00 | Josenilda - Salada - Salada de frutas com leite condensado - R$4,50 | Ron Weasley -";
 
     	this.fornecedores.adiciona("Dona Inês", "dines@gmail.com", "83 9999-5050");
 		this.fornecedores.adiciona("Josenilda" , "nilda@computacao.ufcg.edu.br", "83 98736-5050" );
