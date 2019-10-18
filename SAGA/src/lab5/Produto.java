@@ -61,7 +61,7 @@ public abstract class Produto implements Comparable<Produto> {
     	return this.id;
     }
 
-    public Double getPreco(){ return 0.0; }
+    public Double getPreco(){ return new Double(0.0); }
 
     @Override
     public String toString(){
@@ -85,8 +85,8 @@ public abstract class Produto implements Comparable<Produto> {
 
     @Override
     public int compareTo(Produto p) {
-    	return getID().toString().compareTo(
-    	     p.getID().toString()
-        );
+    	if (this.getNome().compareTo( p.getNome() ) == 1) //Se os nomes dos produtos forem iguais
+    	    return this.toString().compareTo( p.toString() ); //Retorne a comparação de suas represetações textuais
+    	return this.getNome().compareTo( p.getNome() ); //Se não, retorne a comparação de seus nomes
     }
 }

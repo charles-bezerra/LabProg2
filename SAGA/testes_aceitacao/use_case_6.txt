@@ -70,6 +70,6 @@ expectError "Erro ao exibir contas do cliente: cliente nao existe." exibeContasC
 
 adicionaCliente cpf="84591243910" nome="Joao McCree" email="joao_mccree@ccc.ufcg.edu.br" localizacao="SPG"
 
-expectError "Erro ao exibir contas do cliente: cliente nao tem nenhuma conta." exibeContasClientes cpf="84591243910"
+    expectError "Erro ao exibir contas do cliente: cliente nao tem nenhuma conta." exibeContasClientes cpf="84591243910"
 expectError "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo." exibeContasClientes cpf=""
 expectError "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo." exibeContasClientes cpf=

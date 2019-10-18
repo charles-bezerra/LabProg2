@@ -25,7 +25,7 @@ public class FornecedorController {
      * Ordena e retorna todos os fornecedores em ordem alfabética
      * @return ArrayList -> Fornecedor
      */
-    private List<Fornecedor> getFornecedoresOrdenados() {
+    public List<Fornecedor> getFornecedoresOrdenados() {
     	if (this.fornecedores.isEmpty())
     		return null;
     	List<Fornecedor> fornecedores =  new ArrayList<>( this.fornecedores.values() );
@@ -55,10 +55,9 @@ public class FornecedorController {
 
     /**
      * Recupera todos os fornecedores
-     * @param cpf
      * @return
      */
-    public List<Fornecedor> getFornecedores(String cpf){
+    public List<Fornecedor> getFornecedores(){
         return new ArrayList<>( this.fornecedores.values() );
     }
 
@@ -70,7 +69,7 @@ public class FornecedorController {
      * @return retorna o nome
      */
     public String adiciona(String nome, String email, String telefone){
-        if (this.fornecedores.containsKey(nome))
+        if (this.encontraFornecedor(nome))
             throw new IllegalArgumentException("Erro no cadastro de fornecedor: fornecedor ja existe.");
         this.fornecedores.put(nome, new Fornecedor(nome, email, telefone));
         return nome;
@@ -84,9 +83,9 @@ public class FornecedorController {
     public String exibe(String nome){
         Validador.prefixoError = "Erro na exibicao do fornecedor";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
-        if (!this.fornecedores.containsKey(nome))
+        if (!this.encontraFornecedor(nome))
             throw new IllegalArgumentException("Erro na exibicao do fornecedor: fornecedor nao existe.");
-        return this.fornecedores.get(nome).toString();
+        return this.getFornecedor(nome).toString();
     }
 
 
@@ -134,9 +133,9 @@ public class FornecedorController {
     public void edita(String nome, String atributo, String novoValor){
     	Validador.prefixoError="Erro na edicao do fornecedor";
     	Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
-        if (!this.fornecedores.containsKey(nome))
+        if (!this.encontraFornecedor(nome))
             throw new IllegalArgumentException("Erro na edicao do fornecedor: fornecedor nao existe.");
-        this.fornecedores.get(nome).edita(atributo, novoValor);
+        this.getFornecedor(nome).edita(atributo, novoValor);
     }
 
     /**
@@ -146,7 +145,7 @@ public class FornecedorController {
     public void remove(String nome){
     	Validador.prefixoError="Erro na remocao do fornecedor";
     	Validador.validaString("nome do fornecedor nao pode ser vazio ou nulo.", nome);
-        if (!this.fornecedores.containsKey(nome))
+        if (!this.encontraFornecedor(nome))
             throw new IllegalArgumentException("Erro na remocao do fornecedor: fornecedor nao existe.");
         this.fornecedores.remove(nome);
     }
@@ -159,7 +158,7 @@ public class FornecedorController {
      * @return boolean
      */
     public boolean encontraProdutoFornecedor(String fornecedor, String nome, String descricao){
-        return this.fornecedores.get(fornecedor).encontraProduto(nome, descricao);
+        return this.getFornecedor(fornecedor).encontraProduto(nome, descricao);
     }
 
     /**
@@ -183,7 +182,7 @@ public class FornecedorController {
     public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco){
     	Validador.prefixoError="Erro no cadastro de produto";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
-        if (!this.fornecedores.containsKey(fornecedor))
+        if (!this.encontraFornecedor(fornecedor))
             throw new IllegalArgumentException("Erro no cadastro de produto: fornecedor nao existe.");
         this.getFornecedor(fornecedor).adicionaProduto(nome, descricao, preco);
     }
@@ -198,7 +197,7 @@ public class FornecedorController {
     public String exibeProduto(String nome, String descricao, String fornecedor){
         Validador.prefixoError="Erro na exibicao de produto";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
-        if (!this.fornecedores.containsKey(fornecedor))
+        if (!this.encontraFornecedor(fornecedor))
             throw new IllegalArgumentException("Erro na exibicao de produto: fornecedor nao existe.");
         return this.getFornecedor(fornecedor).exibeProduto(nome,descricao);
     }
@@ -322,7 +321,13 @@ public class FornecedorController {
     }
 
 
-    public void editaCombo(String fornecedor, String nome, String descricao, Double novoFator){
+    public void editaCombo(String nome, String descricao, String fornecedor, Double novoFator ){
+        Validador.prefixoError="Erro na edicao de combo";
+        Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
+
+        if (!encontraFornecedor(fornecedor))
+            throw new IllegalArgumentException(Validador.prefixoError + ": fornecedor nao existe.");
+
         this.getFornecedor(fornecedor).editaCombo(nome, descricao, novoFator);
     }
 }

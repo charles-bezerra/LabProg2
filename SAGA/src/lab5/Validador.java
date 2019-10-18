@@ -1,8 +1,5 @@
 package lab5;
 
-import java.awt.*;
-import java.lang.reflect.Array;
-
 public class Validador {
     public static String prefixoError;
 
@@ -33,6 +30,12 @@ public class Validador {
     }
 
     public static Double validaDouble(String msg, Double valor) {
+        if (valor == null)
+            throw new IllegalArgumentException(prefixoError + ": " + msg);
+        return valor;
+    }
+
+    public static Float validaFloat(String msg, Float valor) {
         if (valor == null)
             throw new IllegalArgumentException(prefixoError + ": " + msg);
         return valor;

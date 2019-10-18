@@ -2,11 +2,11 @@ package lab5;
 
 import java.text.DecimalFormat;
 
-public class Combo extends Produto {
+public class ProdutoCombo extends Produto {
     private ProdutoSimples[] produtos;
     private Double fator;
 
-    Combo(String nome, String descricao, Double fator, Produto[] produtos){
+    ProdutoCombo(String nome, String descricao, Double fator, Produto[] produtos){
         super(nome, descricao);
 
         if (fator < 0 && fator >= 1)
@@ -15,7 +15,7 @@ public class Combo extends Produto {
         this.fator = fator;
 
         for (Produto item: produtos)
-            if (item instanceof Combo)
+            if (item instanceof ProdutoCombo)
                 throw new IllegalArgumentException(Validador.prefixoError + ": ");
 
         this.produtos = (ProdutoSimples[]) produtos;
@@ -38,7 +38,7 @@ public class Combo extends Produto {
      */
     @Override
     public Double getPreco(){
-        Double valor = 0.0;
+        Double valor = new Double(0);
 
         for (ProdutoSimples produto: this.produtos)
             valor += produto.getPreco();
@@ -49,6 +49,6 @@ public class Combo extends Produto {
     @Override
     public String toString(){
         DecimalFormat df = new DecimalFormat("###,##0.00");
-        return this.nome + " - " + this.descricao + " - R$" + df.format(this.getPreco());
+        return this.nome + " - " + this.descricao + " - R$" + df.format(this.getPreco()).replace(".",",");
     }
 }

@@ -9,7 +9,7 @@ import java.util.*;
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
-public class ProdutoController {
+public class ProdutoController{
     /**
      * Coleção que contem todos os produtos
      */
@@ -23,7 +23,7 @@ public class ProdutoController {
     /**
      *
      */
-    private Map<ProdutoID, Combo> combos;
+    private Map<ProdutoID, ProdutoCombo> combos;
 
     /**
      * Construtor do ProdutoController
@@ -118,7 +118,7 @@ public class ProdutoController {
         }
 
         ProdutoID id = new ProdutoID(nome, descricao);
-        Combo combo = new Combo(nome, descricao, fator, produtosObj);
+        ProdutoCombo combo = new ProdutoCombo(nome, descricao, fator, produtosObj);
 
         this.produtos.put(id, combo);
         this.combos.put(id, combo);
@@ -139,7 +139,7 @@ public class ProdutoController {
         if ( !encontraProduto(nome, descricao) )
         	throw new IllegalArgumentException("Erro na exibicao de produto: produto nao existe.");
         
-        return this.produtos.get(new ProdutoID(nome, descricao)).toString();
+        return this.getProduto(nome, descricao).toString();
     }
 
     /**
@@ -191,8 +191,7 @@ public class ProdutoController {
         if ( !this.encontraCombo(nome, descricao) )
             throw new IllegalArgumentException(Validador.prefixoError + ": produto nao existe.");
 
-        ProdutoID id = new ProdutoID(nome, descricao);
-        this.combos.get(id).setFator(novoFator);
+        this.combos.get( new ProdutoID(nome, descricao) ).setFator(novoFator);
     }
 
     public void remove(String nome, String descricao){

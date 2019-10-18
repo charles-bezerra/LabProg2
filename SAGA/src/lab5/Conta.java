@@ -1,5 +1,6 @@
 package lab5;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -29,7 +30,6 @@ public class Conta {
         this.id = id;
         this.cliente = cliente;
         this.fornecedor = fornecedor;
-
         this.compras = new ArrayList<>();
     }
 
@@ -52,17 +52,21 @@ public class Conta {
      * Retorna o valor total do debito da conta
      * @return Double
      */
-    public Double getDebito(){
+    public String getDebito(){
         Double valor = 0.0;
         for (Compra compra: this.compras)
-            valor += compra.getPreco();
-        return valor;
+            valor = valor + compra.getPreco();
+        DecimalFormat df = new DecimalFormat(".00");
+        return df.format(valor);
     }
 
     public Cliente getCliente(){
         return this.cliente;
     }
 
+    public Fornecedor getFornecedor(){
+        return this.fornecedor;
+    }
 
     @Override
     public String toString(){
@@ -95,4 +99,5 @@ public class Conta {
         Conta outraConta = (Conta) obj;
         return outraConta.hashCode() == this.hashCode();
     }
+
 }

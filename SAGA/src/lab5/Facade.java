@@ -1,105 +1,113 @@
 package lab5;
 
 public class Facade {
-	private Controller controller;
-	
-    public Facade(){
-    	this.controller = new Controller();
+    private Controller controller;
+
+    public Facade() {
+        this.controller = new Controller();
     }
 
-    public String adicionaCliente(String cpf, String nome, String email, String localizacao){
+    public String adicionaCliente(String cpf, String nome, String email, String localizacao) {
         return this.controller.adicionaCliente(cpf, nome, email, localizacao);
     }
 
-    public String exibeCliente(String cpf){
+    public String exibeCliente(String cpf) {
         return this.controller.exibeCliente(cpf);
     }
 
-    public String exibeClientes(){
+    public String exibeClientes() {
         return this.controller.exibeClientes();
     }
 
-    public String listaCliente(){
+    public String listaCliente() {
         return this.controller.listaClientes();
     }
 
-    public void editaCliente(String cpf, String atributo, String novoValor){
+    public void editaCliente(String cpf, String atributo, String novoValor) {
         this.controller.editaCliente(cpf, atributo, novoValor);
     }
 
-    public void removeCliente(String cpf){
+    public void removeCliente(String cpf) {
         this.controller.removeCliente(cpf);
     }
 
-    public String adicionaFornecedor(String nome, String email, String telefone){
+    public String adicionaFornecedor(String nome, String email, String telefone) {
         return this.controller.adicionaFornecedor(nome, email, telefone);
     }
 
-    public String exibeFornecedor(String nome){
+    public String exibeFornecedor(String nome) {
         return this.controller.exibeFornecedor(nome);
     }
 
-    public String exibeFornecedores(){
+    public String exibeFornecedores() {
         return this.controller.exibeFornecedores();
     }
 
-    public String listaFornecedores(){
-        return  this.controller.listaFornecedores();
+    public String listaFornecedores() {
+        return this.controller.listaFornecedores();
     }
 
-    public void editaFornecedor(String nome, String atributo, String novoValor){
-        this.controller.editaFornecedor(nome,atributo,novoValor);
+    public void editaFornecedor(String nome, String atributo, String novoValor) {
+        this.controller.editaFornecedor(nome, atributo, novoValor);
     }
 
-    public void removeFornecedor(String nome){
+    public void removeFornecedor(String nome) {
         this.controller.removeFornecedor(nome);
     }
 
-    public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco){
+    public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco) {
         this.controller.adicionaProduto(fornecedor, nome, descricao, preco);
     }
 
-    public String exibeProduto(String nome, String descricao, String fornecedor){
+    public String exibeProduto(String nome, String descricao, String fornecedor) {
         return this.controller.exibeProduto(nome, descricao, fornecedor);
     }
 
-    public String exibeProdutos(){
+    public String exibeProdutos() {
         return this.controller.exibeProdutos();
     }
 
-    public String exibeProdutosFornecedor(String fornecedor){
+    public String exibeProdutosFornecedor(String fornecedor) {
         return this.controller.exibeProdutosFornecedor(fornecedor);
     }
 
-    public void editaProduto(String nome, String descricao, String fornecedor, Double novoPreco){
+    public void editaProduto(String nome, String descricao, String fornecedor, Double novoPreco) {
         this.controller.editaProduto(nome, descricao, fornecedor, novoPreco);
     }
 
-    public void removeProduto(String nome, String descricao, String fornecedor){
+    public void removeProduto(String nome, String descricao, String fornecedor) {
         this.controller.removeProduto(nome, descricao, fornecedor);
     }
 
-    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto){
+    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto) {
         return this.controller.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto);
     }
 
-    public String exibeContaCliente(String cpf, String fornecedor){
-        return this.controller.exibeContaCliente(cpf, fornecedor);
+    public String exibeContas(String cpf, String fornecedor) {
+        return this.controller.exibeConta(cpf, fornecedor);
     }
 
-    public String exibeContasClientes(){
-        return this.controller.exibeContasClientes();
+    public String exibeContasClientes(String cpf) {
+        return this.controller.exibeContasClientes(cpf);
+    }
+
+    public String exibeTodasClientes() {
+        return this.controller.exibeTodasContas();
     }
 
     public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
         this.controller.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
     }
 
-    public void editaCombo(String fornecedor, String nome, String descricao, Double novoFator){
-        this.controller.editaCombo(fornecedor, nome, descricao, novoFator);
+    public void editaCombo(String nome, String descricao, String fornecedor, Double novoFator) {
+        this.controller.editaCombo(nome, descricao, fornecedor, novoFator);
     }
 
-    public Double getDebito(String cpf, String fornecedor){
+    public String getDebito(String cpf, String fornecedor) {
         return this.controller.getDebito(cpf, fornecedor);
+    }
+
+    public void realizaPagamento(String cpf, String fornecedor) {
+        this.controller.realizaPagamento(cpf, fornecedor);
     }
 }
