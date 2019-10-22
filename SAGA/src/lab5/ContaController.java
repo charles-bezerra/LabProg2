@@ -4,9 +4,13 @@ import java.util.*;
 
 public class ContaController {
     private Map<ContaID, Conta> contas;
+    private ClienteController clientes;
+    private FornecedorController fornecedores;
 
-    ContaController(){
+    ContaController(ClienteController clientes, FornecedorController fornecedores){
         this.contas = new HashMap<>();
+        this.clientes = clientes;
+        this.fornecedores = fornecedores;
     }
 
     public boolean encontraConta(String cpf, String fornecedor){
@@ -60,9 +64,15 @@ public class ContaController {
     }
 
     public String exibeContaCliente(String cpf, String fornecedor){
-        Validador.prefixoError="Erro ao exibir compras";
+        Validador.prefixoError = "Erro ao exibir conta do cliente";
         Validador.validaCPF(cpf);
-        Validador.validaString("fornecedor nao pode vazio ou nulo.", fornecedor);
+        Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
+
+        if (!this.clientes.encontraCliente(cpf))
+            throw new IllegalArgumentException(Validador.prefixoError + ": cliente nao existe.");
+
+        if (!this.fornecedores.encontraFornecedor(fornecedor))
+            throw new IllegalArgumentException(Validador.prefixoError + ": fornecedor nao existe");
 
         ContaID contaID = new ContaID(cpf, fornecedor);
         Conta conta = this.contas.get(contaID);
@@ -79,4 +89,60 @@ public class ContaController {
 
         return resultado.toString();
     }
+
+    //Compras
+    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto) {
+        Validador.prefixoError = "Erro ao cadastrar compra";
+        Validador.validaCPF(cpf);
+        Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
+
+        Validador.validaString("nome do produto nao pode ser vazio ou nulo.", nomeProduto);
+        Validador.validaString("descricao do produto nao pode ser vazia ou nula.", descricaoProduto);
+
+        if ( !this.clientes.encontraCliente(cpf) )
+            throw new IllegalArgumentException("Erro ao cadastrar compra: cliente nao existe.");
+
+        if ( !this.fornecedores.encontraFornecedor(fornecedor) )
+            throw new IllegalArgumentException("Erro ao cadastrar compra: fornecedor nao existe");
+
+        if ( !this.fornecedores.encontraProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto) )
+            throw new IllegalArgumentException("Erro ao cadastrar compra: produto nao existe.");
+
+        if (!this.encontraConta(cpf, fornecedor)) {
+            Cliente cliente = this.clientes.getCliente(cpf);
+            Fornecedor fornecedorObj = this.fornecedores.getFornecedor(fornecedor);
+            this.adicionaConta(cliente, fornecedorObj);
+        }
+
+        Produto produto = this.fornecedores.getProdutoFornecedor(fornecedor, nomeProduto, descricaoProduto);
+        Double preco = produto.getPreco();
+
+        return this.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto, preco);
+    }
+
+    public String exibeContasClientes() {
+        Iterator<Cliente> clientesIterator = this.clientes.getClientes().iterator();
+        Iterator<Conta> contasIterator;
+        StringBuilder resultado = new StringBuilder("");
+
+        Cliente cliente;
+        Conta conta;
+
+        while (clientesIterator.hasNext()) {
+            cliente = clientesIterator.next();
+            resultado.append(cliente.getNome());
+            contasIterator = this.getContas().iterator();
+            while (contasIterator.hasNext()) {
+                conta = contasIterator.next();
+                if (conta.getCliente().equals(cliente)) {
+                    resultado.append(" | ");
+                    resultado.append( conta.toString() );
+                }
+            }
+            if (clientesIterator.hasNext()) resultado.append(" | ");
+        }
+
+        return resultado.toString();
+    }
+
 }

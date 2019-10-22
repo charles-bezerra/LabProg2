@@ -1,5 +1,6 @@
 package lab5;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -84,6 +85,7 @@ public class Fornecedor implements Comparable<Fornecedor> {
         else throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
 
     }
+
 
     /**
      * Procura se existe um determinado produto
