@@ -1,5 +1,9 @@
 package lab5;
 
+import lab5.controllers.ClienteController;
+import lab5.controllers.ContaController;
+import lab5.controllers.FornecedorController;
+
 public class Facade {
 	private ClienteController clientes;
 	private FornecedorController fornecedores;
@@ -88,23 +92,27 @@ public class Facade {
         this.fornecedores.adicionaCombo(fornecedor, nome, descricao, fator, produtos);
     }
 
-    public void editaCombo(){
-
+    public void editaCombo(String fornecedor, String nome, String descricao, Double novoFator){
+        this.fornecedores.editaCombo(fornecedor, nome, descricao, novoFator);
     }
 
-    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto){
+    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto) {
         return this.contas.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto);
     }
 
     public String exibeContaCliente(String cpf, String fornecedor){
-        return this.contas.exibeContaCliente(cpf, fornecedor);
+        return this.contas.exibeConta(cpf, fornecedor);
     }
 
     public String exibeContasClientes(){
         return this.contas.exibeContasClientes();
     }
 
-    public Double getDebito(String cpf, String fornecedor){
+    public String getDebito(String cpf, String fornecedor){
         return this.contas.getDebito(cpf, fornecedor);
+    }
+
+    public void realizaPagamento(String cpf, String fornecedor) {
+        this.contas.realizaPagamento(cpf, fornecedor);
     }
 }

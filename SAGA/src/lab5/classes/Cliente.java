@@ -1,4 +1,4 @@
-package lab5;
+package lab5.classes;
 
 import java.util.Objects;
 
@@ -32,7 +32,7 @@ public class Cliente implements Comparable<Cliente> {
      * @param email é atribuido ao email do Cliente
      * @param localizacao é atribuido a localizacao do Cliente
      */
-    Cliente(String cpf, String nome, String email, String localizacao){
+    public Cliente(String cpf, String nome, String email, String localizacao){
         Validador.prefixoError = "Erro no cadastro do cliente";
         this.cpf = Validador.validaCPF(cpf);
         this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);

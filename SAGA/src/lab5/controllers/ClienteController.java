@@ -1,4 +1,7 @@
-package lab5;
+package lab5.controllers;
+
+import lab5.classes.*;
+import lab5.classes.Validador;
 
 import java.util.*;
 

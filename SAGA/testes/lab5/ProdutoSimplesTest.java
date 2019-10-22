@@ -1,6 +1,8 @@
 package lab5;
 
-import org.junit.jupiter.api.Test;  
+import lab5.classes.Produto;
+import lab5.classes.ProdutoSimples;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 

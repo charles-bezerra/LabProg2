@@ -1,5 +1,6 @@
 package lab5;
 
+import lab5.controllers.ClienteController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 

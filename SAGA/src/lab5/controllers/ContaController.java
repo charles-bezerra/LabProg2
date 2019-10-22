@@ -1,4 +1,7 @@
-package lab5;
+package lab5.controllers;
+
+import lab5.IDs.ContaID;
+import lab5.classes.*;
 
 import java.util.*;
 
@@ -7,28 +10,33 @@ public class ContaController {
     private ClienteController clientes;
     private FornecedorController fornecedores;
 
-    ContaController(ClienteController clientes, FornecedorController fornecedores){
+
+    ContaController(ClienteController clientes, FornecedorController fornecedores) {
         this.contas = new HashMap<>();
         this.clientes = clientes;
         this.fornecedores = fornecedores;
     }
 
-    public boolean encontraConta(String cpf, String fornecedor){
+    public boolean encontraConta(String cpf, String fornecedor) {
         return this.contas.containsKey(new ContaID(cpf, fornecedor));
     }
 
-    public List<Conta> getContas(){
-        return new ArrayList<>( this.contas.values() );
+    public List<Conta> getContas() {
+        return new ArrayList<>(this.contas.values());
     }
 
-    public void adicionaConta(Cliente cliente, Fornecedor fornecedor){
+    public Conta getConta(String cpf, String fornecedor) {
+        return this.contas.get( new ContaID(cpf, fornecedor) );
+    }
+
+    public void adicionaConta(Cliente cliente, Fornecedor fornecedor) {
         if (cliente == null)
             throw new IllegalArgumentException("Erro ao cadastrar conta: cliente nao pode vazio ou nulo.");
 
         if (fornecedor == null)
             throw new IllegalArgumentException("Erro ao cadastrar conta: fornecedor nao pode vazio ou nulo.");
 
-        if ( this.contas.containsKey( new ContaID( cliente.getCPF(), fornecedor.getNome() ) ) )
+        if (this.contas.containsKey(new ContaID(cliente.getCPF(), fornecedor.getNome())))
             throw new IllegalArgumentException("Erro ao cadastrar conta: conta ja existe.");
 
         ContaID id = new ContaID(cliente.getCPF(), fornecedor.getNome());
@@ -37,34 +45,35 @@ public class ContaController {
         this.contas.put(id, conta);
     }
 
-    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto, Double preco){
-        Validador.prefixoError="Erro na adicao de compra";
+    public String adicionaCompra(String cpf, String fornecedor, String data, String nomeProduto, String descricaoProduto, Double preco) {
+        Validador.prefixoError = "Erro na adicao de compra";
         Validador.validaCPF(cpf);
         Validador.validaString("fornecedor nao pode vazio ou nulo.", fornecedor);
 
         ContaID conta = new ContaID(cpf, fornecedor);
 
-        if ( !this.contas.containsKey(conta) )
+        if (!this.contas.containsKey(conta))
             throw new IllegalArgumentException("Erro na adicao de compra: cliente nao tem nenhuma conta com o fornecedor.");
 
-        return this.contas.get( conta ).adicionaCompra(data, nomeProduto, descricaoProduto, preco);
+        return this.getConta(cpf, fornecedor).adicionaCompra(data, nomeProduto, descricaoProduto, preco);
     }
 
-    public Double getDebito(String cpf, String fornecedor){
-        Validador.prefixoError="Erro ao recuperar debito";
+    public String getDebito(String cpf, String fornecedor) {
+        Validador.prefixoError = "Erro ao recuperar debito";
         Validador.validaCPF(cpf);
         Validador.validaString("fornecedor nao pode vazio ou nulo.", fornecedor);
 
         ContaID conta = new ContaID(cpf, fornecedor);
 
-        if ( !this.contas.containsKey( conta ) )
-            throw new IllegalArgumentException("Erro ao recuperar debito: cliente nao tem nenhuma conta com o fornecedor.");
+        if (!this.contas.containsKey(conta))
+            throw new IllegalArgumentException("Erro ao recuperar debito: cliente nao tem debito com fornecedor.");
 
-        return this.contas.get( conta ).getDebito();
+        return this.contas.get(conta).getDebito();
     }
 
-    public String exibeContaCliente(String cpf, String fornecedor){
-        Validador.prefixoError = "Erro ao exibir conta do cliente";
+
+    public String exibeConta(String cpf, String fornecedor) {
+        Validador.prefixoError = "Erro ao exibir compras";
         Validador.validaCPF(cpf);
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
 
@@ -77,15 +86,15 @@ public class ContaController {
         ContaID contaID = new ContaID(cpf, fornecedor);
         Conta conta = this.contas.get(contaID);
 
-        if ( !this.contas.containsKey( contaID ) )
-            throw new IllegalArgumentException("Erro ao exibir conta: cliente nao tem nenhuma conta com o fornecedor.");
+        if (!this.contas.containsKey(contaID))
+            throw new IllegalArgumentException("Erro ao exibir conta do cliente: cliente nao tem nenhuma conta com o fornecedor.");
 
         StringBuilder resultado = new StringBuilder("");
 
         resultado.append("Cliente: ");
-        resultado.append( conta.getCliente().getNome() );
+        resultado.append(conta.getCliente().getNome());
         resultado.append(" | ");
-        resultado.append( conta.toString() );
+        resultado.append(conta.toString());
 
         return resultado.toString();
     }
@@ -120,7 +129,7 @@ public class ContaController {
         return this.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto, preco);
     }
 
-    public String exibeContasClientes() {
+    public String exibeContasClientes(){
         Iterator<Cliente> clientesIterator = this.clientes.getClientes().iterator();
         Iterator<Conta> contasIterator;
         StringBuilder resultado = new StringBuilder("");
@@ -141,8 +150,12 @@ public class ContaController {
             }
             if (clientesIterator.hasNext()) resultado.append(" | ");
         }
-
         return resultado.toString();
     }
 
+    public void realizaPagamento(String cpf, String fornecedor){
+        if ( !this.encontraConta(cpf, fornecedor) )
+            throw new IllegalArgumentException("Erro no pagamento de conta: nao ha debito do cliente associado a este fornecedor.");
+        this.contas.remove(new ContaID(cpf, fornecedor));
+    }
 }

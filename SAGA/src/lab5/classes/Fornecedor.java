@@ -1,6 +1,7 @@
-package lab5;
+package lab5.classes;
 
-import java.util.HashMap;
+import lab5.controllers.ProdutoController;
+
 import java.util.List;
 import java.util.Objects;
 

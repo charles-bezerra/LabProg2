@@ -1,4 +1,6 @@
-package lab5;
+package lab5.IDs;
+
+import lab5.classes.Validador;
 
 /**
  * Classe que identifica uma conta de um cliente em um fornecedor

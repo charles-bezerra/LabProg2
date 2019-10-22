@@ -1,4 +1,4 @@
-package lab5;
+package lab5.IDs;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
-public class ProdutoID {
+public class ProdutoID{
     /**
      * Atributo que referencia o nome de um determinado produto
      */

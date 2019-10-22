@@ -1,4 +1,4 @@
-package lab5;
+package lab5.classes;
 
 import java.text.DecimalFormat;
 
@@ -18,6 +18,8 @@ public class ProdutoSimples extends Produto {
      * @param preco novo valor do preço
      */
     public void setPreco(Double preco){
+        Validador.prefixoError="Erro na edicao do produto";
+        Validador.validaPreco(preco);
         this.preco = preco;
     }
 
