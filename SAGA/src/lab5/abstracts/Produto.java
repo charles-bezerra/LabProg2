@@ -1,6 +1,7 @@
-package lab5.classes;
+package lab5.abstracts;
 
-import lab5.IDs.ProdutoID;
+import lab5.ids.ProdutoID;
+import lab5.util.Validador;
 
 import java.util.Objects;
 
@@ -31,7 +32,7 @@ public abstract class Produto implements Comparable<Produto> {
      * @param nome atribui valor ao nome do produto
      * @param descricao atribui valor a descrição do produto
      */
-    Produto(String nome, String descricao){
+    protected Produto(String nome, String descricao){
         Validador.prefixoError = "Erro no cadastro de produto";
         this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         this.descricao = Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);

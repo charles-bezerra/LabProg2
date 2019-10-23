@@ -1,4 +1,4 @@
-package lab5;
+package lab5.facades;
 
 import lab5.controllers.ClienteController;
 import lab5.controllers.ContaController;
@@ -100,12 +100,12 @@ public class Facade {
         return this.contas.adicionaCompra(cpf, fornecedor, data, nomeProduto, descricaoProduto);
     }
 
-    public String exibeContaCliente(String cpf, String fornecedor){
-        return this.contas.exibeConta(cpf, fornecedor);
+    public String exibeContas(String cpf, String fornecedor){
+        return this.contas.exibeContas(cpf, fornecedor);
     }
 
-    public String exibeContasClientes(){
-        return this.contas.exibeContasClientes();
+    public String exibeContasClientes(String cpf){
+        return this.contas.exibeContasClientes(cpf);
     }
 
     public String getDebito(String cpf, String fornecedor){

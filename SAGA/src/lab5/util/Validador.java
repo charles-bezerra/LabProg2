@@ -1,4 +1,8 @@
-package lab5.classes;
+package lab5.util;
+
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Validador {
     public static String prefixoError;
@@ -51,7 +55,7 @@ public class Validador {
         return cpf;
     }
 
-    public static String validaData(String data){
+    public static String validaDataString(String data){
         if (data == null || data.trim().equals(""))
             throw new IllegalArgumentException(prefixoError + ": data nao pode ser vazia ou nula.");
 
@@ -61,5 +65,20 @@ public class Validador {
             throw new IllegalArgumentException(prefixoError + ": data invalida.");
 
         return data;
+    }
+
+    public static LocalDate validaData(String data) {
+        if (data == null || data.trim().equals(""))
+            throw new IllegalArgumentException(prefixoError + ": data nao pode ser vazia ou nula.");
+
+        String[] listaData = data.split("/|-");
+
+        if ( listaData[0].length() != 2 || listaData[1].length() != 2 || listaData[2].length() != 4)
+            throw new IllegalArgumentException(prefixoError + ": data invalida.");
+
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataOut = LocalDate.parse(data, formato);
+
+        return dataOut;
     }
 }

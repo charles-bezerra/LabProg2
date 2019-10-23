@@ -1,5 +1,8 @@
 package lab5.classes;
 
+import lab5.abstracts.Produto;
+import lab5.util.Validador;
+
 import java.text.DecimalFormat;
 
 public class ProdutoSimples extends Produto {
@@ -8,7 +11,7 @@ public class ProdutoSimples extends Produto {
      */
     private Double preco;
 
-    ProdutoSimples(String nome, String descricao, Double preco){
+    public ProdutoSimples(String nome, String descricao, Double preco){
         super(nome, descricao);
         this.preco = Validador.validaPreco(preco);
     }

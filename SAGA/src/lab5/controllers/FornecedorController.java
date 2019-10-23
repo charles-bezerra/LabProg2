@@ -1,8 +1,8 @@
 package lab5.controllers;
 
-import lab5.classes.Fornecedor;
-import lab5.classes.Produto;
-import lab5.classes.Validador;
+import lab5.abstracts.*;
+import lab5.classes.*;
+import lab5.util.Validador;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ public class FornecedorController {
     /**
      * Construtor que atribui valor a fornecedores
      */
-    FornecedorController(){
+    public FornecedorController(){
         this.fornecedores = new HashMap<>();
     }
 

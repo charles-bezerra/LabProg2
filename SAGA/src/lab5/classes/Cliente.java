@@ -1,5 +1,7 @@
 package lab5.classes;
 
+import lab5.util.Validador;
+
 import java.util.Objects;
 
 /**

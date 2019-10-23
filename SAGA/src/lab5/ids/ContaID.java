@@ -1,6 +1,6 @@
-package lab5.IDs;
+package lab5.ids;
 
-import lab5.classes.Validador;
+import lab5.util.Validador;
 
 /**
  * Classe que identifica uma conta de um cliente em um fornecedor
@@ -21,7 +21,7 @@ public class ContaID {
      * @param cpf identificador do cliente
      * @param fornecedor identificador do fornecedor
      */
-    ContaID(String cpf, String fornecedor){
+    public ContaID(String cpf, String fornecedor){
         Validador.prefixoError="Erro ao cadastrar compra";
         this.cpf = Validador.validaString("cpf nao pode ser vazio ou nulo", cpf);
         this.fornecedor = Validador.validaString("fornecedor nao pode ser vazio ou nulo", fornecedor);

@@ -1,5 +1,4 @@
-package lab5.IDs;
-
+package lab5.ids;
 import java.util.Objects;
 
 /**
@@ -23,7 +22,7 @@ public class ProdutoID{
      * @param nome nome que pertence a um determinado produto
      * @param descricao descriçao que pertence a um determinado produto
      */
-    ProdutoID(String nome, String descricao){
+    public ProdutoID(String nome, String descricao){
         this.nome = nome;
         this.descricao = descricao;
     }

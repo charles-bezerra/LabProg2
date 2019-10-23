@@ -1,25 +1,39 @@
 package lab5.classes;
 
-import lab5.IDs.ProdutoID;
+import lab5.ids.ProdutoID;
+import lab5.util.Validador;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Compra {
-    private String data;
+    private LocalDate data;
     private ProdutoID idProduto;
-    private Double preco;
+    private double preco;
+    private Cliente cliente;
+    private Fornecedor fornecedor;
 
-    public Compra(String data, String nomeProduto, String descricaoProduto, Double preco){
+    public Compra(String data,
+                  String nomeProduto,
+                  String descricaoProduto,
+                  double preco,
+                  Cliente cliente,
+                  Fornecedor fornecedor)
+    {
+
         Validador.prefixoError = "Erro ao cadastrar compra";
+
         this.data = Validador.validaData(data);
         this.idProduto = new ProdutoID(
                 Validador.validaString("nome do produto nao pode ser vazio ou nulo.", nomeProduto),
-                Validador.validaString("nome do produto nao pode ser vazio ou nulo.", descricaoProduto)
-        );
+                Validador.validaString("nome do produto nao pode ser vazio ou nulo.", descricaoProduto) );
         this.preco = Validador.validaPreco(preco);
+        this.cliente = cliente;
+        this.fornecedor = fornecedor;
     }
 
-    public Double getPreco(){
+    public double getPreco(){
         return this.preco;
     }
 
@@ -28,10 +42,11 @@ public class Compra {
     }
 
     public String getData(){
-        return this.data;
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return formato.format(this.data);
     }
 
-    public void setPreco(Double novoPreco){
+    public void setPreco(double novoPreco){
         Validador.prefixoError="Erro na edicao de compra";
         Validador.validaPreco(novoPreco);
 
@@ -40,7 +55,7 @@ public class Compra {
 
     @Override
     public String toString(){
-        return this.idProduto.getNome() + " - " + this.data.replace("/", "-");
+        return this.idProduto.getNome() + " - " + this.getData();
     }
 
     @Override
@@ -48,12 +63,14 @@ public class Compra {
         if (this == o) return true;
         if (!(o instanceof Compra)) return false;
         Compra compra = (Compra) o;
-        return getData().equals(compra.getData()) &&
-                idProduto.equals(compra.idProduto);
+        return Objects.equals(getData(), compra.getData()) &&
+                Objects.equals(idProduto, compra.idProduto) &&
+                Objects.equals(cliente, compra.cliente) &&
+                Objects.equals(fornecedor, compra.fornecedor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getData(), idProduto);
+        return Objects.hash(getData(), idProduto, cliente, fornecedor);
     }
 }

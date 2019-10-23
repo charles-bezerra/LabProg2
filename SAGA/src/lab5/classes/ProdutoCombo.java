@@ -1,12 +1,15 @@
 package lab5.classes;
 
+import lab5.abstracts.Produto;
+import lab5.util.Validador;
+
 import java.text.DecimalFormat;
 
 public class ProdutoCombo extends Produto {
     private ProdutoSimples[] produtos;
     private Double fator;
 
-    ProdutoCombo(String nome, String descricao, Double fator, Produto[] produtos){
+    public ProdutoCombo(String nome, String descricao, Double fator, Produto[] produtos){
         super(nome, descricao);
 
         if (fator < 0 && fator >= 1)

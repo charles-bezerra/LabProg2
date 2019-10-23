@@ -1,6 +1,6 @@
 package lab5;
 
-import lab5.classes.Produto;
+import lab5.abstracts.Produto;
 import lab5.classes.ProdutoSimples;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,7 @@
 package lab5.controllers;
 
 import lab5.classes.*;
-import lab5.classes.Validador;
+import lab5.util.Validador;
 
 import java.util.*;
 
@@ -20,7 +20,7 @@ public class ClienteController {
 	/**
 	 * Construtor que inicializa this.clientes
 	 */
-    ClienteController(){
+    public ClienteController(){
         this.clientes = new HashMap<>();
     }
 

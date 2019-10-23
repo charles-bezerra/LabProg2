@@ -1,6 +1,8 @@
 package lab5.classes;
 
+import lab5.abstracts.Produto;
 import lab5.controllers.ProdutoController;
+import lab5.util.Validador;
 
 import java.util.List;
 import java.util.Objects;
@@ -34,7 +36,7 @@ public class Fornecedor implements Comparable<Fornecedor> {
     * @param email atribui valor ao e-mail do fornecedor
     * @param telefone atribui valor ao telefone do fornecedor
     */
-    Fornecedor(String nome, String email, String telefone) {
+    public Fornecedor(String nome, String email, String telefone) {
         Validador.prefixoError = "Erro no cadastro do fornecedor";
         this.nome = Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         this.email = Validador.validaString("email nao pode ser vazio ou nulo.", email);
@@ -86,7 +88,6 @@ public class Fornecedor implements Comparable<Fornecedor> {
         else throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
 
     }
-
 
     /**
      * Procura se existe um determinado produto
@@ -156,11 +157,11 @@ public class Fornecedor implements Comparable<Fornecedor> {
     }
 
     /**
-     *
-     * @param nome
-     * @param descricao
-     * @param fator
-     * @param produtos
+     * Adiciona um combo no controller de produto
+     * @param nome identificador do combo
+     * @param descricao identificador do combo
+     * @param fator porcentagem de desconto do preço total do combo
+     * @param produtos produto
      */
     public void adicionaCombo(String nome, String descricao, Double fator, String produtos) {
         this.produtos.adicionaCombo(nome, descricao, fator, produtos);

@@ -1,10 +1,9 @@
 package lab5.controllers;
 
-import lab5.IDs.ProdutoID;
-import lab5.classes.Produto;
-import lab5.classes.ProdutoCombo;
-import lab5.classes.ProdutoSimples;
-import lab5.classes.Validador;
+import lab5.ids.ProdutoID;
+import lab5.abstracts.*;
+import lab5.classes.*;
+import lab5.util.Validador;
 
 import java.util.*;
 
@@ -34,7 +33,7 @@ public class ProdutoController{
     /**
      * Construtor do ProdutoController
      */
-    ProdutoController(){
+    public ProdutoController(){
         this.produtos = new HashMap<>();
         this.produtosSimples = new HashMap<>();
         this.combos = new HashMap<>();
