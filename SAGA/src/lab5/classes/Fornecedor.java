@@ -3,7 +3,6 @@ package lab5.classes;
 import lab5.abstracts.Produto;
 import lab5.controllers.ProdutoController;
 import lab5.util.Validador;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -85,8 +84,9 @@ public class Fornecedor implements Comparable<Fornecedor> {
         	this.email = novoValor;
         else if(atributo.equals("telefone"))
         	this.telefone = novoValor;
-        else throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
 
+        else
+            throw new IllegalArgumentException("Erro na edicao do fornecedor: atributo nao existe.");
     }
 
     /**
@@ -115,7 +115,7 @@ public class Fornecedor implements Comparable<Fornecedor> {
     * @param descricao descrição do produto
     * @param preco valor do preço do produto
     */
-    public void adicionaProduto(String nome, String descricao, Double preco){
+    public void adicionaProduto(String nome, String descricao, double preco){
         this.produtos.adiciona(nome, descricao, preco);
     }
 
@@ -134,7 +134,7 @@ public class Fornecedor implements Comparable<Fornecedor> {
      * @param descricao descrição do produto
      * @param novoPreco novo preço do produto
      */
-    public void editaProduto(String nome, String descricao, Double novoPreco){
+    public void editaProduto(String nome, String descricao, double novoPreco){
         this.produtos.editaProduto(nome,descricao,novoPreco);
     }
 
@@ -163,11 +163,11 @@ public class Fornecedor implements Comparable<Fornecedor> {
      * @param fator porcentagem de desconto do preço total do combo
      * @param produtos produto
      */
-    public void adicionaCombo(String nome, String descricao, Double fator, String produtos) {
+    public void adicionaCombo(String nome, String descricao, double fator, String produtos) {
         this.produtos.adicionaCombo(nome, descricao, fator, produtos);
     }
 
-    public void editaCombo(String nome, String descricao, Double novoFator){
+    public void editaCombo(String nome, String descricao, double novoFator){
         this.produtos.editaCombo(nome, descricao, novoFator);
     }
 

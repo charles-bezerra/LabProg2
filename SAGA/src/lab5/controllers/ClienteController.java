@@ -24,6 +24,10 @@ public class ClienteController {
         this.clientes = new HashMap<>();
     }
 
+    /**
+     * Retorna todos os clientes em ordem alfabética
+     * @return List
+     */
     private List<Cliente> getClientesOrdenados(){
         if ( this.clientes.isEmpty() )
             return null;

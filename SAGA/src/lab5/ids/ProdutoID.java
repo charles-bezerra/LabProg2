@@ -27,10 +27,18 @@ public class ProdutoID{
         this.descricao = descricao;
     }
 
+    /**
+     * Retorna o nome do produto
+     * @return String
+     */
     public String getNome() {
     	return this.nome;
     }
-    
+
+    /**
+     * Retorna a descrição do produto
+     * @return String
+     */
     public String getDescricao() {
     	return this.descricao;
     }
@@ -54,5 +62,4 @@ public class ProdutoID{
         ProdutoID cod = (ProdutoID) o;
         return this.hashCode() == cod.hashCode();
     }
-
 }

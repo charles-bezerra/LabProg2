@@ -15,15 +15,6 @@ class ProdutoSimplesTest {
     	this.produto = new ProdutoSimples("X-frango","Muito bom", 4.9);
     }
 
-    @Test
-    void testSetPrecoNulo() {
-    	try {
-    		this.produto.setPreco(null);
-            fail("Exceção deveria ser lançada!");
-        }catch (IllegalArgumentException error){
-            assertEquals("java.lang.IllegalArgumentException: Erro na edicao do produto: preco nao pode ser vazio ou nulo.", error.toString());
-        }
-    }
 
     @Test
     void testSetPrecoInvalido() {

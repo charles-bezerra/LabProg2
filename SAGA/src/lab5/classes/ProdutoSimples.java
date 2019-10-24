@@ -9,9 +9,9 @@ public class ProdutoSimples extends Produto {
     /**
      * preço do produto
      */
-    private Double preco;
+    private double preco;
 
-    public ProdutoSimples(String nome, String descricao, Double preco){
+    public ProdutoSimples(String nome, String descricao, double preco){
         super(nome, descricao);
         this.preco = Validador.validaPreco(preco);
     }
@@ -20,7 +20,7 @@ public class ProdutoSimples extends Produto {
      * Altera o valor do preço
      * @param preco novo valor do preço
      */
-    public void setPreco(Double preco){
+    public void setPreco(double preco){
         Validador.prefixoError="Erro na edicao do produto";
         Validador.validaPreco(preco);
         this.preco = preco;
@@ -28,10 +28,10 @@ public class ProdutoSimples extends Produto {
 
     /**
      * Retorna o preco do produto
-     * @return Double
+     * @return double
      */
     @Override
-    public Double getPreco(){
+    public double getPreco(){
         return this.preco;
     }
 

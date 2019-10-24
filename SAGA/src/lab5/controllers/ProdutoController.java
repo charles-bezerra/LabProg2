@@ -10,7 +10,6 @@ import java.util.*;
 
 /**
  * Classe CRUD de produto
- * 
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
@@ -21,12 +20,12 @@ public class ProdutoController{
     private Map<ProdutoID, Produto> produtos;
 
     /**
-     *
+     * Coleção que contem os produtos simples
      */
     private Map<ProdutoID, ProdutoSimples> produtosSimples;
 
     /**
-     *
+     * Coleção que contem os produtos combo
      */
     private Map<ProdutoID, ProdutoCombo> combos;
 
@@ -49,39 +48,53 @@ public class ProdutoController{
     	return this.produtos.containsKey(new ProdutoID(nome, descricao));
     }
 
+    /** Verifica se existe um determinado produto simples
+     * @param nome identificado do produto
+     * @param descricao identificador do produto
+     * @return boolean
+     */
     public boolean encontraProdutoSimples(String nome, String descricao) {
         return this.produtosSimples.containsKey(new ProdutoID(nome, descricao));
     }
 
+    /** Verifica se existe um determinado produto combo
+     * @param nome identificado do produto
+     * @param descricao identificador do produto
+     * @return boolean
+     */
     public boolean encontraCombo(String nome, String descricao) {
         return this.combos.containsKey(new ProdutoID(nome, descricao));
     }
 
+    /**
+     * Retorna um produto
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @return Produto
+     */
     public Produto getProduto(String nome, String descricao){
         return this.produtos.get(new ProdutoID(nome, descricao));
     }
     
     /**
-     * 
-     * @return
+     * Retorna todos os produtos ordenados
+     * @return List
      */
     private List<Produto> getProdutosOrdenados(){
     	if (this.produtos.isEmpty())
     		return null;
-		
     	List<Produto> produtosOrdenados = new ArrayList<>( this.produtos.values() );
 		Collections.sort(produtosOrdenados);
-
 		return produtosOrdenados;
     }
     
     /**
-     * 
-     * @param nome
-     * @param descricao
-     * @param preco
+     * Adiciona e cadastra um produto simples
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @param preco preço do produto
      */
-    public void adiciona(String nome, String descricao, Double preco){
+    public void adiciona(String nome, String descricao, double preco){
         if( encontraProdutoSimples(nome, descricao) )
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
       
@@ -92,7 +105,14 @@ public class ProdutoController{
         this.produtosSimples.put(id, produto);
     }
 
-    public void adicionaCombo(String nome, String descricao, Double fator, String produtos){
+    /**
+     * Adiciona e cadastra um produto combo
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @param fator porcentagem de desconto
+     * @param produtos produto no formatos em String de seus produtos
+     */
+    public void adicionaCombo(String nome, String descricao, double fator, String produtos){
         Validador.prefixoError="Erro no cadastro de combo";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
@@ -131,10 +151,10 @@ public class ProdutoController{
     
     
     /**
-     * 
-     * @param nome
-     * @param descricao
-     * @return
+     * Exibe um produto simples ou combo
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @return String
      */
     public String exibe(String nome, String descricao){
     	Validador.prefixoError="Erro na exibicao de produto";
@@ -148,8 +168,8 @@ public class ProdutoController{
     }
 
     /**
-     * o
-     * @return
+     * Exibe todos os produto
+     * @return String
      */
     public List<String> exibeProdutos(){
         List<String> resultado = new ArrayList<>();        
@@ -174,7 +194,13 @@ public class ProdutoController{
         return resultado;
     }
 
-    public void editaProduto(String nome, String descricao, Double novoPreco){
+    /**
+     * Edita um produto simples
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @param novoPreco novo valor do preço do produto simples
+     */
+    public void editaProduto(String nome, String descricao, double novoPreco){
     	Validador.prefixoError = "Erro na edicao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
@@ -187,7 +213,13 @@ public class ProdutoController{
         this.produtosSimples.get(id).setPreco(novoPreco);
     }
 
-    public void editaCombo(String nome, String descricao, Double novoFator){
+    /**
+     * Edita um produto combo
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     * @param novoFator novo valor do fator de desconto do combo
+     */
+    public void editaCombo(String nome, String descricao, double novoFator){
         Validador.prefixoError = "Erro na edicao de combo";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);
         Validador.validaString("descricao nao pode ser vazia ou nula.", descricao);
@@ -199,6 +231,11 @@ public class ProdutoController{
         this.combos.get( new ProdutoID(nome, descricao) ).setFator(novoFator);
     }
 
+    /**
+     * Remove um produto do sistema, simples ou combo
+     * @param nome nome do produto
+     * @param descricao descrição do produto
+     */
     public void remove(String nome, String descricao){
     	Validador.prefixoError="Erro na remocao de produto";
         Validador.validaString("nome nao pode ser vazio ou nulo.", nome);

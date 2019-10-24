@@ -5,11 +5,28 @@ import lab5.util.Validador;
 
 import java.text.DecimalFormat;
 
+/**
+ * Classe de um produto do tipo combo
+ * @author Charles Bezerra de Oliveira Junior - 119110595
+ */
 public class ProdutoCombo extends Produto {
+    /**
+     * Produtos simples que o combo guarda
+     */
     private ProdutoSimples[] produtos;
-    private Double fator;
+    /**
+     * Porcentagem de desconto do combo
+     */
+    private double fator;
 
-    public ProdutoCombo(String nome, String descricao, Double fator, Produto[] produtos){
+    /**
+     * Construtor de combo
+     * @param nome nome do combo
+     * @param descricao descrição do combo
+     * @param fator porcentagem de desconto do combo
+     * @param produtos
+     */
+    public ProdutoCombo(String nome, String descricao, double fator, Produto[] produtos){
         super(nome, descricao);
 
         if (fator < 0 && fator >= 1)
@@ -24,7 +41,11 @@ public class ProdutoCombo extends Produto {
         this.produtos = (ProdutoSimples[]) produtos;
     }
 
-    public void setFator(Double novoFator){
+    /**
+     * Altera o fator de desconto do combo
+     * @param novoFator novo valor do fator
+     */
+    public void setFator(double novoFator){
         Validador.prefixoError="Erro na edicao do combo";
         Validador.validaDouble("fator nao pode ser vazio ou nulo.", novoFator);
 
@@ -37,11 +58,11 @@ public class ProdutoCombo extends Produto {
 
     /**
      * Retorna o preco do combo com o desconto
-     * @return Double
+     * @retur double[]
      */
     @Override
-    public Double getPreco(){
-        Double valor = new Double(0);
+    public double getPreco(){
+        double valor = 0.0;
 
         for (ProdutoSimples produto: this.produtos)
             valor += produto.getPreco();

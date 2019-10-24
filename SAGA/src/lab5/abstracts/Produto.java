@@ -63,7 +63,11 @@ public abstract class Produto implements Comparable<Produto> {
     	return this.id;
     }
 
-    public Double getPreco(){ return new Double(0.0); }
+    /**
+     * Retorna o valor do preco do produto
+     * @return double
+     */
+    public double getPreco(){ return 0.0; }
 
     @Override
     public String toString(){

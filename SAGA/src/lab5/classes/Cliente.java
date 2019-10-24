@@ -41,19 +41,35 @@ public class Cliente implements Comparable<Cliente> {
         this.email = Validador.validaString( "email nao pode ser vazio ou nulo.", email);
         this.localizacao = Validador.validaString( "localizacao nao pode ser vazia ou nula.", localizacao);
     }
-    
+
+    /**
+     * Retorna cpf
+     * @return String
+     */
     public String getCPF() {
     	return this.cpf;
     }
-    
+
+    /**
+     * Retorna nome
+     * @return String
+     */
     public String getNome() {
     	return this.nome;
     }
-    
+
+    /**
+     * Retorna email
+     * @return String
+     */
     public String getEmail() {
     	return this.email;
     }
 
+    /**
+     * Retorna localizacao
+     * @return String
+     */
     public String getLocalizacoa() {
     	return this.localizacao;
     }

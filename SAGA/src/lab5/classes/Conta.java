@@ -20,7 +20,7 @@ public class Conta implements Comparable<Conta>{
     private Fornecedor fornecedor;
 
     /**
-     * As compras
+     * As compras da conta
      */
     private List<Compra> compras;
 
@@ -42,7 +42,7 @@ public class Conta implements Comparable<Conta>{
      * @param preco Double que atribui o preco
      * @return String com a representação textual da compra
      */
-    public String adicionaCompra(String data, String nomeProduto, String descricaoProduto, Double preco){
+    public String adicionaCompra(String data, String nomeProduto, String descricaoProduto, double preco){
         Compra compra = new Compra(data, nomeProduto, descricaoProduto, preco, this.cliente, this.fornecedor);
         this.compras.add(compra);
 
@@ -54,19 +54,35 @@ public class Conta implements Comparable<Conta>{
      * @return Double
      */
     public String getDebito(){
-        Double valor = 0.0;
+        double valor = 0.0;
         for (Compra compra: this.compras)
             valor = valor + compra.getPreco();
         DecimalFormat df = new DecimalFormat(".00");
         return df.format(valor);
     }
 
+    /**
+     * Retorna o cliente da conta
+     * @return Cliente
+     */
     public Cliente getCliente(){
         return this.cliente;
     }
 
+    /**
+     * Retorna o fornecedor da contas
+     * @return Fornecedor
+     */
     public Fornecedor getFornecedor(){
         return this.fornecedor;
+    }
+
+    /**
+     * Retorna todas as compras
+     * @return List
+     */
+    public List<Compra> getCompras(){
+        return this.compras;
     }
 
     @Override

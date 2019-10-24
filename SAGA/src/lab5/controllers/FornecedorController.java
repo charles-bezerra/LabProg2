@@ -9,7 +9,6 @@ import java.util.*;
 
 /**
  * Classe que representa o CRUD do fornecedor
- *
  * @author Charles Bezerra de Oliveira Júnior - 119110595
  *
  */
@@ -183,7 +182,7 @@ public class FornecedorController {
      * @param descricao atribui a descricao de produto
      * @param preco atribui o preco de produto
      */
-    public void adicionaProduto(String fornecedor, String nome, String descricao, Double preco){
+    public void adicionaProduto(String fornecedor, String nome, String descricao, double preco){
     	Validador.prefixoError="Erro no cadastro de produto";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
         if (!this.encontraFornecedor(fornecedor))
@@ -211,34 +210,26 @@ public class FornecedorController {
      * @return String com todas as representações dos produtos de todos fornecedores em ordem alfabética
      */
     public String exibeProdutos() {
-        if (this.getFornecedoresOrdenados() == null)
-            return null;
-
+        if (this.getFornecedoresOrdenados() == null) return null;
         Iterator<Fornecedor> fornecedores = this.getFornecedoresOrdenados().iterator();
         Iterator<String> listaDeProdutosDoFornecedor;
-
         StringBuilder resultado = new StringBuilder("");
-
         Fornecedor fornecedor;
 
         while( fornecedores.hasNext() ) {
             fornecedor = fornecedores.next();
-
             if (fornecedor.exibeProdutos() != null) {
                 listaDeProdutosDoFornecedor = fornecedor.exibeProdutos().iterator();
-
                 while (listaDeProdutosDoFornecedor.hasNext()) {
-                    resultado.append(fornecedor.getNome());
-                    resultado.append(" - ");
-                    resultado.append(listaDeProdutosDoFornecedor.next());
+                    resultado.append(fornecedor.getNome())
+                            .append(" - ")
+                            .append(listaDeProdutosDoFornecedor.next());
                     if (listaDeProdutosDoFornecedor.hasNext()) resultado.append(" | ");
                 }
             }
-            else{
-                resultado.append( fornecedor.getNome() );
-                resultado.append( " -" );
-            }
-
+            else resultado
+                    .append( fornecedor.getNome() )
+                    .append( " -" );
             if (fornecedores.hasNext())
                 resultado.append(" | ");
         }
@@ -283,7 +274,7 @@ public class FornecedorController {
      * @param descricao descrição de um produto
      * @param novoPreco novo preço
      */
-    public void editaProduto(String nome, String descricao, String fornecedor, Double novoPreco){
+    public void editaProduto(String nome, String descricao, String fornecedor, double novoPreco){
         Validador.prefixoError="Erro na edicao de produto";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
         if (!this.fornecedores.containsKey(fornecedor))
@@ -308,30 +299,32 @@ public class FornecedorController {
 
     /**
      * Adiciona um combo nos produtos do fornecedor
-     * @param fornecedor
-     * @param nome
-     * @param descricao
-     * @param fator
-     * @param produtos
+     * @param fornecedor nome que identifica um fornecedor
+     * @param nome nome do Combo
+     * @param descricao descrição do Combo
+     * @param fator porcentagem de desconto do Combo
+     * @param produtos produtos a serem adicionados a Combo
      */
-    public void adicionaCombo(String fornecedor, String nome, String descricao, Double fator, String produtos) {
+    public void adicionaCombo(String fornecedor, String nome, String descricao, double fator, String produtos) {
         Validador.prefixoError="Erro no cadastro de combo";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
-
         if ( !this.encontraFornecedor(fornecedor) )
             throw new IllegalArgumentException(Validador.prefixoError + ": fornecedor nao existe.");
-
         this.getFornecedor(fornecedor).adicionaCombo(nome, descricao, fator, produtos);
     }
 
-
-    public void editaCombo(String nome, String descricao, String fornecedor, Double novoFator ){
+    /**
+     * Edita um determinado Combo
+     * @param fornecedor nome que identifica um fornecedor
+     * @param nome nome do Combo
+     * @param descricao descrição do Combo
+     * @param novoFator nova porcentagem de desconto do Combo
+     */
+    public void editaCombo(String nome, String descricao, String fornecedor, double novoFator ){
         Validador.prefixoError="Erro na edicao de combo";
         Validador.validaString("fornecedor nao pode ser vazio ou nulo.", fornecedor);
-
         if (!encontraFornecedor(fornecedor))
             throw new IllegalArgumentException(Validador.prefixoError + ": fornecedor nao existe.");
-
         this.getFornecedor(fornecedor).editaCombo(nome, descricao, novoFator);
     }
 }
