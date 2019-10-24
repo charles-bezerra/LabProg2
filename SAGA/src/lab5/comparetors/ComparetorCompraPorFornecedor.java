@@ -1,6 +1,6 @@
 package lab5.comparetors;
 
-import lab5.classes.Compra;
+import lab5.comparetors.classes.Compra;
 import java.util.Comparator;
 
 public class ComparetorCompraPorFornecedor implements Comparator<Compra> {

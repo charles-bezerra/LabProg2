@@ -1,7 +1,7 @@
 package lab5;
 
 import lab5.abstracts.Produto;
-import lab5.classes.ProdutoSimples;
+import lab5.comparetors.classes.ProdutoSimples;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;

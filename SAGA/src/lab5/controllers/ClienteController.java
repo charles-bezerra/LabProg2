@@ -1,7 +1,7 @@
 package lab5.controllers;
 
-import lab5.classes.*;
 import lab5.util.Validador;
+import lab5.comparetors.classes.Cliente;
 
 import java.util.*;
 

@@ -1,8 +1,9 @@
-package lab5.classes;
+package lab5.comparetors.classes;
 
 import lab5.abstracts.Produto;
-import lab5.controllers.ProdutoController;
 import lab5.util.Validador;
+import lab5.controllers.ProdutoController;
+
 import java.util.List;
 import java.util.Objects;
 

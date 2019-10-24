@@ -1,7 +1,7 @@
 package lab5.abstracts;
 
-import lab5.ids.ProdutoID;
 import lab5.util.Validador;
+import lab5.ids.ProdutoID;
 
 import java.util.Objects;
 

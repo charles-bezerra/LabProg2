@@ -1,6 +1,6 @@
 package lab5;
 
-import lab5.classes.Cliente;
+import lab5.comparetors.classes.Cliente;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

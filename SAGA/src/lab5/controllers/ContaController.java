@@ -1,15 +1,18 @@
 package lab5.controllers;
 
-import java.util.*;
-
+import lab5.abstracts.Produto;
 import lab5.comparetors.ComparetorCompraPorCliente;
 import lab5.comparetors.ComparetorCompraPorData;
 import lab5.comparetors.ComparetorCompraPorFornecedor;
+import lab5.comparetors.classes.Cliente;
+import lab5.comparetors.classes.Compra;
+import lab5.comparetors.classes.Conta;
+import lab5.comparetors.classes.Fornecedor;
 import lab5.enums.CriterioOrdenacao;
 import lab5.ids.ContaID;
-import lab5.abstracts.*;
-import lab5.classes.*;
 import lab5.util.Validador;
+
+import java.util.*;
 
 /**
  * Classe que controla as contas do sistema (CRUD)

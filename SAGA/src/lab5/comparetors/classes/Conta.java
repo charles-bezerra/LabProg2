@@ -1,6 +1,7 @@
-package lab5.classes;
+package lab5.comparetors.classes;
 
 import lab5.ids.ContaID;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;

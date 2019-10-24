@@ -1,4 +1,4 @@
-package lab5.classes;
+package lab5.comparetors.classes;
 
 import lab5.abstracts.Produto;
 import lab5.util.Validador;

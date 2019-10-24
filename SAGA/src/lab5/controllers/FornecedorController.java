@@ -1,8 +1,8 @@
 package lab5.controllers;
 
-import lab5.abstracts.*;
-import lab5.classes.*;
+import lab5.abstracts.Produto;
 import lab5.util.Validador;
+import lab5.comparetors.classes.Fornecedor;
 
 import java.util.*;
 

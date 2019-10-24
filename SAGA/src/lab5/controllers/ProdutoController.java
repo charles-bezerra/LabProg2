@@ -1,9 +1,10 @@
 package lab5.controllers;
 
+import lab5.abstracts.Produto;
 import lab5.ids.ProdutoID;
-import lab5.abstracts.*;
-import lab5.classes.*;
 import lab5.util.Validador;
+import lab5.comparetors.classes.ProdutoCombo;
+import lab5.comparetors.classes.ProdutoSimples;
 
 import java.util.*;
 
